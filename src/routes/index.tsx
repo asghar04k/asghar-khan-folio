@@ -21,11 +21,11 @@ export const Route = createFileRoute("/")({
         content:
           "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University — clinical ethics, patient support, and health services research.",
       },
-      { property: "og:title", content: "Asghar Khan — ePortfolio" },
+      { property: "og:title", content: "Asghar Khan — Clinical Ethics & Health Research Portfolio" },
       {
         property: "og:description",
         content:
-          "Clinical ethics, patient support, and health services research at Western University's Schulich School of Medicine & Dentistry.",
+          "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University — clinical ethics, patient support, and health services research.",
       },
     ],
   }),
