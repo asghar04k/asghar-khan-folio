@@ -10,33 +10,211 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AwardsRouteImport } from './routes/awards'
+import { Route as ExperienceRouteImport } from './routes/experience'
+import { Route as HobbiesRouteImport } from './routes/hobbies'
+import { Route as MmsRouteImport } from './routes/mms'
+import { Route as ResearchRouteImport } from './routes/research'
+import { Route as ResumeRouteImport } from './routes/resume'
+import { Route as VenturesRouteImport } from './routes/ventures'
+import { Route as VolunteeringRouteImport } from './routes/volunteering'
+import { Route as MmsIndexRouteImport } from './routes/mms.index'
+import { Route as MmsCapstoneRouteImport } from './routes/mms.capstone'
+import { Route as MmsCoursesRouteImport } from './routes/mms.courses'
+import { Route as MmsReflectionsRouteImport } from './routes/mms.reflections'
+import { Route as MmsRotationsRouteImport } from './routes/mms.rotations'
+import { Route as MmsSeminarsRouteImport } from './routes/mms.seminars'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AwardsRoute = AwardsRouteImport.update({
+  id: '/awards',
+  path: '/awards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienceRoute = ExperienceRouteImport.update({
+  id: '/experience',
+  path: '/experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HobbiesRoute = HobbiesRouteImport.update({
+  id: '/hobbies',
+  path: '/hobbies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MmsRoute = MmsRouteImport.update({
+  id: '/mms',
+  path: '/mms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchRoute = ResearchRouteImport.update({
+  id: '/research',
+  path: '/research',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResumeRoute = ResumeRouteImport.update({
+  id: '/resume',
+  path: '/resume',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VenturesRoute = VenturesRouteImport.update({
+  id: '/ventures',
+  path: '/ventures',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VolunteeringRoute = VolunteeringRouteImport.update({
+  id: '/volunteering',
+  path: '/volunteering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MmsIndexRoute = MmsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MmsRoute,
+} as any)
+const MmsCapstoneRoute = MmsCapstoneRouteImport.update({
+  id: '/capstone',
+  path: '/capstone',
+  getParentRoute: () => MmsRoute,
+} as any)
+const MmsCoursesRoute = MmsCoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
+  getParentRoute: () => MmsRoute,
+} as any)
+const MmsReflectionsRoute = MmsReflectionsRouteImport.update({
+  id: '/reflections',
+  path: '/reflections',
+  getParentRoute: () => MmsRoute,
+} as any)
+const MmsRotationsRoute = MmsRotationsRouteImport.update({
+  id: '/rotations',
+  path: '/rotations',
+  getParentRoute: () => MmsRoute,
+} as any)
+const MmsSeminarsRoute = MmsSeminarsRouteImport.update({
+  id: '/seminars',
+  path: '/seminars',
+  getParentRoute: () => MmsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/awards': typeof AwardsRoute
+  '/experience': typeof ExperienceRoute
+  '/hobbies': typeof HobbiesRoute
+  '/mms': typeof MmsRouteWithChildren
+  '/research': typeof ResearchRoute
+  '/resume': typeof ResumeRoute
+  '/ventures': typeof VenturesRoute
+  '/volunteering': typeof VolunteeringRoute
+  '/mms/capstone': typeof MmsCapstoneRoute
+  '/mms/courses': typeof MmsCoursesRoute
+  '/mms/reflections': typeof MmsReflectionsRoute
+  '/mms/rotations': typeof MmsRotationsRoute
+  '/mms/seminars': typeof MmsSeminarsRoute
+  '/mms/': typeof MmsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/awards': typeof AwardsRoute
+  '/experience': typeof ExperienceRoute
+  '/hobbies': typeof HobbiesRoute
+  '/research': typeof ResearchRoute
+  '/resume': typeof ResumeRoute
+  '/ventures': typeof VenturesRoute
+  '/volunteering': typeof VolunteeringRoute
+  '/mms/capstone': typeof MmsCapstoneRoute
+  '/mms/courses': typeof MmsCoursesRoute
+  '/mms/reflections': typeof MmsReflectionsRoute
+  '/mms/rotations': typeof MmsRotationsRoute
+  '/mms/seminars': typeof MmsSeminarsRoute
+  '/mms': typeof MmsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/awards': typeof AwardsRoute
+  '/experience': typeof ExperienceRoute
+  '/hobbies': typeof HobbiesRoute
+  '/mms': typeof MmsRouteWithChildren
+  '/research': typeof ResearchRoute
+  '/resume': typeof ResumeRoute
+  '/ventures': typeof VenturesRoute
+  '/volunteering': typeof VolunteeringRoute
+  '/mms/capstone': typeof MmsCapstoneRoute
+  '/mms/courses': typeof MmsCoursesRoute
+  '/mms/reflections': typeof MmsReflectionsRoute
+  '/mms/rotations': typeof MmsRotationsRoute
+  '/mms/seminars': typeof MmsSeminarsRoute
+  '/mms/': typeof MmsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/awards'
+    | '/experience'
+    | '/hobbies'
+    | '/mms'
+    | '/research'
+    | '/resume'
+    | '/ventures'
+    | '/volunteering'
+    | '/mms/capstone'
+    | '/mms/courses'
+    | '/mms/reflections'
+    | '/mms/rotations'
+    | '/mms/seminars'
+    | '/mms/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/awards'
+    | '/experience'
+    | '/hobbies'
+    | '/research'
+    | '/resume'
+    | '/ventures'
+    | '/volunteering'
+    | '/mms/capstone'
+    | '/mms/courses'
+    | '/mms/reflections'
+    | '/mms/rotations'
+    | '/mms/seminars'
+    | '/mms'
+  id:
+    | '__root__'
+    | '/'
+    | '/awards'
+    | '/experience'
+    | '/hobbies'
+    | '/mms'
+    | '/research'
+    | '/resume'
+    | '/ventures'
+    | '/volunteering'
+    | '/mms/capstone'
+    | '/mms/courses'
+    | '/mms/reflections'
+    | '/mms/rotations'
+    | '/mms/seminars'
+    | '/mms/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AwardsRoute: typeof AwardsRoute
+  ExperienceRoute: typeof ExperienceRoute
+  HobbiesRoute: typeof HobbiesRoute
+  MmsRoute: typeof MmsRouteWithChildren
+  ResearchRoute: typeof ResearchRoute
+  ResumeRoute: typeof ResumeRoute
+  VenturesRoute: typeof VenturesRoute
+  VolunteeringRoute: typeof VolunteeringRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +226,138 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/awards': {
+      id: '/awards'
+      path: '/awards'
+      fullPath: '/awards'
+      preLoaderRoute: typeof AwardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experience': {
+      id: '/experience'
+      path: '/experience'
+      fullPath: '/experience'
+      preLoaderRoute: typeof ExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hobbies': {
+      id: '/hobbies'
+      path: '/hobbies'
+      fullPath: '/hobbies'
+      preLoaderRoute: typeof HobbiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mms': {
+      id: '/mms'
+      path: '/mms'
+      fullPath: '/mms'
+      preLoaderRoute: typeof MmsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research': {
+      id: '/research'
+      path: '/research'
+      fullPath: '/research'
+      preLoaderRoute: typeof ResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resume': {
+      id: '/resume'
+      path: '/resume'
+      fullPath: '/resume'
+      preLoaderRoute: typeof ResumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ventures': {
+      id: '/ventures'
+      path: '/ventures'
+      fullPath: '/ventures'
+      preLoaderRoute: typeof VenturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/volunteering': {
+      id: '/volunteering'
+      path: '/volunteering'
+      fullPath: '/volunteering'
+      preLoaderRoute: typeof VolunteeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mms/': {
+      id: '/mms/'
+      path: '/'
+      fullPath: '/mms/'
+      preLoaderRoute: typeof MmsIndexRouteImport
+      parentRoute: typeof MmsRoute
+    }
+    '/mms/capstone': {
+      id: '/mms/capstone'
+      path: '/capstone'
+      fullPath: '/mms/capstone'
+      preLoaderRoute: typeof MmsCapstoneRouteImport
+      parentRoute: typeof MmsRoute
+    }
+    '/mms/courses': {
+      id: '/mms/courses'
+      path: '/courses'
+      fullPath: '/mms/courses'
+      preLoaderRoute: typeof MmsCoursesRouteImport
+      parentRoute: typeof MmsRoute
+    }
+    '/mms/reflections': {
+      id: '/mms/reflections'
+      path: '/reflections'
+      fullPath: '/mms/reflections'
+      preLoaderRoute: typeof MmsReflectionsRouteImport
+      parentRoute: typeof MmsRoute
+    }
+    '/mms/rotations': {
+      id: '/mms/rotations'
+      path: '/rotations'
+      fullPath: '/mms/rotations'
+      preLoaderRoute: typeof MmsRotationsRouteImport
+      parentRoute: typeof MmsRoute
+    }
+    '/mms/seminars': {
+      id: '/mms/seminars'
+      path: '/seminars'
+      fullPath: '/mms/seminars'
+      preLoaderRoute: typeof MmsSeminarsRouteImport
+      parentRoute: typeof MmsRoute
+    }
   }
 }
 
+interface MmsRouteChildren {
+  MmsCapstoneRoute: typeof MmsCapstoneRoute
+  MmsCoursesRoute: typeof MmsCoursesRoute
+  MmsReflectionsRoute: typeof MmsReflectionsRoute
+  MmsRotationsRoute: typeof MmsRotationsRoute
+  MmsSeminarsRoute: typeof MmsSeminarsRoute
+  MmsIndexRoute: typeof MmsIndexRoute
+}
+
+const MmsRouteChildren: MmsRouteChildren = {
+  MmsCapstoneRoute: MmsCapstoneRoute,
+  MmsCoursesRoute: MmsCoursesRoute,
+  MmsReflectionsRoute: MmsReflectionsRoute,
+  MmsRotationsRoute: MmsRotationsRoute,
+  MmsSeminarsRoute: MmsSeminarsRoute,
+  MmsIndexRoute: MmsIndexRoute,
+}
+
+const MmsRouteWithChildren = MmsRoute._addFileChildren(MmsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AwardsRoute: AwardsRoute,
+  ExperienceRoute: ExperienceRoute,
+  HobbiesRoute: HobbiesRoute,
+  MmsRoute: MmsRouteWithChildren,
+  ResearchRoute: ResearchRoute,
+  ResumeRoute: ResumeRoute,
+  VenturesRoute: VenturesRoute,
+  VolunteeringRoute: VolunteeringRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
