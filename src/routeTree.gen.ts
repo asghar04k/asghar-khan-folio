@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AwardsRouteImport } from './routes/awards'
+import { Route as ExperienceRouteImport } from './routes/experience'
+import { Route as HobbiesRouteImport } from './routes/hobbies'
+import { Route as ResearchRouteImport } from './routes/research'
+import { Route as ResumeRouteImport } from './routes/resume'
+import { Route as VenturesRouteImport } from './routes/ventures'
+import { Route as VolunteeringRouteImport } from './routes/volunteering'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AwardsRoute = AwardsRouteImport.update({
+  id: '/awards',
+  path: '/awards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienceRoute = ExperienceRouteImport.update({
+  id: '/experience',
+  path: '/experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HobbiesRoute = HobbiesRouteImport.update({
+  id: '/hobbies',
+  path: '/hobbies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchRoute = ResearchRouteImport.update({
+  id: '/research',
+  path: '/research',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResumeRoute = ResumeRouteImport.update({
+  id: '/resume',
+  path: '/resume',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VenturesRoute = VenturesRouteImport.update({
+  id: '/ventures',
+  path: '/ventures',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VolunteeringRoute = VolunteeringRouteImport.update({
+  id: '/volunteering',
+  path: '/volunteering',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/awards': typeof AwardsRoute
+  '/experience': typeof ExperienceRoute
+  '/hobbies': typeof HobbiesRoute
+  '/research': typeof ResearchRoute
+  '/resume': typeof ResumeRoute
+  '/ventures': typeof VenturesRoute
+  '/volunteering': typeof VolunteeringRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/awards': typeof AwardsRoute
+  '/experience': typeof ExperienceRoute
+  '/hobbies': typeof HobbiesRoute
+  '/research': typeof ResearchRoute
+  '/resume': typeof ResumeRoute
+  '/ventures': typeof VenturesRoute
+  '/volunteering': typeof VolunteeringRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/awards': typeof AwardsRoute
+  '/experience': typeof ExperienceRoute
+  '/hobbies': typeof HobbiesRoute
+  '/research': typeof ResearchRoute
+  '/resume': typeof ResumeRoute
+  '/ventures': typeof VenturesRoute
+  '/volunteering': typeof VolunteeringRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/awards'
+    | '/experience'
+    | '/hobbies'
+    | '/research'
+    | '/resume'
+    | '/ventures'
+    | '/volunteering'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/awards'
+    | '/experience'
+    | '/hobbies'
+    | '/research'
+    | '/resume'
+    | '/ventures'
+    | '/volunteering'
+  id:
+    | '__root__'
+    | '/'
+    | '/awards'
+    | '/experience'
+    | '/hobbies'
+    | '/research'
+    | '/resume'
+    | '/ventures'
+    | '/volunteering'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AwardsRoute: typeof AwardsRoute
+  ExperienceRoute: typeof ExperienceRoute
+  HobbiesRoute: typeof HobbiesRoute
+  ResearchRoute: typeof ResearchRoute
+  ResumeRoute: typeof ResumeRoute
+  VenturesRoute: typeof VenturesRoute
+  VolunteeringRoute: typeof VolunteeringRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/awards': {
+      id: '/awards'
+      path: '/awards'
+      fullPath: '/awards'
+      preLoaderRoute: typeof AwardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experience': {
+      id: '/experience'
+      path: '/experience'
+      fullPath: '/experience'
+      preLoaderRoute: typeof ExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hobbies': {
+      id: '/hobbies'
+      path: '/hobbies'
+      fullPath: '/hobbies'
+      preLoaderRoute: typeof HobbiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research': {
+      id: '/research'
+      path: '/research'
+      fullPath: '/research'
+      preLoaderRoute: typeof ResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resume': {
+      id: '/resume'
+      path: '/resume'
+      fullPath: '/resume'
+      preLoaderRoute: typeof ResumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ventures': {
+      id: '/ventures'
+      path: '/ventures'
+      fullPath: '/ventures'
+      preLoaderRoute: typeof VenturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/volunteering': {
+      id: '/volunteering'
+      path: '/volunteering'
+      fullPath: '/volunteering'
+      preLoaderRoute: typeof VolunteeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AwardsRoute: AwardsRoute,
+  ExperienceRoute: ExperienceRoute,
+  HobbiesRoute: HobbiesRoute,
+  ResearchRoute: ResearchRoute,
+  ResumeRoute: ResumeRoute,
+  VenturesRoute: VenturesRoute,
+  VolunteeringRoute: VolunteeringRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
