@@ -76,22 +76,47 @@ export const employment: Role[] = [
       "Managed patient intake workflows in a high-volume clinic. Supported consultations and procedural preparation, and facilitated patient communication, including with high-profile patients and professional athletes.",
   },
   {
-    title: "Customer Service Representative (Part-time, Remote)",
-    org: "Call Centre Guys",
+    title: "Research Trainee",
+    org: "Temerty Centre for AI Research and Education in Medicine (T-CAIREM), University of Toronto",
     location: "Toronto, ON",
-    dates: "May 2023 – May 2025",
+    dates: "May 2023 – Nov 2025",
     year: "2023–25",
     description:
-      "Managed high-volume inbound calls and digital communications across multiple service areas, including healthcare-related clients.",
+      "Contributed to a scoping review on applied AI in geriatric medicine, engaging with researchers, clinicians, and industry across the T-CAIREM community at the University of Toronto.",
   },
   {
-    title: "AI Research Assistant (Project-based)",
+    title: "Research Assistant",
     org: "North York General Hospital",
     location: "Toronto, ON",
     dates: "May 2023 – Aug 2025",
     year: "2023–25",
     description:
-      "Managed large-scale screening and data organization for AI-focused research, collaborating with interdisciplinary healthcare teams.",
+      "Conducted a comprehensive scoping review on the application and risks of artificial intelligence in the care of older adults. Collaborated with the Provincial Geriatrics Leadership of Ontario, and with NYGH and University of Toronto librarians, on the review, and engaged with healthcare startups to inform their strategic decisions using insights from the review.",
+  },
+  {
+    title: "Marketing Specialist",
+    org: "KDIT Solutions Inc.",
+    location: "Alberta, Canada (Remote)",
+    dates: "Jun 2023 – Sep 2023",
+    year: "2023",
+    description:
+      "Spearheaded digital marketing initiatives, including website optimization and landing page creation for IBM Maximo software, enhancing online visibility, user engagement, and client acquisition.",
+  },
+  {
+    title: "Retail Sales Representative",
+    org: "uBreakiFix",
+    location: "Ontario, Canada",
+    dates: "Sep 2022 – Jan 2023",
+    year: "2022–23",
+    description: "Customer-facing sales and service role in a device repair retail environment.",
+  },
+  {
+    title: "Junior Developer Assistant",
+    org: "FAHM Technology Partners",
+    location: "Richmond Hill, ON (Hybrid)",
+    dates: "Jun 2022 – Aug 2022",
+    year: "2022",
+    description: "Supported development work as an early technical role prior to university.",
   },
 ];
 
@@ -149,21 +174,45 @@ export const volunteering = [
     crossLink: { label: "See the Independent Study thesis", to: "/research" },
   },
   {
-    title: "Clinic & Patient-Visiting Volunteer",
+    title: "Ortho Inpatient Clinic Volunteer",
     org: "London Health Sciences Centre",
     location: "London, ON",
-    dates: "Apr 2025 – Present",
+    dates: "Aug 2025 – Present",
     year: "2025–",
-    description:
-      "Patient navigation and clinic flow in orthopaedic outpatient and lab units; patient support in inpatient and palliative care through regular visits.",
+    description: "Patient navigation and clinic flow support in the orthopaedic inpatient unit.",
+  },
+  {
+    title: "Palliative Care Volunteer",
+    org: "London Health Sciences Centre",
+    location: "London, ON",
+    dates: "Jul 2025 – Aug 2025",
+    year: "2025",
+    description: "Patient support in palliative care through regular visits.",
+  },
+  {
+    title: "Lab Test Student Volunteer",
+    org: "London Health Sciences Centre",
+    location: "London, ON",
+    dates: "Jun 2025 – Jul 2025",
+    year: "2025",
+    description: "Supported lab testing unit workflow and patient flow.",
+  },
+  {
+    title: "Ortho Outpatient Student Volunteer",
+    org: "London Health Sciences Centre",
+    location: "London, ON",
+    dates: "May 2025 – Jun 2025",
+    year: "2025",
+    description: "Patient navigation and clinic flow support in orthopaedic outpatient units.",
   },
 ];
 
 export const otherVolunteering = [
-  "Volunteer Notetaker — Accessibility Services, Western University",
+  "Volunteer Notetaker — Accessibility Services, Western University (Feb–Apr 2025): took notes for students with accommodations in Dr. Jacob Shelley's Health Law 3101A course",
+  "Fundraising Volunteer — Vaughan Food Bank (Sep 2018–Present, 8+ yrs): biweekly food package delivery and distribution for low-income families",
+  "Fundraising Volunteer — The Corsage Project, in partnership with Children's Aid Foundation of Canada (Feb–Mar 2020): spoke to YRDSB students and staff and helped raise funds and scholarships for young women in financial difficulty",
   "Youth Volunteer — Jaffari Community Centre",
   "Volunteer — Babul Hawaij Relief Foundation",
-  "Student Volunteer — Mississauga Food Bank",
 ];
 
 export type Project = {
@@ -201,12 +250,15 @@ export const research: Project[] = [
     ],
   },
   {
-    title: "AI Fall Detection — Systematic/Literature Review",
-    org: "Fallyx",
-    year: "In progress",
+    title: "AI-Powered Wearable Sensors for Fall Detection in Older Adults",
+    org: "STEM Fellowship — National Inter-University Health Data and AI Inquiry Program, University of Toronto",
+    year: "2025",
     summary:
-      "Review work connected to Fallyx, an AI fall-detection startup, including a team-led oral presentation.",
-    details: ["Team details, paper link, abstract link, and presentation photos to be added."],
+      "A systematic review examining the reliability of AI-enabled wearable technologies for detecting falls in older adults — sensor types, algorithms, and validation methods across the literature, identifying strengths, limitations, and opportunities for innovation.",
+    details: [
+      "Presented as an oral talk at the 2025 National Inter-University Health Data and AI Inquiry Program (Hart House, University of Toronto), hosted by STEM Fellowship.",
+      "Team: Jenna Pavlovic, Ameera Khwaja, Maria Tassopoulos, Emma Massaro, and Asghar Khan.",
+    ],
   },
   {
     title: "Space Medicine Scoping Review",
