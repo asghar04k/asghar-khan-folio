@@ -21,7 +21,10 @@ export const Route = createFileRoute("/")({
         content:
           "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University — clinical ethics, patient support, and health services research.",
       },
-      { property: "og:title", content: "Asghar Khan — Clinical Ethics & Health Research Portfolio" },
+      {
+        property: "og:title",
+        content: "Asghar Khan — Clinical Ethics & Health Research Portfolio",
+      },
       {
         property: "og:description",
         content:
@@ -35,7 +38,12 @@ export const Route = createFileRoute("/")({
 const tiles = [
   { to: "/awards", label: "Awards", note: "Recognition & distinctions", icon: Award },
   { to: "/resume", label: "Resume", note: "View & download", icon: FileText },
-  { to: "/experience", label: "Work Experience", note: "Employment, practicum, leadership", icon: Briefcase },
+  {
+    to: "/experience",
+    label: "Work Experience",
+    note: "Employment, practicum, leadership",
+    icon: Briefcase,
+  },
   { to: "/research", label: "Research", note: "Reviews, QI, thesis", icon: FlaskConical },
   { to: "/volunteering", label: "Volunteering", note: "SOAHAC & LHSC", icon: HeartHandshake },
   { to: "/mms/courses", label: "MMS", note: "Program portfolio", icon: GraduationCap },

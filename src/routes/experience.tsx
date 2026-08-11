@@ -62,8 +62,8 @@ function ExperiencePage() {
             {practicum.linkLabel} <ExternalLink className="h-3.5 w-3.5" />
           </a>
           <div className="mt-6 rounded-2xl border border-dashed border-border p-5 text-sm text-muted-foreground">
-            Photos from the Western Centre for Bioethics launch event and with Dr. Jacob Shelley will
-            be added here.
+            Photos from the Western Centre for Bioethics launch event and with Dr. Jacob Shelley
+            will be added here.
           </div>
         </article>
       </Reveal>

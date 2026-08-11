@@ -13,7 +13,10 @@ export const Route = createFileRoute("/mms/courses")({
           "Coursework in the Master of Medical Sciences program, each with an artifact and a written reflection.",
       },
       { property: "og:title", content: "MMS Courses — Asghar Khan" },
-      { property: "og:description", content: "Course artifacts and reflections, updated each term." },
+      {
+        property: "og:description",
+        content: "Course artifacts and reflections, updated each term.",
+      },
     ],
   }),
   component: CoursesPage,

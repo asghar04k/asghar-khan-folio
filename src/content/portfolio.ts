@@ -260,7 +260,8 @@ export const research: Project[] = [
     ],
   },
   {
-    title: "Practical Applications of Artificial Intelligence in Geriatric Medicine: A Scoping Review",
+    title:
+      "Practical Applications of Artificial Intelligence in Geriatric Medicine: A Scoping Review",
     org: "North York General Hospital",
     year: "2025",
     summary:
@@ -398,9 +399,61 @@ export const ventures = {
     },
   ],
   graveyard: [
-    { title: "Luxe Detailing", epitaph: "A car detailing company. Details coming soon." },
-    { title: "Drip Apparel", epitaph: "A clothing company. Details coming soon." },
-    { title: "Safety Stuff Plus", epitaph: "Details coming soon." },
+    {
+      title: "Luxe Detailing",
+      logo: "/images/ventures/luxe-logo.jpg",
+      dates: "Grade 12 – 2nd year of university",
+      epitaph: "Rest in soap suds. A few hundred cars later, homework won.",
+      body: "A mobile auto detailing business — interior, exterior, and ceramic coating. Detailed a couple hundred cars over the run before shutting it down once it became too time-consuming to keep up with alongside school.",
+    },
+    {
+      title: "Safety Stuff Plus",
+      logo: "/images/ventures/safety-stuff-plus-logo.jpg",
+      dates: "Spring 2020 (high school)",
+      epitaph: "Flattened the curve, then flattened itself.",
+      body: "Launched at the very start of COVID-19 to supply businesses with PPE in wholesale quantities — face shields, masks, gloves, sneeze guards, point-of-sale safety guards, and social distancing floor stickers. Generated roughly $20,000 in sales.",
+      images: [
+        {
+          src: "/images/ventures/safety-stuff-plus-stickers.jpg",
+          alt: "Safety Stuff Plus social distancing floor stickers",
+        },
+        {
+          src: "/images/ventures/safety-stuff-plus-flyer.jpg",
+          alt: "Safety Stuff Plus point-of-sale safety guard product flyer",
+        },
+      ],
+      links: [
+        { label: "Product flyer (PDF)", href: "/images/ventures/safety-stuff-plus-flyer.pdf" },
+      ],
+    },
+    {
+      title: "Drip Apparel",
+      logo: "/images/ventures/drip-apparel-logo.jpg",
+      dates: "High school – end of 1st year of university",
+      epitaph: "Retired the throwback shorts, kept the receipts.",
+      body: "A throwback sports apparel brand — retro jerseys and shorts sourced through a manufacturer in China. Generated roughly $8,000 in sales before winding down.",
+      images: [
+        {
+          src: "/images/ventures/drip-apparel-inventory-1.jpg",
+          alt: "Drip Apparel inventory — retro jerseys",
+        },
+        {
+          src: "/images/ventures/drip-apparel-inventory-2.jpg",
+          alt: "Drip Apparel inventory — throwback shorts",
+        },
+        {
+          src: "/images/ventures/drip-apparel-inventory-3.jpg",
+          alt: "Drip Apparel inventory — throwback shorts",
+        },
+      ],
+    },
+    {
+      title: "Mustang Tutors",
+      logo: "/images/ventures/mustang-tutors-logo.png",
+      dates: "2nd year of university",
+      epitaph: "Taught a lesson in trust — the hard way.",
+      body: "A peer-tutoring venture at Western. Shut down after tutors started booking private sessions directly with students, bypassing the platform, and the overhead of managing the team became too much to sustain.",
+    },
   ],
 };
 

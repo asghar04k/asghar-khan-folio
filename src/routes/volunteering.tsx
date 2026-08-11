@@ -31,7 +31,7 @@ function VolunteeringPage() {
     >
       <ul className="space-y-3">
         {volunteering.map((v, i) => (
-          <Reveal as="li" key={v.org} delay={i * 60}>
+          <Reveal as="li" key={v.title + v.dates} delay={i * 60}>
             <article className="lift rounded-2xl border border-border bg-card p-6">
               <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4">
                 <div className="min-w-0">
@@ -59,7 +59,9 @@ function VolunteeringPage() {
       <ul className="grid gap-3 sm:grid-cols-2">
         {otherVolunteering.map((v, i) => (
           <Reveal as="li" key={v} delay={i * 40}>
-            <div className="lift h-full rounded-2xl border border-border bg-card p-5 text-sm">{v}</div>
+            <div className="lift h-full rounded-2xl border border-border bg-card p-5 text-sm">
+              {v}
+            </div>
           </Reveal>
         ))}
       </ul>

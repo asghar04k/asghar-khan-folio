@@ -45,7 +45,10 @@ function ResearchPage() {
                 <ul className="mt-4 space-y-2">
                   {p.details.map((d) => (
                     <li key={d} className="flex gap-2 text-sm text-muted-foreground">
-                      <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-secondary" />
+                      <span
+                        aria-hidden
+                        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-secondary"
+                      />
                       {d}
                     </li>
                   ))}
