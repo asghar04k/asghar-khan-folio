@@ -33,13 +33,18 @@ function AwardsPage() {
       <ul className="grid gap-3 sm:grid-cols-2">
         {awards.map((a, i) => (
           <Reveal as="li" key={a.title} delay={i * 50}>
-            <div className="lift h-full rounded-2xl border border-border bg-card p-5">
-              <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
-                <Award className="h-5 w-5 shrink-0 text-primary" />
-                {a.year && <span className="ledger shrink-0">{a.year}</span>}
+            <div className="lift h-full overflow-hidden rounded-2xl border border-border bg-card">
+              {"image" in a && a.image && (
+                <img src={a.image} alt={`${a.title} certificate`} className="h-48 w-full object-cover" />
+              )}
+              <div className="p-5">
+                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
+                  <Award className="h-5 w-5 shrink-0 text-primary" />
+                  {a.year && <span className="ledger shrink-0">{a.year}</span>}
+                </div>
+                <p className="mt-6 font-medium text-balance">{a.title}</p>
+                {a.note && <p className="mt-1.5 text-sm text-muted-foreground">{a.note}</p>}
               </div>
-              <p className="mt-6 font-medium text-balance">{a.title}</p>
-              {a.note && <p className="mt-1.5 text-sm text-muted-foreground">{a.note}</p>}
             </div>
           </Reveal>
         ))}

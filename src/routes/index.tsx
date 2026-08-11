@@ -48,14 +48,25 @@ function Index() {
     <main className="mx-auto max-w-6xl px-5 pt-16 pb-8">
       <section className="wash pb-16">
         <Reveal>
-          <p className="ledger">{profile.location}</p>
-          <h1 className="mt-4 text-5xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-7xl">
-            {profile.name}
-          </h1>
-          <p className="mt-5 max-w-2xl font-mono text-sm text-muted-foreground sm:text-base">
-            {profile.tagline}
-          </p>
-          <p className="mt-4 max-w-2xl text-lg text-foreground/85">{profile.shortBio}</p>
+          <div className="flex flex-col-reverse items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="ledger">{profile.location}</p>
+              <h1 className="mt-4 text-5xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-7xl">
+                {profile.name}
+              </h1>
+              <p className="mt-5 max-w-2xl font-mono text-sm text-muted-foreground sm:text-base">
+                {profile.tagline}
+              </p>
+              <p className="mt-4 max-w-2xl text-lg text-foreground/85">{profile.shortBio}</p>
+            </div>
+            {profile.headshot && (
+              <img
+                src={profile.headshot}
+                alt={profile.name}
+                className="h-32 w-32 shrink-0 rounded-2xl object-cover shadow-sm sm:h-40 sm:w-40"
+              />
+            )}
+          </div>
         </Reveal>
       </section>
 

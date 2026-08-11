@@ -62,6 +62,18 @@ function ResearchPage() {
                   {l.label} <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               ))}
+              {p.images && p.images.length > 0 && (
+                <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                  {p.images.map((img) => (
+                    <img
+                      key={img.src}
+                      src={img.src}
+                      alt={img.alt}
+                      className="aspect-square w-full rounded-xl object-cover"
+                    />
+                  ))}
+                </div>
+              )}
             </article>
           </Reveal>
         ))}

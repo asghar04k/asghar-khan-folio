@@ -12,6 +12,7 @@ export const profile = {
   bio: "Asghar Khan is a Master of Medical Sciences candidate at Western University's Schulich School of Medicine & Dentistry, following an Honours Specialization in Health Sciences (final two-year GPA of 3.97/4.0) and the 2026 recipient of the BHSc Award of Recognition. His work sits at the intersection of clinical ethics, patient support, and health services research — spanning a clinical ethics practicum at the Western Centre for Bioethics and London Health Sciences Centre, a research assistantship in the Down Syndrome Clinic at The Hospital for Sick Children, and applied AI research in geriatric medicine. He is also the founder and president of the Western Undergraduate Research Students' Association (URSA), which he grew into a 2,000+ member research community in its first year.",
   email: "akha228@uwo.ca",
   linkedin: "https://www.linkedin.com/in/asghark/",
+  headshot: "/images/profile/headshot.jpg",
 };
 
 export const education = [
@@ -148,6 +149,16 @@ export const ursa = {
     { value: "30+", label: "executive team" },
     { value: "90+", label: "first-cycle applications" },
   ],
+  images: [
+    {
+      src: "/images/leadership/ursa-symposium-banner.jpg",
+      alt: "Asghar Khan next to the URSA banner at the Research & Innovation Symposium",
+    },
+    {
+      src: "/images/leadership/ursa-symposium-audience.jpg",
+      alt: "Audience at the URSA Research & Innovation Symposium",
+    },
+  ],
 };
 
 export const leadershipRoles = [
@@ -222,6 +233,7 @@ export type Project = {
   summary: string;
   details?: string[];
   links?: { label: string; href: string }[];
+  images?: { src: string; alt: string }[];
 };
 
 export const research: Project[] = [
@@ -236,6 +248,16 @@ export const research: Project[] = [
       "Conference abstract and poster presented at the SSuRe Summer Research Symposium.",
       "Improved resource understandability by 55% and actionability by 40%.",
     ],
+    images: [
+      {
+        src: "/images/research/sickkids-poster-photo.jpg",
+        alt: "Asghar Khan presenting the SickKids Down Syndrome QI poster at the SSuRe Summer Research Symposium",
+      },
+      {
+        src: "/images/research/sickkids-poster-detail.jpg",
+        alt: "Full detail of the SickKids Down Syndrome QI research poster",
+      },
+    ],
   },
   {
     title: "Practical Applications of Artificial Intelligence in Geriatric Medicine: A Scoping Review",
@@ -248,6 +270,28 @@ export const research: Project[] = [
       "Co-presented with Sai-Amrit Maharaj, MHSc, CSPHP, B.Sc(hon).",
       "Supervised and mentored by Dr. Nihal Haque, MD FRCPC (Geriatrician, North York General Hospital) and Dr. Kelly Kay (Executive Director, Provincial Geriatrics Leadership Ontario).",
     ],
+    images: [
+      {
+        src: "/images/research/wuhrc-poster-photo.jpg",
+        alt: "Asghar Khan at his AI in Geriatric Medicine poster at WUHRC 2025",
+      },
+      {
+        src: "/images/research/wuhrc-presenting.jpg",
+        alt: "Asghar Khan discussing his poster with attendees at WUHRC 2025",
+      },
+      {
+        src: "/images/research/tcairem-poster-photo.jpg",
+        alt: "Asghar Khan at his poster at the T-CAIREM 2025 conference",
+      },
+      {
+        src: "/images/research/tcairem-badge.jpg",
+        alt: "T-CAIREM 2025 conference badge and program",
+      },
+      {
+        src: "/images/research/ai-geriatrics-poster-detail.jpg",
+        alt: "Full detail of the AI in Geriatric Medicine scoping review poster",
+      },
+    ],
   },
   {
     title: "AI-Powered Wearable Sensors for Fall Detection in Older Adults",
@@ -258,6 +302,20 @@ export const research: Project[] = [
     details: [
       "Presented as an oral talk at the 2025 National Inter-University Health Data and AI Inquiry Program (Hart House, University of Toronto), hosted by STEM Fellowship.",
       "Team: Jenna Pavlovic, Ameera Khwaja, Maria Tassopoulos, Emma Massaro, and Asghar Khan.",
+    ],
+    images: [
+      {
+        src: "/images/research/stem-fellowship-presenting.jpg",
+        alt: "Asghar Khan presenting the AI fall-detection wearables review at Hart House, University of Toronto",
+      },
+      {
+        src: "/images/research/stem-fellowship-venue.jpg",
+        alt: "Asghar Khan presenting at the podium at Hart House for the STEM Fellowship program",
+      },
+      {
+        src: "/images/research/stem-fellowship-team.jpg",
+        alt: "The AI fall-detection wearables review team at the University of Toronto",
+      },
     ],
   },
   {
@@ -305,6 +363,7 @@ export const awards = [
     title: "BHSc Award of Recognition",
     year: "2026",
     note: "Awarded annually to one BHSc student for academic achievement, leadership, character, and community commitment.",
+    image: "/images/awards/bhsc-award-diploma.jpg",
   },
   { title: "Western Scholarship of Distinction", year: "2022", note: "$3,500" },
   { title: "Health Innovation Award", year: "", note: "" },
@@ -326,6 +385,7 @@ export const hobbies = [
   {
     title: "Hunting",
     body: "Time outdoors and traditional food and hunting practices, including with Walpole Island First Nation (Bkejwanong Territory).",
+    image: "/images/hobbies/hunting.jpg",
   },
 ];
 

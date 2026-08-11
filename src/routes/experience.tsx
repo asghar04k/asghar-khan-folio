@@ -110,10 +110,21 @@ function ExperiencePage() {
             </a>
           </div>
 
+          {ursa.images && ursa.images.length > 0 && (
+            <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3">
+              {ursa.images.map((img) => (
+                <img
+                  key={img.src}
+                  src={img.src}
+                  alt={img.alt}
+                  className="aspect-[4/3] w-full rounded-xl object-cover"
+                />
+              ))}
+            </div>
+          )}
           <div className="mt-6 rounded-2xl border border-dashed border-border p-5 text-sm text-muted-foreground">
-            Photos from the Research &amp; Innovation Symposium at the Morrissette Entrepreneurship
-            Building, the Indigenous Health &amp; Research Talking Circle, and the LinkedIn headshots
-            event will be added here.
+            More photos from the Indigenous Health &amp; Research Talking Circle and the LinkedIn
+            headshots event will be added here.
           </div>
         </article>
       </Reveal>
