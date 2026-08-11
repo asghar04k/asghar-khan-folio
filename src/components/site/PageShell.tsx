@@ -23,7 +23,7 @@ export function PageShell({
           {intro && <p className="mt-4 max-w-2xl text-muted-foreground">{intro}</p>}
         </Reveal>
       </header>
-      {children}
+      <div className="wash-cool">{children}</div>
     </main>
   );
 }

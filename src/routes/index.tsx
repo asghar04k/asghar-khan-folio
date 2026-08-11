@@ -70,7 +70,7 @@ function Index() {
         </Reveal>
       </section>
 
-      <section aria-label="Explore the portfolio">
+      <section aria-label="Explore the portfolio" className="wash-cool">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {tiles.map((tile, i) => (
             <Reveal key={tile.to} delay={i * 50}>
@@ -89,7 +89,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="mt-20 grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+      <section className="wash-soft mt-20 grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <Reveal>
           <h2 className="text-xl font-semibold tracking-tight">About</h2>
           <p className="mt-4 leading-relaxed text-foreground/85">{profile.bio}</p>
@@ -109,7 +109,7 @@ function Index() {
         </Reveal>
       </section>
 
-      <section className="mt-20">
+      <section className="wash-cool mt-20">
         <Reveal>
           <h2 className="text-xl font-semibold tracking-tight">Selected experience</h2>
         </Reveal>

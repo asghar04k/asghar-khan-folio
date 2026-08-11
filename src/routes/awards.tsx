@@ -35,7 +35,11 @@ function AwardsPage() {
           <Reveal as="li" key={a.title} delay={i * 50}>
             <div className="lift h-full overflow-hidden rounded-2xl border border-border bg-card">
               {"image" in a && a.image && (
-                <img src={a.image} alt={`${a.title} certificate`} className="h-48 w-full object-cover" />
+                <img
+                  src={a.image}
+                  alt={`${a.title} certificate`}
+                  className="h-48 w-full object-cover object-[center_78%]"
+                />
               )}
               <div className="p-5">
                 <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
