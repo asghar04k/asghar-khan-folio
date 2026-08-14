@@ -25,6 +25,19 @@ function LabPage() {
       <SectionHeading note={labBootcamp.dates}>{labBootcamp.title}</SectionHeading>
       <Reveal>
         <article className="wash-soft rounded-3xl border border-border bg-card p-6 sm:p-8">
+          {labBootcamp.headerImages.length > 0 && (
+            <div className="mb-6 grid grid-cols-2 gap-2">
+              {labBootcamp.headerImages.map((img) => (
+                <img
+                  key={img.src}
+                  src={img.src}
+                  alt={img.alt}
+                  className="aspect-[4/3] w-full rounded-xl object-cover"
+                />
+              ))}
+            </div>
+          )}
+
           <p className="leading-relaxed text-foreground/85">{labBootcamp.overview}</p>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -43,25 +56,24 @@ function LabPage() {
                 <p className="ledger">{w.week}</p>
                 <p className="mt-1 font-medium">{w.title}</p>
                 <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{w.body}</p>
+                {"images" in w && w.images && w.images.length > 0 && (
+                  <div className="mt-3 grid grid-cols-2 gap-2 sm:w-2/3">
+                    {w.images.map((img) => (
+                      <img
+                        key={img.src}
+                        src={img.src}
+                        alt={img.alt}
+                        className="aspect-[4/3] w-full rounded-lg object-cover"
+                      />
+                    ))}
+                  </div>
+                )}
               </li>
             ))}
           </ol>
 
           <h4 className="mt-8 font-medium">Reflection</h4>
           <p className="mt-2 leading-relaxed text-foreground/85">{labBootcamp.reflection}</p>
-
-          {labBootcamp.images.length > 0 && (
-            <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3">
-              {labBootcamp.images.map((img) => (
-                <img
-                  key={img.src}
-                  src={img.src}
-                  alt={img.alt}
-                  className="aspect-[4/3] w-full rounded-xl object-cover"
-                />
-              ))}
-            </div>
-          )}
         </article>
       </Reveal>
 

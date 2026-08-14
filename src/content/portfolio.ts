@@ -533,11 +533,25 @@ export const labBootcamp = {
       body: "What's the more accurate way to measure protein levels: comparing to one common reference protein, or to the total protein in the sample?",
     },
   ],
+  headerImages: [
+    { src: "/images/mms-lab/team-group.jpg", alt: "Asghar Khan with his lab bench group" },
+    { src: "/images/mms-lab/pipetting-1.jpg", alt: "Asghar Khan pipetting at the lab bench" },
+  ],
   weeks: [
     {
       week: "Week 1",
       title: "Lab Safety & Equipment Basics",
       body: "Learned lab safety and waste handling, and practiced using a micropipette (the tool for measuring out tiny, precise amounts of liquid). Also got first reps loading gel plates and building a simple measurement curve to see how accurately we could pipette.",
+      images: [
+        {
+          src: "/images/mms-lab/pipetting-2.jpg",
+          alt: "Asghar Khan practicing with a micropipette",
+        },
+        {
+          src: "/images/mms-lab/pipetting-3.jpg",
+          alt: "Asghar Khan practicing with a micropipette",
+        },
+      ],
     },
     {
       week: "Weeks 2–4",
@@ -558,16 +572,22 @@ export const labBootcamp = {
       week: "Week 8",
       title: "Separating Proteins by Size",
       body: "Loaded equal amounts of protein into a gel to separate them by size, and compared two different ways of accounting for how much protein was loaded overall.",
+      images: [
+        { src: "/images/mms-lab/sds-page-1.jpg", alt: "SDS-PAGE gel electrophoresis setup" },
+        { src: "/images/mms-lab/sds-page-2.jpg", alt: "SDS-PAGE gel electrophoresis equipment" },
+      ],
     },
     {
       week: "Week 9",
       title: "Detecting the Protein of Interest",
       body: "Transferred the separated proteins onto a membrane and used antibodies to detect and measure our specific protein of interest, then compared the two measurement approaches from Week 8.",
+      images: [
+        { src: "/images/mms-lab/transfer-station.jpg", alt: "Protein transfer station setup" },
+      ],
     },
   ],
   reflection:
     'I\'d read plenty of research papers before this program, but never had to actually do what they described. This bootcamp closed that gap fast. Watching one rushed pipetting step throw off an entire result taught me that most "technique" is just small decisions that either protect your data or quietly ruin it. Running two full experiments, instead of isolated skills, changed how I read papers now: a result on a page stopped feeling abstract and started feeling like a specific set of choices someone made.',
-  images: [] as { src: string; alt: string }[],
 };
 
 export const journalClub = {
