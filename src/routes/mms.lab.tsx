@@ -1,42 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, SectionHeading } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
-import { labBootcamp, mmsSeminars, placeholderNote } from "@/content/portfolio";
+import { journalClub, labBootcamp, placeholderNote } from "@/content/portfolio";
 
-export const Route = createFileRoute("/mms/seminars")({
+export const Route = createFileRoute("/mms/lab")({
   head: () => ({
     meta: [
-      { title: "MMS Seminars & Lab Bootcamp — Asghar Khan" },
+      { title: "MMS Lab & Journal Club — Asghar Khan" },
       {
         name: "description",
         content:
-          "The weekly seminar series and the nine-week hands-on RT-qPCR and western blot laboratory bootcamp in the Master of Medical Sciences program.",
+          "The nine-week hands-on lab bootcamp and journal club in the Master of Medical Sciences program.",
       },
-      { property: "og:title", content: "MMS Seminars & Lab Bootcamp — Asghar Khan" },
-      { property: "og:description", content: "Seminar notes and bootcamp reflections." },
+      { property: "og:title", content: "MMS Lab & Journal Club — Asghar Khan" },
+      { property: "og:description", content: "Lab bootcamp reflections and journal club notes." },
     ],
   }),
-  component: SeminarsPage,
+  component: LabPage,
 });
 
-function SeminarsPage() {
+function LabPage() {
   return (
-    <PageShell eyebrow="MMS Program" title="Seminars & Bootcamp">
-      <ul className="grid gap-3 sm:grid-cols-2">
-        {mmsSeminars.map((s, i) => (
-          <Reveal as="li" key={s.title} delay={i * 50}>
-            <article className="lift h-full rounded-2xl border border-border bg-card p-6">
-              <h2 className="font-medium">{s.title}</h2>
-              <p className="mt-2 text-sm text-muted-foreground">{s.description}</p>
-              <div className="mt-4 rounded-xl border border-dashed border-border p-4">
-                <p className="ledger">Notes & reflection</p>
-                <p className="mt-1.5 text-sm text-muted-foreground">{placeholderNote}</p>
-              </div>
-            </article>
-          </Reveal>
-        ))}
-      </ul>
-
+    <PageShell eyebrow="MMS Program" title="Lab & Journal Club">
       <SectionHeading note={labBootcamp.dates}>{labBootcamp.title}</SectionHeading>
       <Reveal>
         <article className="wash-soft rounded-3xl border border-border bg-card p-6 sm:p-8">
@@ -77,6 +62,17 @@ function SeminarsPage() {
               ))}
             </div>
           )}
+        </article>
+      </Reveal>
+
+      <SectionHeading note="Recurring">{journalClub.title}</SectionHeading>
+      <Reveal>
+        <article className="rounded-2xl border border-border bg-card p-6">
+          <p className="text-sm text-muted-foreground">{journalClub.description}</p>
+          <div className="mt-4 rounded-xl border border-dashed border-border p-4">
+            <p className="ledger">Notes & reflection</p>
+            <p className="mt-1.5 text-sm text-muted-foreground">{placeholderNote}</p>
+          </div>
         </article>
       </Reveal>
     </PageShell>

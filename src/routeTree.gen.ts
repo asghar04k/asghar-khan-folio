@@ -21,9 +21,9 @@ import { Route as VolunteeringRouteImport } from './routes/volunteering'
 import { Route as MmsIndexRouteImport } from './routes/mms.index'
 import { Route as MmsCapstoneRouteImport } from './routes/mms.capstone'
 import { Route as MmsCoursesRouteImport } from './routes/mms.courses'
+import { Route as MmsLabRouteImport } from './routes/mms.lab'
 import { Route as MmsReflectionsRouteImport } from './routes/mms.reflections'
 import { Route as MmsRotationsRouteImport } from './routes/mms.rotations'
-import { Route as MmsSeminarsRouteImport } from './routes/mms.seminars'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -85,6 +85,11 @@ const MmsCoursesRoute = MmsCoursesRouteImport.update({
   path: '/courses',
   getParentRoute: () => MmsRoute,
 } as any)
+const MmsLabRoute = MmsLabRouteImport.update({
+  id: '/lab',
+  path: '/lab',
+  getParentRoute: () => MmsRoute,
+} as any)
 const MmsReflectionsRoute = MmsReflectionsRouteImport.update({
   id: '/reflections',
   path: '/reflections',
@@ -93,11 +98,6 @@ const MmsReflectionsRoute = MmsReflectionsRouteImport.update({
 const MmsRotationsRoute = MmsRotationsRouteImport.update({
   id: '/rotations',
   path: '/rotations',
-  getParentRoute: () => MmsRoute,
-} as any)
-const MmsSeminarsRoute = MmsSeminarsRouteImport.update({
-  id: '/seminars',
-  path: '/seminars',
   getParentRoute: () => MmsRoute,
 } as any)
 
@@ -113,9 +113,9 @@ export interface FileRoutesByFullPath {
   '/volunteering': typeof VolunteeringRoute
   '/mms/capstone': typeof MmsCapstoneRoute
   '/mms/courses': typeof MmsCoursesRoute
+  '/mms/lab': typeof MmsLabRoute
   '/mms/reflections': typeof MmsReflectionsRoute
   '/mms/rotations': typeof MmsRotationsRoute
-  '/mms/seminars': typeof MmsSeminarsRoute
   '/mms/': typeof MmsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -129,9 +129,9 @@ export interface FileRoutesByTo {
   '/volunteering': typeof VolunteeringRoute
   '/mms/capstone': typeof MmsCapstoneRoute
   '/mms/courses': typeof MmsCoursesRoute
+  '/mms/lab': typeof MmsLabRoute
   '/mms/reflections': typeof MmsReflectionsRoute
   '/mms/rotations': typeof MmsRotationsRoute
-  '/mms/seminars': typeof MmsSeminarsRoute
   '/mms': typeof MmsIndexRoute
 }
 export interface FileRoutesById {
@@ -147,9 +147,9 @@ export interface FileRoutesById {
   '/volunteering': typeof VolunteeringRoute
   '/mms/capstone': typeof MmsCapstoneRoute
   '/mms/courses': typeof MmsCoursesRoute
+  '/mms/lab': typeof MmsLabRoute
   '/mms/reflections': typeof MmsReflectionsRoute
   '/mms/rotations': typeof MmsRotationsRoute
-  '/mms/seminars': typeof MmsSeminarsRoute
   '/mms/': typeof MmsIndexRoute
 }
 export interface FileRouteTypes {
@@ -166,9 +166,9 @@ export interface FileRouteTypes {
     | '/volunteering'
     | '/mms/capstone'
     | '/mms/courses'
+    | '/mms/lab'
     | '/mms/reflections'
     | '/mms/rotations'
-    | '/mms/seminars'
     | '/mms/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -182,9 +182,9 @@ export interface FileRouteTypes {
     | '/volunteering'
     | '/mms/capstone'
     | '/mms/courses'
+    | '/mms/lab'
     | '/mms/reflections'
     | '/mms/rotations'
-    | '/mms/seminars'
     | '/mms'
   id:
     | '__root__'
@@ -199,9 +199,9 @@ export interface FileRouteTypes {
     | '/volunteering'
     | '/mms/capstone'
     | '/mms/courses'
+    | '/mms/lab'
     | '/mms/reflections'
     | '/mms/rotations'
-    | '/mms/seminars'
     | '/mms/'
   fileRoutesById: FileRoutesById
 }
@@ -303,6 +303,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MmsCoursesRouteImport
       parentRoute: typeof MmsRoute
     }
+    '/mms/lab': {
+      id: '/mms/lab'
+      path: '/lab'
+      fullPath: '/mms/lab'
+      preLoaderRoute: typeof MmsLabRouteImport
+      parentRoute: typeof MmsRoute
+    }
     '/mms/reflections': {
       id: '/mms/reflections'
       path: '/reflections'
@@ -317,31 +324,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MmsRotationsRouteImport
       parentRoute: typeof MmsRoute
     }
-    '/mms/seminars': {
-      id: '/mms/seminars'
-      path: '/seminars'
-      fullPath: '/mms/seminars'
-      preLoaderRoute: typeof MmsSeminarsRouteImport
-      parentRoute: typeof MmsRoute
-    }
   }
 }
 
 interface MmsRouteChildren {
   MmsCapstoneRoute: typeof MmsCapstoneRoute
   MmsCoursesRoute: typeof MmsCoursesRoute
+  MmsLabRoute: typeof MmsLabRoute
   MmsReflectionsRoute: typeof MmsReflectionsRoute
   MmsRotationsRoute: typeof MmsRotationsRoute
-  MmsSeminarsRoute: typeof MmsSeminarsRoute
   MmsIndexRoute: typeof MmsIndexRoute
 }
 
 const MmsRouteChildren: MmsRouteChildren = {
   MmsCapstoneRoute: MmsCapstoneRoute,
   MmsCoursesRoute: MmsCoursesRoute,
+  MmsLabRoute: MmsLabRoute,
   MmsReflectionsRoute: MmsReflectionsRoute,
   MmsRotationsRoute: MmsRotationsRoute,
-  MmsSeminarsRoute: MmsSeminarsRoute,
   MmsIndexRoute: MmsIndexRoute,
 }
 

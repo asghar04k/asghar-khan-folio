@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+
 import { PageShell } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 
@@ -21,12 +22,39 @@ export const Route = createFileRoute("/mms/")({
   component: MmsIndex,
 });
 
-const sections = [
-  { to: "/mms/courses", label: "Courses", note: "Artifacts and reflections per course" },
-  { to: "/mms/rotations", label: "Rotations", note: "Basic science, clinical, community" },
-  { to: "/mms/capstone", label: "Capstone", note: "Team project on a wicked problem" },
-  { to: "/mms/seminars", label: "Seminars & Bootcamp", note: "Weekly series and lab bootcamp" },
-  { to: "/mms/reflections", label: "Reflections", note: "Ongoing journal" },
+const stats = [
+  { value: "8", label: "courses" },
+  { value: "3", label: "rotations" },
+  { value: "9 wks", label: "lab bootcamp" },
+  { value: "1", label: "capstone team" },
+] as const;
+
+const journey = [
+  {
+    to: "/mms/courses",
+    label: "Courses & Seminars",
+    note: "Coursework in research design, ethics, and science communication, plus a weekly seminar series.",
+  },
+  {
+    to: "/mms/lab",
+    label: "Lab & Journal Club",
+    note: "A nine-week hands-on lab bootcamp running two real experiments, plus a recurring journal club.",
+  },
+  {
+    to: "/mms/rotations",
+    label: "Rotations",
+    note: "Three placements: a lab bench, a clinical setting, and a community partner.",
+  },
+  {
+    to: "/mms/capstone",
+    label: "Capstone",
+    note: "A team project tackling access to care for marginalized populations.",
+  },
+  {
+    to: "/mms/reflections",
+    label: "Reflections",
+    note: "A running journal on what the program has actually taught me.",
+  },
 ] as const;
 
 function MmsIndex() {
@@ -34,21 +62,37 @@ function MmsIndex() {
     <PageShell
       eyebrow="Master of Medical Sciences"
       title="Program Portfolio"
-      intro="This section documents my Master of Medical Sciences at Western University's Schulich School of Medicine & Dentistry, updated each term."
+      intro="Two years at Western's Schulich School of Medicine & Dentistry, building toward a career at the intersection of research and clinical care. Here's the whole program at a glance."
     >
-      <ul className="grid gap-3 sm:grid-cols-2">
-        {sections.map((s, i) => (
-          <Reveal as="li" key={s.to} delay={i * 50}>
+      <Reveal>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="rounded-2xl bg-muted/70 p-4 text-center">
+              <p className="font-mono text-2xl text-primary">{s.value}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </Reveal>
+
+      <ol className="mt-10 space-y-3">
+        {journey.map((s, i) => (
+          <Reveal as="li" key={s.to} delay={i * 60}>
             <Link
               to={s.to}
-              className="lift block h-full rounded-2xl border border-border bg-card p-6"
+              className="lift flex items-start gap-4 rounded-2xl border border-border bg-card p-5"
             >
-              <p className="font-medium">{s.label}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{s.note}</p>
+              <span className="ledger mt-0.5 shrink-0 text-primary">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="min-w-0">
+                <span className="block font-medium">{s.label}</span>
+                <span className="mt-1 block text-sm text-muted-foreground">{s.note}</span>
+              </span>
             </Link>
           </Reveal>
         ))}
-      </ul>
+      </ol>
     </PageShell>
   );
 }

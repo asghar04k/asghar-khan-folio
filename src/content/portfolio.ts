@@ -522,7 +522,7 @@ export const labBootcamp = {
   title: "Lab Bootcamp",
   dates: "Weekly, early in the program",
   overview:
-    "A nine-week, hands-on lab bootcamp early in the program. We ran two full experiments start to finish on lab-grown cells — one testing whether vitamin C changes how much collagen a cell makes, and one testing the best way to measure protein levels accurately. The point wasn't just practicing individual skills, but living through a real experiment end to end, including the parts that didn't go perfectly.",
+    "A nine-week, hands-on lab bootcamp early in the program. We ran two full experiments start to finish on lab-grown cells, one testing whether vitamin C changes how much collagen a cell makes, and one testing the best way to measure protein levels accurately.",
   researchQuestions: [
     {
       label: "Experiment 1",
@@ -530,7 +530,7 @@ export const labBootcamp = {
     },
     {
       label: "Experiment 2",
-      body: "What's the more accurate way to measure protein levels — comparing to one common reference protein, or comparing to the total protein in the sample?",
+      body: "What's the more accurate way to measure protein levels: comparing to one common reference protein, or to the total protein in the sample?",
     },
   ],
   weeks: [
@@ -566,8 +566,13 @@ export const labBootcamp = {
     },
   ],
   reflection:
-    "Coming into this program from a health sciences background, I'd read plenty of research papers without ever having to actually do what they described. This bootcamp closed that gap fast — the first week's pipetting practice felt almost too basic, until I saw how easily one rushed step or the wrong tool could throw off an entire result. Most of what looks like \"technique\" in a paper is really just a long list of small decisions that either protect your data or quietly ruin it. Running two full experiments start to finish, instead of just practicing isolated skills, changed how I read papers now — a number or a result on a page stopped feeling abstract and started feeling like a specific set of choices someone made along the way. The biggest lesson wasn't a lab skill at all — it was the Week 8–9 question itself, whether to measure against one reference protein or the total protein in the sample. That's a decision every study like this makes quietly, and having to actually test it myself, instead of assuming it was done right, is something I want to carry into how I read and eventually produce research.",
+    'I\'d read plenty of research papers before this program, but never had to actually do what they described. This bootcamp closed that gap fast. Watching one rushed pipetting step throw off an entire result taught me that most "technique" is just small decisions that either protect your data or quietly ruin it. Running two full experiments, instead of isolated skills, changed how I read papers now: a result on a page stopped feeling abstract and started feeling like a specific set of choices someone made.',
   images: [] as { src: string; alt: string }[],
+};
+
+export const journalClub = {
+  title: "Journal Club",
+  description: "A recurring session breaking down current research papers as a group.",
 };
 
 export const mmsReflections = [

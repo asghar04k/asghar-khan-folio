@@ -1,21 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageShell } from "@/components/site/PageShell";
+import { PageShell, SectionHeading } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
-import { mmsCourses, placeholderNote } from "@/content/portfolio";
+import { mmsCourses, mmsSeminars, placeholderNote } from "@/content/portfolio";
 
 export const Route = createFileRoute("/mms/courses")({
   head: () => ({
     meta: [
-      { title: "MMS Courses — Asghar Khan" },
+      { title: "MMS Courses & Seminars — Asghar Khan" },
       {
         name: "description",
         content:
-          "Coursework in the Master of Medical Sciences program, each with an artifact and a written reflection.",
+          "Coursework and the weekly seminar series in the Master of Medical Sciences program, each with an artifact and a written reflection.",
       },
-      { property: "og:title", content: "MMS Courses — Asghar Khan" },
+      { property: "og:title", content: "MMS Courses & Seminars — Asghar Khan" },
       {
         property: "og:description",
-        content: "Course artifacts and reflections, updated each term.",
+        content: "Course artifacts, reflections, and weekly seminar notes, updated each term.",
       },
     ],
   }),
@@ -26,7 +26,7 @@ function CoursesPage() {
   return (
     <PageShell
       eyebrow="MMS Program"
-      title="Courses"
+      title="Courses & Seminars"
       intro="Each course carries an artifact and a reflection, added as the program progresses."
     >
       <ul className="space-y-3">
@@ -44,6 +44,22 @@ function CoursesPage() {
                   <p className="ledger">Reflection</p>
                   <p className="mt-1.5 text-sm text-muted-foreground">{placeholderNote}</p>
                 </div>
+              </div>
+            </article>
+          </Reveal>
+        ))}
+      </ul>
+
+      <SectionHeading note="Running through the program">Seminars</SectionHeading>
+      <ul className="grid gap-3 sm:grid-cols-2">
+        {mmsSeminars.map((s, i) => (
+          <Reveal as="li" key={s.title} delay={i * 50}>
+            <article className="lift h-full rounded-2xl border border-border bg-card p-6">
+              <h2 className="font-medium">{s.title}</h2>
+              <p className="mt-2 text-sm text-muted-foreground">{s.description}</p>
+              <div className="mt-4 rounded-xl border border-dashed border-border p-4">
+                <p className="ledger">Notes & reflection</p>
+                <p className="mt-1.5 text-sm text-muted-foreground">{placeholderNote}</p>
               </div>
             </article>
           </Reveal>
