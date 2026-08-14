@@ -516,11 +516,59 @@ export const mmsSeminars = [
     title: "Weekly Seminar Series",
     description: "A Friday seminar series running through the program.",
   },
-  {
-    title: "Lab Bootcamp",
-    description: "An intensive hands-on laboratory bootcamp early in the program.",
-  },
 ];
+
+export const labBootcamp = {
+  title: "Lab Bootcamp",
+  dates: "Weekly, early in the program",
+  overview:
+    "A nine-week, hands-on wet-lab bootcamp built around two full experimental workflows — RT-qPCR and western blotting — run start to finish on Rat2 fibroblast cells. The goal wasn't just to learn individual techniques in isolation, but to live through an entire experiment: from a biological question, through sample prep and instrument time, to data that could actually be interpreted (or fail to make sense, which taught its own lessons).",
+  researchQuestions: [
+    {
+      label: "RT-qPCR arm",
+      body: "Does ascorbic acid exposure change Collagen I expression in Rat2 fibroblasts? β-actin and GAPDH served as reference genes.",
+    },
+    {
+      label: "Western blot arm",
+      body: "Is a single reference protein (β-actin or GAPDH) or total protein the more appropriate normalization strategy for western blot data from the same cell line?",
+    },
+  ],
+  weeks: [
+    {
+      week: "Week 1",
+      title: "Lab Safety & Equipment Refresher",
+      body: "PPE, waste streams (regular, biohazard, sharps, liquid), and the etiquette of a shared bench. Most of the session was pipette fundamentals — reading a P1000/P200/P20 correctly, choosing the smallest pipette for the volume to maximize accuracy, aspirating without introducing bubbles, and balancing a centrifuge — plus first reps loading acrylamide and agarose gels and building a Ponceau S dye standard curve on a 96-well plate.",
+    },
+    {
+      week: "Weeks 2–4",
+      title: "RT-qPCR I–III: Cell Culture, RNA Isolation, and Primer Validation",
+      body: "Practiced aseptic technique subculturing Rat2 fibroblasts, then lysed and isolated RNA from ascorbic-acid-treated vs. control cells by spin-column chromatography, checking concentration and purity by UV spectrophotometry. Removed trace genomic DNA and reverse-transcribed the RNA into cDNA, then ran gradient PCR across eight annealing temperatures per primer set to find the optimal condition for β-actin, GAPDH, and Collagen I — reading specificity off agarose gels and melt curves.",
+    },
+    {
+      week: "Weeks 5–6",
+      title: "RT-qPCR IV–V: Efficiency Curves and the Real Experiment",
+      body: "Built primer efficiency curves from a dilution series to confirm each primer set amplified cleanly cycle over cycle, then ran the actual RT-qPCR experiment — quantifying Collagen I expression in treated vs. control samples, normalized to the reference genes.",
+    },
+    {
+      week: "Week 7",
+      title: "Western Blot I: Protein Isolation & BCA Assay",
+      body: "Lysed cells with RIPA buffer and protease inhibitors, homogenized with a needle and syringe, then quantified total protein concentration with a BCA assay against a BSA standard curve — the same logic as the Week 1 dye curve, now applied to a real unknown sample.",
+    },
+    {
+      week: "Week 8",
+      title: "Western Blot II: SDS-PAGE & Loading Control Optimization",
+      body: "Normalized loading volumes across samples using the BCA results, ran SDS-PAGE to separate proteins by size, and optimized a loading control strategy — directly testing the question the workflow was built around: single reference protein vs. total protein.",
+    },
+    {
+      week: "Week 9",
+      title: "Western Blot III: Probing for Proteins",
+      body: "Transferred protein to a membrane and probed with antibodies for the protein of interest, then imaged and compared normalization approaches against the total-protein stain.",
+    },
+  ],
+  reflection:
+    "Coming into this program from a health sciences background, I'd read plenty of methods sections without ever having to live inside one. The bootcamp made the gap between reading a protocol and executing it obvious almost immediately — the first week's pipetting refresher felt almost too simple until I watched how easily a rushed aspiration or the wrong tip size threw off a dilution series, and realized that most of what looks like \"technique\" in a methods section is really just accumulated small decisions that either protect your data or quietly corrupt it. Running the RT-qPCR and western blot workflows end to end, rather than as isolated demos, changed how I read papers now — a Cq value or a band on a blot stopped being an abstract result and became a specific set of choices: which reference gene, which lysis buffer, which annealing temperature, and whether anyone bothered to validate the primers before trusting them. The most useful lesson wasn't a technique at all — it was the western blot normalization question itself, whether a single reference protein or total protein better represents your loading control, which is a decision every published western blot makes silently. Having to actually test it, rather than take it on faith, is the kind of thing I want to carry into how I read and eventually generate evidence in clinical research.",
+  images: [] as { src: string; alt: string }[],
+};
 
 export const mmsReflections = [
   {
