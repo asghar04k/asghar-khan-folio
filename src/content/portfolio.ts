@@ -585,7 +585,7 @@ export const labBootcamp = {
     },
   ],
   reflection:
-    'I\'d read plenty of research papers before this program, but never had to actually do what they described. This bootcamp closed that gap fast. Watching one rushed pipetting step throw off an entire result taught me that most "technique" is just small decisions that either protect your data or quietly ruin it. Running two full experiments, instead of isolated skills, changed how I read papers now: a result on a page stopped feeling abstract and started feeling like a specific set of choices someone made.',
+    "I did labs throughout undergrad, but honestly, I often felt like I was just going through the motions. I would follow the protocol, do the calculations, and try to get the right answer for a participation mark without always understanding the bigger picture. The classes were large, it was difficult to hear the TA, and there was rarely enough time to ask questions. This teaching lab felt completely different. The smaller groups gave me the chance to actually ask questions and understand why we were doing each experiment. Working with state-of-the-art equipment also made the science feel much more real, instead of something I had only learned about in lectures. I found myself genuinely enjoying the experiments because I understood what I was doing and why it mattered. I came out of the experience with a much better understanding of research in a lab setting and a greater appreciation for hands-on science.",
 };
 
 export const journalClub = {
