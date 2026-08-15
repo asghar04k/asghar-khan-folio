@@ -556,7 +556,7 @@ export const labBootcamp = {
     {
       week: "Weeks 2–4",
       title: "Growing Cells and Extracting Genetic Material",
-      body: "Practiced growing and handling living cells in a sterile environment, then extracted their genetic material (RNA) from vitamin-C-treated and untreated samples and converted it into a stable, workable form (cDNA). Ran tests to find the ideal conditions for accurately measuring our genes of interest before using them in a real experiment.",
+      body: "Practiced growing and handling living cells in a sterile environment, then extracted their genetic material (RNA) from vitamin-C-derivative-treated and untreated samples and converted it into a stable, workable form (cDNA). Ran tests to find the ideal conditions for accurately measuring our genes of interest before using them in a real experiment.",
     },
     {
       week: "Weeks 5–6",
