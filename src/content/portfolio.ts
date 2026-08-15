@@ -571,7 +571,7 @@ export const labBootcamp = {
     {
       week: "Week 8",
       title: "Separating Proteins by Size",
-      body: "Loaded equal amounts of protein into a gel to separate them by size, and compared two different ways of accounting for how much protein was loaded overall.",
+      body: "Loaded equal amounts of protein into a gel to separate them by size, then transferred them onto a membrane.",
       images: [
         { src: "/images/mms-lab/sds-page-1.jpg", alt: "SDS-PAGE gel electrophoresis setup" },
         { src: "/images/mms-lab/sds-page-2.jpg", alt: "SDS-PAGE gel electrophoresis equipment" },
