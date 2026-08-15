@@ -580,7 +580,7 @@ export const labBootcamp = {
     {
       week: "Week 9",
       title: "Detecting the Protein of Interest",
-      body: "Transferred the separated proteins onto a membrane and used antibodies to detect and measure our specific protein of interest, then compared the two measurement approaches from Week 8.",
+      body: "Used antibodies to detect and measure our specific protein of interest, then compared the two measurement approaches from Week 8.",
       images: [
         { src: "/images/mms-lab/transfer-station.jpg", alt: "Protein transfer station setup" },
       ],
