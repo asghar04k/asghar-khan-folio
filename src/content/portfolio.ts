@@ -556,7 +556,7 @@ export const labBootcamp = {
     {
       week: "Weeks 2–4",
       title: "Growing Cells and Extracting Genetic Material",
-      body: "Practiced growing and handling living cells in a sterile environment, then extracted their genetic material (RNA) from vitamin-C-treated and untreated samples and converted it into a stable, workable form (cDNA). Ran tests to find the ideal conditions for accurately measuring our genes of interest before using them in a real experiment.",
+      body: "Practiced growing and handling living cells in a sterile environment, then extracted their genetic material (RNA) from vitamin-C-derivative-treated and untreated samples and converted it into a stable, workable form (cDNA). Ran tests to find the ideal conditions for accurately measuring our genes of interest before using them in a real experiment.",
     },
     {
       week: "Weeks 5–6",
@@ -571,7 +571,7 @@ export const labBootcamp = {
     {
       week: "Week 8",
       title: "Separating Proteins by Size",
-      body: "Loaded equal amounts of protein into a gel to separate them by size, and compared two different ways of accounting for how much protein was loaded overall.",
+      body: "Loaded equal amounts of protein into a gel to separate them by size, then transferred them onto a membrane.",
       images: [
         { src: "/images/mms-lab/sds-page-1.jpg", alt: "SDS-PAGE gel electrophoresis setup" },
         { src: "/images/mms-lab/sds-page-2.jpg", alt: "SDS-PAGE gel electrophoresis equipment" },
@@ -580,7 +580,7 @@ export const labBootcamp = {
     {
       week: "Week 9",
       title: "Detecting the Protein of Interest",
-      body: "Transferred the separated proteins onto a membrane and used antibodies to detect and measure our specific protein of interest, then compared the two measurement approaches from Week 8.",
+      body: "Used antibodies to detect and measure our specific protein of interest, then compared the two measurement approaches from Week 8.",
       images: [
         { src: "/images/mms-lab/transfer-station.jpg", alt: "Protein transfer station setup" },
       ],
