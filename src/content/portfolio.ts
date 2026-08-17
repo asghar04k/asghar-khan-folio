@@ -525,7 +525,7 @@ export type SelectedWorkItem = {
 export type CourseDetail = {
   intro: string;
   selectedWork: SelectedWorkItem[];
-  alsoInThisCourse: string;
+  alsoInThisCourse: { intro: string; topics: string[] };
   reflection: string[];
   podcast?: { src: string; title: string; description: string };
 };
@@ -565,8 +565,17 @@ export const courseDetails: Record<string, CourseDetail> = {
           "Practiced both halves of scientific peer review in the same week: giving specific, actionable feedback as a reviewer, and engaging thoughtfully with feedback rather than just accepting it as an author.",
       },
     ],
-    alsoInThisCourse:
-      "Beyond the proposal and peer-review cycle, 9501 also included microteach presentations, a group Layman Summary, a session on predatory publishing and preprints, a storytelling class with visiting author Dr. Adrian Owen, a closing debate on whether open science strengthens public trust, and nine weekly LinkedIn posts reflecting on each class for a professional audience.",
+    alsoInThisCourse: {
+      intro: "Beyond the proposal and peer-review cycle, 9501 also included:",
+      topics: [
+        "Microteach presentations",
+        "Group Layman Summary",
+        "Predatory publishing & preprints",
+        "Storytelling with Dr. Adrian Owen",
+        "Closing debate on open science",
+        "9 weekly LinkedIn reflections",
+      ],
+    },
     reflection: [
       "This course built my ability to communicate science to different audiences, starting with the Microteach presentations (which had nothing to do with science but got everyone comfortable speaking to an unfamiliar audience), through the Layman Summary, and the SciComm Proposal, Peer Review, and Response Letter sequence, which walked through grant writing and publication as if it were a real project. My weekly LinkedIn posts extended that practice by translating each class for a professional network every week.",
       "The part that pushed me the most was our closing debate, where I was assigned to argue a position I didn't initially agree with. I'd avoided debate-style classes since elementary school, so choosing to represent my team as one of the speakers, and having our own research change my mind on the issue, ended up being the most valuable part of the course for me.",

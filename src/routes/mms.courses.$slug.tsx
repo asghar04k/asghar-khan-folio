@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, CheckCircle2, Headphones, Target, Wrench } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Headphones, Quote, Target, Wrench } from "lucide-react";
 import { PageShell, SectionHeading } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { courseDetails, mmsCourses, placeholderNote } from "@/content/portfolio";
@@ -140,18 +140,40 @@ function CourseDetailPage() {
 
           <SectionHeading>Also in this course</SectionHeading>
           <Reveal>
-            <p className="leading-relaxed text-foreground/85">{detail.alsoInThisCourse}</p>
+            <p className="text-sm text-muted-foreground">{detail.alsoInThisCourse.intro}</p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {detail.alsoInThisCourse.topics.map((t) => (
+                <li
+                  key={t}
+                  className="rounded-full border border-border bg-muted/60 px-4 py-2 text-sm text-foreground/85"
+                >
+                  {t}
+                </li>
+              ))}
+            </ul>
           </Reveal>
 
           <SectionHeading>Self-Reflection</SectionHeading>
           <Reveal>
-            <div className="space-y-4">
-              {detail.reflection.map((p) => (
-                <p key={p.slice(0, 24)} className="leading-relaxed text-foreground/85">
-                  {p}
-                </p>
-              ))}
-            </div>
+            <article className="wash-soft rounded-3xl border border-border bg-card p-6 sm:p-8">
+              <Quote className="h-7 w-7 text-primary/40" />
+              <div className="mt-4 space-y-5">
+                {detail.reflection.map((p, i) =>
+                  i === 1 ? (
+                    <blockquote
+                      key={p.slice(0, 24)}
+                      className="border-l-2 border-primary pl-5 text-lg leading-relaxed font-medium text-balance text-foreground"
+                    >
+                      {p}
+                    </blockquote>
+                  ) : (
+                    <p key={p.slice(0, 24)} className="leading-relaxed text-foreground/85">
+                      {p}
+                    </p>
+                  ),
+                )}
+              </div>
+            </article>
           </Reveal>
         </>
       ) : (
