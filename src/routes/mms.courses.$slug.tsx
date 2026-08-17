@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Headphones, Target, Wrench } from "lucide-react";
 import { PageShell, SectionHeading } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { courseDetails, mmsCourses, placeholderNote } from "@/content/portfolio";
@@ -21,6 +21,8 @@ export const Route = createFileRoute("/mms/courses/$slug")({
   component: CourseDetailPage,
 });
 
+const rotations = ["-rotate-2", "rotate-2", "-rotate-1"];
+
 function CourseDetailPage() {
   const course = Route.useLoaderData();
   const detail = courseDetails[course.slug];
@@ -40,25 +42,96 @@ function CourseDetailPage() {
 
       {detail ? (
         <>
+          {detail.podcast && (
+            <Reveal className="mt-8">
+              <article className="wash-cool flex items-center gap-4 rounded-3xl border border-border bg-card p-5 sm:p-6">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary">
+                  <Headphones className="h-5 w-5" />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="font-medium">{detail.podcast.title}</p>
+                  <p className="mt-0.5 text-sm text-muted-foreground">
+                    {detail.podcast.description}
+                  </p>
+                  <audio controls className="mt-3 w-full" src={detail.podcast.src}>
+                    <track kind="captions" />
+                  </audio>
+                </div>
+              </article>
+            </Reveal>
+          )}
+
           <SectionHeading>Selected Work</SectionHeading>
-          <ul className="space-y-4">
-            {detail.selectedWork.map((w) => (
+          <ul className="space-y-6">
+            {detail.selectedWork.map((w, i) => (
               <Reveal as="li" key={w.title}>
-                <article className="rounded-3xl border border-border bg-card p-6 sm:p-8">
+                <article className="overflow-hidden rounded-3xl border border-border bg-card p-6 sm:p-8">
                   <h3 className="text-lg font-medium text-balance">{w.title}</h3>
-                  <div className="mt-5 space-y-4">
-                    <div>
-                      <p className="ledger">Task</p>
-                      <p className="mt-1.5 leading-relaxed text-foreground/85">{w.task}</p>
+
+                  <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+                    <div className="space-y-5">
+                      <div className="flex gap-3">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/12 text-primary">
+                          <Target className="h-4 w-4" />
+                        </span>
+                        <div className="min-w-0">
+                          <p className="ledger">Task</p>
+                          <p className="mt-1 leading-relaxed text-foreground/85">{w.task}</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary/12 text-secondary">
+                          <Wrench className="h-4 w-4" />
+                        </span>
+                        <div className="min-w-0">
+                          <p className="ledger">My Actions</p>
+                          <p className="mt-1 leading-relaxed text-foreground/85">{w.actions}</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-tertiary/15 text-tertiary">
+                          <CheckCircle2 className="h-4 w-4" />
+                        </span>
+                        <div className="min-w-0">
+                          <p className="ledger">Results</p>
+                          <p className="mt-1 leading-relaxed text-foreground/85">{w.results}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <p className="ledger">My Actions</p>
-                      <p className="mt-1.5 leading-relaxed text-foreground/85">{w.actions}</p>
-                    </div>
-                    <div>
-                      <p className="ledger">Results</p>
-                      <p className="mt-1.5 leading-relaxed text-foreground/85">{w.results}</p>
-                    </div>
+
+                    {(w.documentPdf || w.references) && (
+                      <div className="flex flex-col gap-4">
+                        {w.documentPdf && (
+                          <div>
+                            <p className="ledger mb-2">The proposal, scroll to read</p>
+                            <iframe
+                              src={w.documentPdf}
+                              title={`${w.title} document`}
+                              className="h-[420px] w-full rounded-2xl border border-border bg-muted/40"
+                            />
+                          </div>
+                        )}
+                        {w.references && w.references.length > 0 && (
+                          <div className="flex flex-wrap items-end gap-4 pt-1">
+                            {w.references.map((r, ri) => (
+                              <figure
+                                key={r.src}
+                                className={`lift w-24 shrink-0 rounded-xl border border-border bg-card p-1.5 shadow-sm sm:w-28 ${rotations[(i + ri) % rotations.length]}`}
+                              >
+                                <img
+                                  src={r.src}
+                                  alt={r.alt}
+                                  className="aspect-[3/4] w-full rounded-lg object-cover"
+                                />
+                                <figcaption className="mt-1 truncate text-center text-[10px] text-muted-foreground">
+                                  {r.caption}
+                                </figcaption>
+                              </figure>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </article>
               </Reveal>

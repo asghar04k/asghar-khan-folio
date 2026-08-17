@@ -518,6 +518,8 @@ export type SelectedWorkItem = {
   task: string;
   actions: string;
   results: string;
+  documentPdf?: string;
+  references?: { src: string; alt: string; caption: string }[];
 };
 
 export type CourseDetail = {
@@ -525,12 +527,13 @@ export type CourseDetail = {
   selectedWork: SelectedWorkItem[];
   alsoInThisCourse: string;
   reflection: string[];
+  podcast?: { src: string; title: string; description: string };
 };
 
 export const courseDetails: Record<string, CourseDetail> = {
   "communicating-science": {
     intro:
-      "A discussion-based communication course spanning microteach presentations, a group lay summary, a SciComm grant proposal with peer review and response letters, predatory publishing and preprints, storytelling with visiting author Dr. Adrian Owen, and a closing debate on open science, alongside nine weekly LinkedIn posts translating each class into a public reflection for a professional audience.",
+      "This course was about making science understandable to everyone, not just other scientists. It covered microteach presentations, a group lay summary, a SciComm grant proposal with peer review and response letters, predatory publishing and preprints, storytelling with visiting author Dr. Adrian Owen, and a closing debate on open science, alongside nine weekly LinkedIn posts translating each class into a public reflection for a professional audience.",
     selectedWork: [
       {
         title: 'SciComm Outreach Proposal, "From Research to Reality"',
@@ -539,6 +542,19 @@ export const courseDetails: Record<string, CourseDetail> = {
           "Designed the initiative, Western Research in Action (hosted by URSA, the undergraduate research organization I founded and lead), around storytelling and accessibility rather than technical findings, drawing directly on the approach Dr. Owen described in Into the Gray Zone. Structured each speaker's presentation around four plain-language questions: what problem they were solving, how they investigated it, what they found, and how it created change. Grounded the proposal in URSA's own real programming data (prior events had already drawn 100+ attendees and 18 speakers, with interest exceeding venue capacity and a community of 2,000+ students to reach) and built out the audience/need, rationale, implementation plan, and evaluation plan a full grant proposal requires.",
         results:
           "A complete, evidence-backed proposal ready for peer review, and not just a class exercise. Because it's built directly on URSA's real infrastructure and track record, Western Research in Action is an event I actually want to bring to life through the organization.",
+        documentPdf: "/documents/scicomm-outreach-proposal.pdf",
+        references: [
+          {
+            src: "/images/mms-courses/into-the-gray-zone-cover.jpg",
+            alt: "Into the Gray Zone by Dr. Adrian Owen",
+            caption: "Into the Gray Zone, Dr. Adrian Owen",
+          },
+          {
+            src: "/images/mms-courses/ursa-logo.png",
+            alt: "Western URSA logo",
+            caption: "Western URSA",
+          },
+        ],
       },
       {
         title: "Peer Review & Response Letter",
