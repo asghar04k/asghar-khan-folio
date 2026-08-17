@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, CheckCircle2, Headphones, Quote, Target, Wrench } from "lucide-react";
+import { AudioPlayer } from "@/components/site/AudioPlayer";
 import { PageShell, SectionHeading } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { courseDetails, mmsCourses, placeholderNote } from "@/content/portfolio";
@@ -42,25 +43,6 @@ function CourseDetailPage() {
 
       {detail ? (
         <>
-          {detail.podcast && (
-            <Reveal className="mt-8">
-              <article className="wash-cool flex items-center gap-4 rounded-3xl border border-border bg-card p-5 sm:p-6">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary">
-                  <Headphones className="h-5 w-5" />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="font-medium">{detail.podcast.title}</p>
-                  <p className="mt-0.5 text-sm text-muted-foreground">
-                    {detail.podcast.description}
-                  </p>
-                  <audio controls className="mt-3 w-full" src={detail.podcast.src}>
-                    <track kind="captions" />
-                  </audio>
-                </div>
-              </article>
-            </Reveal>
-          )}
-
           <SectionHeading>Selected Work</SectionHeading>
           <ul className="space-y-6">
             {detail.selectedWork.map((w, i) => (
@@ -99,35 +81,82 @@ function CourseDetailPage() {
                       </div>
                     </div>
 
-                    {(w.documentPdf || w.references) && (
+                    {((w.documents && w.documents.length > 0) || w.references || w.audio) && (
                       <div className="flex flex-col gap-4">
-                        {w.documentPdf && (
-                          <div>
-                            <p className="ledger mb-2">The proposal, scroll to read</p>
-                            <iframe
-                              src={w.documentPdf}
-                              title={`${w.title} document`}
-                              className="h-[420px] w-full rounded-2xl border border-border bg-muted/40"
-                            />
+                        {w.audio && (
+                          <div className="wash-cool rounded-2xl border border-border bg-card p-4">
+                            <div className="flex items-center gap-2">
+                              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary">
+                                <Headphones className="h-4 w-4" />
+                              </span>
+                              <div className="min-w-0">
+                                <p className="truncate text-sm font-medium">
+                                  {w.audio.podcastName}
+                                </p>
+                                <p className="truncate text-xs text-muted-foreground">
+                                  {w.audio.description}
+                                </p>
+                              </div>
+                            </div>
+                            {w.audio.src ? (
+                              <div className="mt-4">
+                                <AudioPlayer src={w.audio.src} title={w.audio.podcastName} />
+                              </div>
+                            ) : (
+                              <p className="mt-4 text-xs text-muted-foreground italic">
+                                Audio coming soon.
+                              </p>
+                            )}
+                          </div>
+                        )}
+                        {w.documents && w.documents.length > 0 && (
+                          <div className="flex flex-col gap-4">
+                            {w.documents.map((doc) => (
+                              <div key={doc.src}>
+                                <p className="ledger mb-2">{doc.label}, scroll to read</p>
+                                <iframe
+                                  src={doc.src}
+                                  title={`${w.title} — ${doc.label}`}
+                                  className={`w-full rounded-2xl border border-border bg-muted/40 ${
+                                    w.documents!.length > 1 ? "h-[260px]" : "h-[420px]"
+                                  }`}
+                                />
+                              </div>
+                            ))}
                           </div>
                         )}
                         {w.references && w.references.length > 0 && (
                           <div className="flex flex-wrap items-end gap-4 pt-1">
-                            {w.references.map((r, ri) => (
-                              <figure
-                                key={r.src}
-                                className={`lift w-24 shrink-0 rounded-xl border border-border bg-card p-1.5 shadow-sm sm:w-28 ${rotations[(i + ri) % rotations.length]}`}
-                              >
-                                <img
-                                  src={r.src}
-                                  alt={r.alt}
-                                  className="aspect-[3/4] w-full rounded-lg object-cover"
-                                />
-                                <figcaption className="mt-1 truncate text-center text-[10px] text-muted-foreground">
-                                  {r.caption}
-                                </figcaption>
-                              </figure>
-                            ))}
+                            {w.references.map((r, ri) => {
+                              const content = (
+                                <>
+                                  <img
+                                    src={r.src}
+                                    alt={r.alt}
+                                    className="aspect-[3/4] w-full rounded-lg object-cover"
+                                  />
+                                  <figcaption className="mt-1 truncate text-center text-[10px] text-muted-foreground">
+                                    {r.caption}
+                                  </figcaption>
+                                </>
+                              );
+                              const className = `lift w-24 shrink-0 rounded-xl border border-border bg-card p-1.5 shadow-sm sm:w-28 ${rotations[(i + ri) % rotations.length]}`;
+                              return r.href ? (
+                                <a
+                                  key={r.src}
+                                  href={r.href}
+                                  target="_blank"
+                                  rel="noreferrer noopener"
+                                  className={className}
+                                >
+                                  {content}
+                                </a>
+                              ) : (
+                                <figure key={r.src} className={className}>
+                                  {content}
+                                </figure>
+                              );
+                            })}
                           </div>
                         )}
                       </div>

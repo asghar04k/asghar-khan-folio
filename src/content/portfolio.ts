@@ -518,8 +518,9 @@ export type SelectedWorkItem = {
   task: string;
   actions: string;
   results: string;
-  documentPdf?: string;
-  references?: { src: string; alt: string; caption: string }[];
+  documents?: { src: string; label: string }[];
+  references?: { src: string; alt: string; caption: string; href?: string }[];
+  audio?: { src: string; podcastName: string; description: string };
 };
 
 export type CourseDetail = {
@@ -527,7 +528,6 @@ export type CourseDetail = {
   selectedWork: SelectedWorkItem[];
   alsoInThisCourse: { intro: string; topics: string[] };
   reflection: string[];
-  podcast?: { src: string; title: string; description: string };
 };
 
 export const courseDetails: Record<string, CourseDetail> = {
@@ -537,32 +537,50 @@ export const courseDetails: Record<string, CourseDetail> = {
     selectedWork: [
       {
         title: 'SciComm Outreach Proposal, "From Research to Reality"',
-        task: "Write a science communication outreach proposal, building on a topic that grew out of the earlier Layman Summary assignment (an early-course exercise where we read a published research paper and rewrote it for a general audience). Our group's paper was on detecting awareness in unresponsive patients by having them imagine playing tennis, from Dr. Adrian Owen's own consciousness research, which is what first connected me to his work.",
+        task: "Write a science communication outreach proposal, building on our earlier Layman Summary of Dr. Adrian Owen's consciousness research, which is what first connected me to his work.",
         actions:
-          "Designed the initiative, Western Research in Action (hosted by URSA, the undergraduate research organization I founded and lead), around storytelling and accessibility rather than technical findings, drawing directly on the approach Dr. Owen described in Into the Gray Zone. Structured each speaker's presentation around four plain-language questions: what problem they were solving, how they investigated it, what they found, and how it created change. Grounded the proposal in URSA's own real programming data (prior events had already drawn 100+ attendees and 18 speakers, with interest exceeding venue capacity and a community of 2,000+ students to reach) and built out the audience/need, rationale, implementation plan, and evaluation plan a full grant proposal requires.",
+          "Designed Western Research in Action, an event hosted by URSA (the research organization I founded and lead), built around storytelling over technical findings, drawing on Dr. Owen's approach in Into the Gray Zone. Grounded it in URSA's real numbers (100+ attendees, 18 speakers, 2,000+ student community) and wrote out the full grant proposal: need, rationale, implementation, evaluation.",
         results:
-          "A complete, evidence-backed proposal ready for peer review, and not just a class exercise. Because it's built directly on URSA's real infrastructure and track record, Western Research in Action is an event I actually want to bring to life through the organization.",
-        documentPdf: "/documents/scicomm-outreach-proposal.pdf",
+          "I can now turn a research question into a fundable, audience-first pitch instead of just a summary. A complete proposal I actually want to bring to life through URSA, not just a class exercise.",
+        documents: [{ src: "/documents/scicomm-outreach-proposal.pdf", label: "Proposal" }],
         references: [
           {
             src: "/images/mms-courses/into-the-gray-zone-cover.jpg",
             alt: "Into the Gray Zone by Dr. Adrian Owen",
             caption: "Into the Gray Zone, Dr. Adrian Owen",
+            href: "https://www.amazon.com/dp/150113521X",
           },
           {
             src: "/images/mms-courses/ursa-logo.png",
             alt: "Western URSA logo",
             caption: "Western URSA",
+            href: "https://www.westernursa.ca/",
           },
         ],
       },
       {
         title: "Peer Review & Response Letter",
-        task: "Complete the course's full peer-review cycle from both sides: write a formal peer review of a classmate's proposal, then write a response letter addressing the feedback I received on my own.",
+        task: "Complete the course's peer-review cycle from both sides: review a classmate's proposal, then respond to the feedback I received on my own.",
         actions:
-          "As reviewer, I evaluated a classmate's proposal for \"MedTok Mythbusters,\" a TikTok-based initiative aimed at countering health misinformation among teens and young adults, highlighting its practicality and use of TikTok's duet feature while pushing for a clearer primary objective and a more realistic plan for measuring impact within an eight-week pilot. As author, I responded in writing to the feedback I received on my own proposal, agreeing to add a risk-mitigation section, cite URSA's real attendance data for credibility, clarify that the speakers listed were illustrative rather than final, and tighten the proposal's framing and closing statement.",
+          "As reviewer, I evaluated a classmate's \"MedTok Mythbusters\" proposal, a TikTok initiative countering health misinformation, praising its practicality while pushing for a clearer objective and a more realistic impact plan. As author, I responded to my own feedback by agreeing to add a risk-mitigation section, cite real URSA data for credibility, and tighten the proposal's framing.",
         results:
-          "Practiced both halves of scientific peer review in the same week: giving specific, actionable feedback as a reviewer, and engaging thoughtfully with feedback rather than just accepting it as an author.",
+          "I can now give specific, actionable feedback as a reviewer, and respond to critique with actual changes instead of just accepting or dismissing it.",
+        documents: [
+          { src: "/documents/peer-review.pdf", label: "Peer Review" },
+          { src: "/documents/response-letter.pdf", label: "Response Letter" },
+        ],
+      },
+      {
+        title: '"Beyond the Abstract" Podcast',
+        task: "Create a 10-minute episode for a fictional science communication podcast, breaking down a recent peer-reviewed research article (published within the last year) for a general audience: the question it asked, why it matters, what it found, and its limitations.",
+        actions: "Details on the article, group, and my specific contribution to be added.",
+        results: "Details to be added.",
+        audio: {
+          src: "",
+          podcastName: "Beyond the Abstract",
+          description:
+            "A 10-minute episode breaking down a recent research article for a general audience.",
+        },
       },
     ],
     alsoInThisCourse: {
