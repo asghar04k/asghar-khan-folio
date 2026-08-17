@@ -472,32 +472,92 @@ export const posts = [
 
 export const mmsCourses = [
   {
+    slug: "communicating-science",
     title: "Communicating Science in the 21st Century",
     description: "Translating research for public, clinical, and policy audiences.",
   },
   {
+    slug: "designing-analyzing-research",
     title: "Designing, Analyzing & Interpreting Medical Science Research",
     description: "Study design, analysis, and critical interpretation of medical science research.",
   },
-  { title: "Science Policy", description: "How evidence moves into policy and practice." },
   {
+    slug: "science-policy",
+    title: "Science Policy",
+    description: "How evidence moves into policy and practice.",
+  },
+  {
+    slug: "ethical-research-practices",
     title: "Ethical Research Practices",
     description: "Research ethics frameworks and their application in practice.",
   },
   {
+    slug: "academic-integrity-professionalism",
     title: "Academic Integrity and Professionalism",
     description: "Professional conduct and integrity across research settings.",
   },
-  { title: "Data Science", description: "Applied data handling and analysis for health research." },
   {
+    slug: "data-science",
+    title: "Data Science",
+    description: "Applied data handling and analysis for health research.",
+  },
+  {
+    slug: "research-excellence-diversity",
     title: "Research Excellence Through Diversity",
     description: "Equity, diversity, and inclusion as drivers of research quality.",
   },
   {
+    slug: "ip-implementation-commercialization",
     title: "Intellectual Property, Implementation & Commercialization",
     description: "From discovery to implementation and commercialization pathways.",
   },
 ];
+
+export type SelectedWorkItem = {
+  title: string;
+  task: string;
+  actions: string;
+  results: string;
+};
+
+export type CourseDetail = {
+  intro: string;
+  selectedWork: SelectedWorkItem[];
+  alsoInThisCourse: string;
+  reflection: string[];
+};
+
+export const courseDetails: Record<string, CourseDetail> = {
+  "communicating-science": {
+    intro:
+      "A discussion-based communication course spanning microteach presentations, a group lay summary, a SciComm grant proposal with peer review and response letters, predatory publishing and preprints, storytelling with visiting author Dr. Adrian Owen, and a closing debate on open science, alongside nine weekly LinkedIn posts translating each class into a public reflection for a professional audience.",
+    selectedWork: [
+      {
+        title: 'SciComm Outreach Proposal, "From Research to Reality"',
+        task: "Write a science communication outreach proposal, building on a topic that grew out of the earlier Layman Summary assignment (an early-course exercise where we read a published research paper and rewrote it for a general audience). Our group's paper was on detecting awareness in unresponsive patients by having them imagine playing tennis, from Dr. Adrian Owen's own consciousness research, which is what first connected me to his work.",
+        actions:
+          "Designed the initiative, Western Research in Action (hosted by URSA, the undergraduate research organization I founded and lead), around storytelling and accessibility rather than technical findings, drawing directly on the approach Dr. Owen described in Into the Gray Zone. Structured each speaker's presentation around four plain-language questions: what problem they were solving, how they investigated it, what they found, and how it created change. Grounded the proposal in URSA's own real programming data (prior events had already drawn 100+ attendees and 18 speakers, with interest exceeding venue capacity and a community of 2,000+ students to reach) and built out the audience/need, rationale, implementation plan, and evaluation plan a full grant proposal requires.",
+        results:
+          "A complete, evidence-backed proposal ready for peer review, and not just a class exercise. Because it's built directly on URSA's real infrastructure and track record, Western Research in Action is an event I actually want to bring to life through the organization.",
+      },
+      {
+        title: "Peer Review & Response Letter",
+        task: "Complete the course's full peer-review cycle from both sides: write a formal peer review of a classmate's proposal, then write a response letter addressing the feedback I received on my own.",
+        actions:
+          "As reviewer, I evaluated a classmate's proposal for \"MedTok Mythbusters,\" a TikTok-based initiative aimed at countering health misinformation among teens and young adults, highlighting its practicality and use of TikTok's duet feature while pushing for a clearer primary objective and a more realistic plan for measuring impact within an eight-week pilot. As author, I responded in writing to the feedback I received on my own proposal, agreeing to add a risk-mitigation section, cite URSA's real attendance data for credibility, clarify that the speakers listed were illustrative rather than final, and tighten the proposal's framing and closing statement.",
+        results:
+          "Practiced both halves of scientific peer review in the same week: giving specific, actionable feedback as a reviewer, and engaging thoughtfully with feedback rather than just accepting it as an author.",
+      },
+    ],
+    alsoInThisCourse:
+      "Beyond the proposal and peer-review cycle, 9501 also included microteach presentations, a group Layman Summary, a session on predatory publishing and preprints, a storytelling class with visiting author Dr. Adrian Owen, a closing debate on whether open science strengthens public trust, and nine weekly LinkedIn posts reflecting on each class for a professional audience.",
+    reflection: [
+      "This course built my ability to communicate science to different audiences, starting with the Microteach presentations (which had nothing to do with science but got everyone comfortable speaking to an unfamiliar audience), through the Layman Summary, and the SciComm Proposal, Peer Review, and Response Letter sequence, which walked through grant writing and publication as if it were a real project. My weekly LinkedIn posts extended that practice by translating each class for a professional network every week.",
+      "The part that pushed me the most was our closing debate, where I was assigned to argue a position I didn't initially agree with. I'd avoided debate-style classes since elementary school, so choosing to represent my team as one of the speakers, and having our own research change my mind on the issue, ended up being the most valuable part of the course for me.",
+      "9501 gave me the confidence to communicate my ideas, and I want to carry that into more difficult conversations around ethics and professionalism in the next course: getting better at analyzing situations from multiple perspectives and connecting my clinical ethics experience at LHSC to our case discussions.",
+    ],
+  },
+};
 
 export const mmsRotations = [
   { title: "Basic Science Rotation", description: "Laboratory placement." },

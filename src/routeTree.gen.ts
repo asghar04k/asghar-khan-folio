@@ -24,6 +24,8 @@ import { Route as MmsCoursesRouteImport } from './routes/mms.courses'
 import { Route as MmsLabRouteImport } from './routes/mms.lab'
 import { Route as MmsReflectionsRouteImport } from './routes/mms.reflections'
 import { Route as MmsRotationsRouteImport } from './routes/mms.rotations'
+import { Route as MmsCoursesIndexRouteImport } from './routes/mms.courses.index'
+import { Route as MmsCoursesSlugRouteImport } from './routes/mms.courses.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -100,6 +102,16 @@ const MmsRotationsRoute = MmsRotationsRouteImport.update({
   path: '/rotations',
   getParentRoute: () => MmsRoute,
 } as any)
+const MmsCoursesIndexRoute = MmsCoursesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MmsCoursesRoute,
+} as any)
+const MmsCoursesSlugRoute = MmsCoursesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => MmsCoursesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -112,11 +124,13 @@ export interface FileRoutesByFullPath {
   '/ventures': typeof VenturesRoute
   '/volunteering': typeof VolunteeringRoute
   '/mms/capstone': typeof MmsCapstoneRoute
-  '/mms/courses': typeof MmsCoursesRoute
+  '/mms/courses': typeof MmsCoursesRouteWithChildren
   '/mms/lab': typeof MmsLabRoute
   '/mms/reflections': typeof MmsReflectionsRoute
   '/mms/rotations': typeof MmsRotationsRoute
   '/mms/': typeof MmsIndexRoute
+  '/mms/courses/$slug': typeof MmsCoursesSlugRoute
+  '/mms/courses/': typeof MmsCoursesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -128,11 +142,12 @@ export interface FileRoutesByTo {
   '/ventures': typeof VenturesRoute
   '/volunteering': typeof VolunteeringRoute
   '/mms/capstone': typeof MmsCapstoneRoute
-  '/mms/courses': typeof MmsCoursesRoute
   '/mms/lab': typeof MmsLabRoute
   '/mms/reflections': typeof MmsReflectionsRoute
   '/mms/rotations': typeof MmsRotationsRoute
   '/mms': typeof MmsIndexRoute
+  '/mms/courses/$slug': typeof MmsCoursesSlugRoute
+  '/mms/courses': typeof MmsCoursesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -146,11 +161,13 @@ export interface FileRoutesById {
   '/ventures': typeof VenturesRoute
   '/volunteering': typeof VolunteeringRoute
   '/mms/capstone': typeof MmsCapstoneRoute
-  '/mms/courses': typeof MmsCoursesRoute
+  '/mms/courses': typeof MmsCoursesRouteWithChildren
   '/mms/lab': typeof MmsLabRoute
   '/mms/reflections': typeof MmsReflectionsRoute
   '/mms/rotations': typeof MmsRotationsRoute
   '/mms/': typeof MmsIndexRoute
+  '/mms/courses/$slug': typeof MmsCoursesSlugRoute
+  '/mms/courses/': typeof MmsCoursesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -170,6 +187,8 @@ export interface FileRouteTypes {
     | '/mms/reflections'
     | '/mms/rotations'
     | '/mms/'
+    | '/mms/courses/$slug'
+    | '/mms/courses/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -181,11 +200,12 @@ export interface FileRouteTypes {
     | '/ventures'
     | '/volunteering'
     | '/mms/capstone'
-    | '/mms/courses'
     | '/mms/lab'
     | '/mms/reflections'
     | '/mms/rotations'
     | '/mms'
+    | '/mms/courses/$slug'
+    | '/mms/courses'
   id:
     | '__root__'
     | '/'
@@ -203,6 +223,8 @@ export interface FileRouteTypes {
     | '/mms/reflections'
     | '/mms/rotations'
     | '/mms/'
+    | '/mms/courses/$slug'
+    | '/mms/courses/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -324,12 +346,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MmsRotationsRouteImport
       parentRoute: typeof MmsRoute
     }
+    '/mms/courses/': {
+      id: '/mms/courses/'
+      path: '/'
+      fullPath: '/mms/courses/'
+      preLoaderRoute: typeof MmsCoursesIndexRouteImport
+      parentRoute: typeof MmsCoursesRoute
+    }
+    '/mms/courses/$slug': {
+      id: '/mms/courses/$slug'
+      path: '/$slug'
+      fullPath: '/mms/courses/$slug'
+      preLoaderRoute: typeof MmsCoursesSlugRouteImport
+      parentRoute: typeof MmsCoursesRoute
+    }
   }
 }
 
+interface MmsCoursesRouteChildren {
+  MmsCoursesSlugRoute: typeof MmsCoursesSlugRoute
+  MmsCoursesIndexRoute: typeof MmsCoursesIndexRoute
+}
+
+const MmsCoursesRouteChildren: MmsCoursesRouteChildren = {
+  MmsCoursesSlugRoute: MmsCoursesSlugRoute,
+  MmsCoursesIndexRoute: MmsCoursesIndexRoute,
+}
+
+const MmsCoursesRouteWithChildren = MmsCoursesRoute._addFileChildren(
+  MmsCoursesRouteChildren,
+)
+
 interface MmsRouteChildren {
   MmsCapstoneRoute: typeof MmsCapstoneRoute
-  MmsCoursesRoute: typeof MmsCoursesRoute
+  MmsCoursesRoute: typeof MmsCoursesRouteWithChildren
   MmsLabRoute: typeof MmsLabRoute
   MmsReflectionsRoute: typeof MmsReflectionsRoute
   MmsRotationsRoute: typeof MmsRotationsRoute
@@ -338,7 +388,7 @@ interface MmsRouteChildren {
 
 const MmsRouteChildren: MmsRouteChildren = {
   MmsCapstoneRoute: MmsCapstoneRoute,
-  MmsCoursesRoute: MmsCoursesRoute,
+  MmsCoursesRoute: MmsCoursesRouteWithChildren,
   MmsLabRoute: MmsLabRoute,
   MmsReflectionsRoute: MmsReflectionsRoute,
   MmsRotationsRoute: MmsRotationsRoute,
