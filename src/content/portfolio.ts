@@ -475,41 +475,49 @@ export const mmsCourses = [
     slug: "communicating-science",
     title: "Communicating Science in the 21st Century",
     description: "Translating research for public, clinical, and policy audiences.",
+    active: true,
   },
   {
     slug: "designing-analyzing-research",
     title: "Designing, Analyzing & Interpreting Medical Science Research",
     description: "Study design, analysis, and critical interpretation of medical science research.",
-  },
-  {
-    slug: "science-policy",
-    title: "Science Policy",
-    description: "How evidence moves into policy and practice.",
-  },
-  {
-    slug: "ethical-research-practices",
-    title: "Ethical Research Practices",
-    description: "Research ethics frameworks and their application in practice.",
+    active: false,
   },
   {
     slug: "academic-integrity-professionalism",
     title: "Academic Integrity and Professionalism",
     description: "Professional conduct and integrity across research settings.",
+    active: true,
+  },
+  {
+    slug: "science-policy",
+    title: "Science Policy",
+    description: "How evidence moves into policy and practice.",
+    active: true,
+  },
+  {
+    slug: "ethical-research-practices",
+    title: "Ethical Research Practices",
+    description: "Research ethics frameworks and their application in practice.",
+    active: false,
   },
   {
     slug: "data-science",
     title: "Data Science",
     description: "Applied data handling and analysis for health research.",
+    active: false,
   },
   {
     slug: "research-excellence-diversity",
     title: "Research Excellence Through Diversity",
     description: "Equity, diversity, and inclusion as drivers of research quality.",
+    active: false,
   },
   {
     slug: "ip-implementation-commercialization",
     title: "Intellectual Property, Implementation & Commercialization",
     description: "From discovery to implementation and commercialization pathways.",
+    active: false,
   },
 ];
 
