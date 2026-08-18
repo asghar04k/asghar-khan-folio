@@ -690,6 +690,7 @@ export const courseDetails: Record<string, CourseDetail> = {
         actions: `Individually wrote the paper's introduction and its section on underrepresentation of women in cardiovascular research, grounding the whole team's paper in the FDA's history of formally excluding women from early-phase trials from 1977 to 1993, and in concrete consequences like 8 of the 10 prescription drugs withdrawn from the U.S. market between 1997 and 2001 posing greater risk to women. Combined that with teammates' sections on biological sex mechanisms, clinical presentation differences, and intersectional gaps to produce the full team paper, then helped translate the findings into our "Overview of Challenges" presentation to open the policy simulation.`,
         results:
           "A literature base solid enough to carry the rest of the month's work: establishing that the real problem wasn't just underrepresentation in trials, but that even the sex data that is collected often isn't properly analyzed.",
+        documents: [{ src: "/documents/sgba-literature-review.pdf", label: "Literature Review" }],
       },
       {
         title: "Interest-Holder Engagement Strategy",
@@ -698,6 +699,21 @@ export const courseDetails: Record<string, CourseDetail> = {
           "Worked with the team to profile each stakeholder using a RACI framework (Responsible, Accountable, Consulted, Informed): Health Canada and the Governor in Council, international regulators like the FDA, EMA, and ICH, funders CIHR and NIH, pharmaceutical manufacturers including Apotex and Sanofi Pasteur, and patient advocacy groups like the Society for Women's Health Research and the Centre of Excellence for Women's Health, assessing each one's priority, power, likely reaction, and a concrete engagement plan.",
         results:
           "A full interest-holder engagement strategy spanning government, international regulators, funders, industry, and patient groups: the kind of document a real federal policy team would need in hand before proposing a regulatory change.",
+        heroImage: {
+          src: "/images/mms-courses/sgba-health-canada-raci.jpg",
+          alt: "Slide from the team's Interest-Holder Engagement Strategy profiling Health Canada: importance, RACI role, engagement goals, likely reaction, and engagement plan",
+        },
+        documents: [
+          { src: "/documents/sgba-engagement-strategy.pdf", label: "Engagement Strategy" },
+        ],
+        links: [
+          { label: "Health Canada", href: "https://www.canada.ca/en/health-canada.html" },
+          { label: "CIHR", href: "https://cihr-irsc.gc.ca/" },
+          { label: "FDA", href: "https://www.fda.gov/" },
+          { label: "EMA", href: "https://www.ema.europa.eu/" },
+          { label: "ICH", href: "https://www.ich.org/" },
+          { label: "NIH", href: "https://www.nih.gov/" },
+        ],
       },
       {
         title: "Developing the Solution: Closing the Gaps",
@@ -705,6 +721,7 @@ export const courseDetails: Record<string, CourseDetail> = {
         actions: `Authored the section explaining why past SGBA+ policy hadn't worked: a "minimal-compliance culture" where researchers checked the sex-inclusion box without conducting real disaggregated analysis, and the fact that most existing mandates apply to human trials but not the earlier preclinical animal studies that shape them. Argued that our team's two-part solution closed both gaps directly: strengthening CIHR funding requirements to mandate sex-disaggregated preclinical data, feeding into a Health Canada regulatory amendment once that evidence base existed. Helped bring the full solution into our closing Mini-Strategy Presentation to the class.`,
         results:
           "A defensible two-part federal policy solution built on real regulatory levers, CIHR funding conditions and a Food and Drug Regulations amendment, rather than just a recommendation with no mechanism behind it.",
+        documents: [{ src: "/documents/sgba-solutions.pdf", label: "Solution" }],
       },
     ],
     alsoInThisCourse: {
