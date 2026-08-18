@@ -621,6 +621,12 @@ export const courseDetails: Record<string, CourseDetail> = {
           "Broke down what made the science so exciting, then the misconduct itself and the human pressures behind it: a new lab at 30, a decade-long rival hypothesis, and a culture that rewards novelty over careful replication.",
         results:
           "The assignment itself was small, but what it taught me wasn't. Misconduct rarely comes from one bad decision; it builds from pressure, incentives, and good intentions left unchecked. I can now break down a case like this by its root causes, not just its facts, a skill that applies well beyond research, to any academic or professional setting where pressure to deliver can tempt people to cut corners.",
+        heroImage: {
+          src: "/images/mms-courses/obokata-guardian-lab.jpg",
+          alt: "The Guardian article 'What pushes scientists to lie? The disturbing but familiar story of Haruko Obokata', showing Obokata working in her laboratory in Kobe",
+          caption: "Source: The Guardian, Photograph: Jiji Press/AFP/Getty Images",
+          href: "https://www.theguardian.com/science/2015/feb/18/haruko-obokata-stap-cells-controversy-scientists-lie",
+        },
       },
       {
         title: "Retraction Story Assignment",
