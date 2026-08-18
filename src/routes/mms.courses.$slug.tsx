@@ -1,5 +1,13 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, CheckCircle2, Headphones, Quote, Target, Wrench } from "lucide-react";
+import {
+  ArrowLeft,
+  CheckCircle2,
+  ExternalLink,
+  Headphones,
+  Quote,
+  Target,
+  Wrench,
+} from "lucide-react";
 import { AudioPlayer } from "@/components/site/AudioPlayer";
 import { PageShell, SectionHeading } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
@@ -79,10 +87,57 @@ function CourseDetailPage() {
                           <p className="mt-1 leading-relaxed text-foreground/85">{w.results}</p>
                         </div>
                       </div>
+                      {w.links && w.links.length > 0 && (
+                        <div className="flex flex-wrap gap-2 pl-11">
+                          {w.links.map((l) => (
+                            <a
+                              key={l.href}
+                              href={l.href}
+                              target="_blank"
+                              rel="noreferrer noopener"
+                              className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs transition-colors hover:border-primary hover:text-primary"
+                            >
+                              {l.label} <ExternalLink className="h-3 w-3" />
+                            </a>
+                          ))}
+                        </div>
+                      )}
                     </div>
 
-                    {((w.documents && w.documents.length > 0) || w.references || w.audio) && (
+                    {((w.documents && w.documents.length > 0) ||
+                      w.references ||
+                      w.audio ||
+                      w.heroImage) && (
                       <div className="flex flex-col gap-4">
+                        {w.heroImage &&
+                          (w.heroImage.href ? (
+                            <a
+                              href={w.heroImage.href}
+                              target="_blank"
+                              rel="noreferrer noopener"
+                              className="lift block overflow-hidden rounded-2xl border border-border bg-card"
+                            >
+                              <img
+                                src={w.heroImage.src}
+                                alt={w.heroImage.alt}
+                                className="max-h-[440px] w-full object-contain"
+                              />
+                              <p className="border-t border-border px-4 py-2 text-center text-xs text-muted-foreground">
+                                {w.heroImage.caption}
+                              </p>
+                            </a>
+                          ) : (
+                            <div className="overflow-hidden rounded-2xl border border-border bg-card">
+                              <img
+                                src={w.heroImage.src}
+                                alt={w.heroImage.alt}
+                                className="max-h-[440px] w-full object-contain"
+                              />
+                              <p className="border-t border-border px-4 py-2 text-center text-xs text-muted-foreground">
+                                {w.heroImage.caption}
+                              </p>
+                            </div>
+                          ))}
                         {w.audio && (
                           <div className="wash-cool rounded-2xl border border-border bg-card p-4">
                             <div className="flex items-center gap-2">

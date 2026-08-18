@@ -520,7 +520,9 @@ export type SelectedWorkItem = {
   results: string;
   documents?: { src: string; label: string }[];
   references?: { src: string; alt: string; caption: string; href?: string }[];
+  heroImage?: { src: string; alt: string; caption: string; href?: string };
   audio?: { src: string; podcastName: string; description: string };
+  links?: { label: string; href: string }[];
 };
 
 export type CourseDetail = {
@@ -610,7 +612,7 @@ export const courseDetails: Record<string, CourseDetail> = {
         actions:
           "Broke down why the science was so exciting (a simpler, cheaper path to regenerative medicine) before unpacking the misconduct: manipulated images, irreproducible results, possible self-plagiarism. In a second brief, went into the human side: the pressure of suddenly leading her own lab at 30, a collaborator who'd chased the same hypothesis for a decade, and a research culture that rewards novelty over careful replication, while still concluding none of that justifies manipulating data. Proposed concrete safeguards: routine image screening and required outside verification before publication.",
         results:
-          "I can now see how career pressure and institutional incentives combine to produce real misconduct, and I hold a firmer view that believing in your results never justifies manipulating the evidence behind them.",
+          "I can now break down a misconduct case by its root causes, not just its facts, weighing career pressure and institutional incentives against personal accountability. That's a skill I want to bring into any research environment: catching warning signs early instead of just reacting after the fact.",
       },
       {
         title: "Retraction Story Assignment",
@@ -618,7 +620,19 @@ export const courseDetails: Record<string, CourseDetail> = {
         actions:
           "Chose the TOGETHER trial's metformin-for-COVID-19 study, retracted after its own authors discovered a miscount in primary outcome events that had stopped the trial early on faulty grounds. Traced how the mistake happened, argued it showed no intentional misconduct since the authors caught and self-reported it, and proposed stronger data-verification procedures. Used the case as an example of a retraction handled with integrity: transparency over self-protection.",
         results:
-          "I can now tell the difference between an honest mistake and misconduct, and I've seen what it actually looks like for a research team to choose accuracy over protecting their own results.",
+          "I can now tell an honest, self-reported error apart from real misconduct, and I picked up a concrete data-verification habit I plan to apply to my own research going forward.",
+        links: [
+          {
+            label: "Retraction Watch: the TOGETHER trial retraction",
+            href: "https://retractionwatch.com/2025/11/20/lancet-journal-retracts-covid-19-metformin-paper-nearly-2-years-after-authors-request-correction/",
+          },
+        ],
+        heroImage: {
+          src: "/images/mms-courses/retraction-watch-metformin.jpg",
+          alt: "The retracted TOGETHER trial metformin paper, stamped RETRACTED",
+          caption: "Source: Retraction Watch",
+          href: "https://retractionwatch.com/2025/11/20/lancet-journal-retracts-covid-19-metformin-paper-nearly-2-years-after-authors-request-correction/",
+        },
       },
       {
         title: "AI Misconduct and Prevention",
@@ -626,19 +640,20 @@ export const courseDetails: Record<string, CourseDetail> = {
         actions:
           "Proposed an AI-assisted literature-search model that would quietly adjust search terms until it retrieved evidence supporting a predetermined conclusion, grounded in my own experience running a large scoping review where I saw how many ordinary decisions go into a search strategy. Argued this would be hard to catch since the final search would still pass a basic reproducibility check. Proposed extending the existing PRESS guideline to require researchers to justify their search decisions and declare AI wasn't used to steer the outcome.",
         results:
-          "I can now point to a real gap in how AI-assisted research gets reviewed, and I have a concrete proposal for closing it, connected directly back to my own research work.",
+          "I can now spot how AI tools can quietly bias a search while it still looks methodologically sound, a risk I hadn't considered in my own scoping review until this assignment, and I can turn a risk like that into an actual policy fix instead of just flagging it.",
       },
     ],
     alsoInThisCourse: {
-      intro: "Beyond these three assignments, 9505 also included:",
+      intro: "Beyond these three assignments, 9505 also covered:",
       topics: [
+        "Academic integrity",
         "Lab professionalism",
         "Professional values",
         "Effective teamwork",
         "Clinical professional conduct",
         "Professionalism case studies",
-        "AI ethics discussion",
-        "Misconduct Scenario assignment",
+        "AI ethics",
+        "Ethical Dilemmas assignment",
         "Final group presentations",
       ],
     },
