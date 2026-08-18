@@ -600,6 +600,54 @@ export const courseDetails: Record<string, CourseDetail> = {
       "9501 gave me the confidence to communicate my ideas, and I want to carry that into more difficult conversations around ethics and professionalism in the next course: getting better at analyzing situations from multiple perspectives and connecting my clinical ethics experience at LHSC to our case discussions.",
     ],
   },
+  "academic-integrity-professionalism": {
+    intro:
+      "A case-based course on ethics and professionalism in research, clinical work, and industry: real cases of misconduct and retraction, plus sessions on professional values, teamwork, and AI ethics.",
+    selectedWork: [
+      {
+        title: "Obokata Case Brief: The STAP Stem Cell Controversy",
+        task: "Analyze the STAP stem cell scandal: Dr. Haruko Obokata's celebrated Nature papers, claiming a simple way to reprogram cells into stem cells, were retracted after investigators found manipulated images and irreproducible results. Work through what went wrong and what could have caught it sooner.",
+        actions:
+          "Broke down why the science was so exciting (a simpler, cheaper path to regenerative medicine) before unpacking the misconduct: manipulated images, irreproducible results, possible self-plagiarism. In a second brief, went into the human side: the pressure of suddenly leading her own lab at 30, a collaborator who'd chased the same hypothesis for a decade, and a research culture that rewards novelty over careful replication, while still concluding none of that justifies manipulating data. Proposed concrete safeguards: routine image screening and required outside verification before publication.",
+        results:
+          "I can now see how career pressure and institutional incentives combine to produce real misconduct, and I hold a firmer view that believing in your results never justifies manipulating the evidence behind them.",
+      },
+      {
+        title: "Retraction Story Assignment",
+        task: "Choose a real retracted paper from Retraction Watch and dig into why it was retracted, whether misconduct was involved, and what could have prevented it.",
+        actions:
+          "Chose the TOGETHER trial's metformin-for-COVID-19 study, retracted after its own authors discovered a miscount in primary outcome events that had stopped the trial early on faulty grounds. Traced how the mistake happened, argued it showed no intentional misconduct since the authors caught and self-reported it, and proposed stronger data-verification procedures. Used the case as an example of a retraction handled with integrity: transparency over self-protection.",
+        results:
+          "I can now tell the difference between an honest mistake and misconduct, and I've seen what it actually looks like for a research team to choose accuracy over protecting their own results.",
+      },
+      {
+        title: "AI Misconduct and Prevention",
+        task: "Design a plausible, hard-to-detect way AI could be misused to commit research misconduct, then propose a real countermeasure, an assignment built to make the risks concrete.",
+        actions:
+          "Proposed an AI-assisted literature-search model that would quietly adjust search terms until it retrieved evidence supporting a predetermined conclusion, grounded in my own experience running a large scoping review where I saw how many ordinary decisions go into a search strategy. Argued this would be hard to catch since the final search would still pass a basic reproducibility check. Proposed extending the existing PRESS guideline to require researchers to justify their search decisions and declare AI wasn't used to steer the outcome.",
+        results:
+          "I can now point to a real gap in how AI-assisted research gets reviewed, and I have a concrete proposal for closing it, connected directly back to my own research work.",
+      },
+    ],
+    alsoInThisCourse: {
+      intro: "Beyond these three assignments, 9505 also included:",
+      topics: [
+        "Lab professionalism",
+        "Professional values",
+        "Effective teamwork",
+        "Clinical professional conduct",
+        "Professionalism case studies",
+        "AI ethics discussion",
+        "Misconduct Scenario assignment",
+        "Final group presentations",
+      ],
+    },
+    reflection: [
+      "These three assignments pushed me to think about research misconduct less as a single bad decision and more as something that builds up through career pressure, institutional incentives, and good intentions gone unchecked. The Obokata case made that clear: none of the individual pressures she was under justified what happened, but understanding them changed how I think about prevention. It's not enough to tell people not to falsify data; the systems around researchers need to make honesty the easier path.",
+      "The AI Misconduct assignment hit closest to home, since I built the scenario directly out of my own experience running a large scoping review. It was uncomfortable to realize how easily a legitimate-looking search strategy could hide bias.",
+      "Going into my next course, I want to carry that same scrutiny into my own research practices: being more deliberate about documenting and justifying methodological decisions as I make them, not just when someone asks.",
+    ],
+  },
 };
 
 export const mmsRotations = [
