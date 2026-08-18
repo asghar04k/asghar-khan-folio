@@ -110,34 +110,36 @@ function CourseDetailPage() {
                       w.heroImage) && (
                       <div className="flex flex-col gap-4">
                         {w.heroImage &&
-                          (w.heroImage.href ? (
-                            <a
-                              href={w.heroImage.href}
-                              target="_blank"
-                              rel="noreferrer noopener"
-                              className="lift block overflow-hidden rounded-2xl border border-border bg-card"
-                            >
+                          (() => {
+                            const img = (
                               <img
                                 src={w.heroImage.src}
                                 alt={w.heroImage.alt}
-                                className="max-h-[440px] w-full object-contain"
+                                className="max-h-[560px] w-full object-contain"
                               />
+                            );
+                            const caption = w.heroImage.caption && (
                               <p className="border-t border-border px-4 py-2 text-center text-xs text-muted-foreground">
                                 {w.heroImage.caption}
                               </p>
-                            </a>
-                          ) : (
-                            <div className="overflow-hidden rounded-2xl border border-border bg-card">
-                              <img
-                                src={w.heroImage.src}
-                                alt={w.heroImage.alt}
-                                className="max-h-[440px] w-full object-contain"
-                              />
-                              <p className="border-t border-border px-4 py-2 text-center text-xs text-muted-foreground">
-                                {w.heroImage.caption}
-                              </p>
-                            </div>
-                          ))}
+                            );
+                            return w.heroImage.href ? (
+                              <a
+                                href={w.heroImage.href}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="lift block overflow-hidden rounded-2xl border border-border bg-card"
+                              >
+                                {img}
+                                {caption}
+                              </a>
+                            ) : (
+                              <div className="overflow-hidden rounded-2xl border border-border bg-card">
+                                {img}
+                                {caption}
+                              </div>
+                            );
+                          })()}
                         {w.audio && (
                           <div className="wash-cool rounded-2xl border border-border bg-card p-4">
                             <div className="flex items-center gap-2">

@@ -520,7 +520,7 @@ export type SelectedWorkItem = {
   results: string;
   documents?: { src: string; label: string }[];
   references?: { src: string; alt: string; caption: string; href?: string }[];
-  heroImage?: { src: string; alt: string; caption: string; href?: string };
+  heroImage?: { src: string; alt: string; caption?: string; href?: string };
   audio?: { src: string; podcastName: string; description: string };
   links?: { label: string; href: string }[];
 };
@@ -612,7 +612,7 @@ export const courseDetails: Record<string, CourseDetail> = {
         actions:
           "Broke down why the science was so exciting (a simpler, cheaper path to regenerative medicine) before unpacking the misconduct: manipulated images, irreproducible results, possible self-plagiarism. In a second brief, went into the human side: the pressure of suddenly leading her own lab at 30, a collaborator who'd chased the same hypothesis for a decade, and a research culture that rewards novelty over careful replication, while still concluding none of that justifies manipulating data. Proposed concrete safeguards: routine image screening and required outside verification before publication.",
         results:
-          "I can now break down a misconduct case by its root causes, not just its facts, weighing career pressure and institutional incentives against personal accountability. That's a skill I want to bring into any research environment: catching warning signs early instead of just reacting after the fact.",
+          "I can now break down a misconduct case by its root causes, not just its facts, weighing career pressure and institutional incentives against personal accountability. That's a skill I want to bring into any research environment, catching warning signs early, and it applies just as directly to any academic or professional setting where pressure to deliver can tempt people to cut corners.",
       },
       {
         title: "Retraction Story Assignment",
@@ -620,7 +620,7 @@ export const courseDetails: Record<string, CourseDetail> = {
         actions:
           "Chose the TOGETHER trial's metformin-for-COVID-19 study, retracted after its own authors discovered a miscount in primary outcome events that had stopped the trial early on faulty grounds. Traced how the mistake happened, argued it showed no intentional misconduct since the authors caught and self-reported it, and proposed stronger data-verification procedures. Used the case as an example of a retraction handled with integrity: transparency over self-protection.",
         results:
-          "I can now tell an honest, self-reported error apart from real misconduct, and I picked up a concrete data-verification habit I plan to apply to my own research going forward.",
+          "I can now tell an honest, self-reported error apart from real misconduct, and I picked up a concrete data-verification habit I plan to apply to my own research, and to any professional setting where getting it right matters more than covering a mistake.",
         links: [
           {
             label: "Retraction Watch: the TOGETHER trial retraction",
@@ -640,7 +640,11 @@ export const courseDetails: Record<string, CourseDetail> = {
         actions:
           "Proposed an AI-assisted literature-search model that would quietly adjust search terms until it retrieved evidence supporting a predetermined conclusion, grounded in my own experience running a large scoping review where I saw how many ordinary decisions go into a search strategy. Argued this would be hard to catch since the final search would still pass a basic reproducibility check. Proposed extending the existing PRESS guideline to require researchers to justify their search decisions and declare AI wasn't used to steer the outcome.",
         results:
-          "I can now spot how AI tools can quietly bias a search while it still looks methodologically sound, a risk I hadn't considered in my own scoping review until this assignment, and I can turn a risk like that into an actual policy fix instead of just flagging it.",
+          "I can now spot how AI tools can quietly bias a search while it still looks methodologically sound, a risk I hadn't considered in my own scoping review until this assignment, and I can turn a risk like that into an actual policy fix. That's not just a research skill: anywhere AI supports a decision, from clinical practice to industry, someone needs to be able to catch that kind of hidden bias.",
+        heroImage: {
+          src: "/images/mms-courses/ai-misconduct-flowchart.jpg",
+          alt: "Flowchart of a hidden, iterative AI search-manipulation strategy, showing how a reproducible search can still be biased",
+        },
       },
     ],
     alsoInThisCourse: {
