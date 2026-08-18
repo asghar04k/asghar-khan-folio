@@ -681,6 +681,50 @@ export const courseDetails: Record<string, CourseDetail> = {
       "Going into my next course, I want to carry that same scrutiny into my own research practices: being more deliberate about documenting and justifying methodological decisions as I make them, not just when someone asks.",
     ],
   },
+  "science-policy": {
+    intro: `A month-long policy simulation where four of us worked as a federal "policy team" tackling a real health policy issue end to end: from literature review and stakeholder mapping through to a proposed regulatory solution, alongside sessions on how government works, risk and change management, and performance measurement. The three entries below trace that same project, our team's file on Sex- and Gender-Based Analysis Plus (SGBA+) in drug development, from research to a proposed solution.`,
+    selectedWork: [
+      {
+        title: "Literature Review & Environmental Scan: SGBA+ in Drug Development",
+        task: "As a four-person policy team, build the literature review and environmental scan that would ground a month-long federal policy simulation: identifying why Sex- and Gender-Based Analysis Plus (SGBA+) still isn't fully integrated into Canadian drug development, and what's already been tried elsewhere.",
+        actions: `Individually wrote the paper's introduction and its section on underrepresentation of women in cardiovascular research, grounding the whole team's paper in the FDA's history of formally excluding women from early-phase trials from 1977 to 1993, and in concrete consequences like 8 of the 10 prescription drugs withdrawn from the U.S. market between 1997 and 2001 posing greater risk to women. Combined that with teammates' sections on biological sex mechanisms, clinical presentation differences, and intersectional gaps to produce the full team paper, then helped translate the findings into our "Overview of Challenges" presentation to open the policy simulation.`,
+        results:
+          "A literature base solid enough to carry the rest of the month's work: establishing that the real problem wasn't just underrepresentation in trials, but that even the sex data that is collected often isn't properly analyzed.",
+      },
+      {
+        title: "Interest-Holder Engagement Strategy",
+        task: "Map the full stakeholder landscape for a proposed federal SGBA+ regulatory change, from Health Canada and Cabinet to international regulators, funders, industry, and patient advocacy groups, and build a real engagement plan for each.",
+        actions:
+          "Worked with the team to profile each stakeholder using a RACI framework (Responsible, Accountable, Consulted, Informed): Health Canada and the Governor in Council, international regulators like the FDA, EMA, and ICH, funders CIHR and NIH, pharmaceutical manufacturers including Apotex and Sanofi Pasteur, and patient advocacy groups like the Society for Women's Health Research and the Centre of Excellence for Women's Health, assessing each one's priority, power, likely reaction, and a concrete engagement plan.",
+        results:
+          "A full interest-holder engagement strategy spanning government, international regulators, funders, industry, and patient groups: the kind of document a real federal policy team would need in hand before proposing a regulatory change.",
+      },
+      {
+        title: "Developing the Solution: Closing the Gaps",
+        task: `Turn the team's research into an actual two-part policy solution, and defend it against the specific barriers that had stalled SGBA+ adoption for years. My piece: writing the "Challenges to be Addressed" section.`,
+        actions: `Authored the section explaining why past SGBA+ policy hadn't worked: a "minimal-compliance culture" where researchers checked the sex-inclusion box without conducting real disaggregated analysis, and the fact that most existing mandates apply to human trials but not the earlier preclinical animal studies that shape them. Argued that our team's two-part solution closed both gaps directly: strengthening CIHR funding requirements to mandate sex-disaggregated preclinical data, feeding into a Health Canada regulatory amendment once that evidence base existed. Helped bring the full solution into our closing Mini-Strategy Presentation to the class.`,
+        results:
+          "A defensible two-part federal policy solution built on real regulatory levers, CIHR funding conditions and a Food and Drug Regulations amendment, rather than just a recommendation with no mechanism behind it.",
+      },
+    ],
+    alsoInThisCourse: {
+      intro: "Beyond the SGBA+ policy file itself, 9503 also covered:",
+      topics: [
+        "How government works",
+        "Government policy levers",
+        "Risk management",
+        "Project & change management",
+        "Performance measurement",
+        "Careers in government",
+        "Government cover letter",
+        "Final presentations to a guest evaluator",
+      ],
+    },
+    reflection: [
+      "This course made policy work feel real in a way that's hard to get from a lecture. Carrying one file, SGBA+ in drug development, through an entire month, from the literature review all the way to a defensible regulatory solution, showed me how much groundwork sits underneath a single policy recommendation: the evidence has to hold up, the stakeholders have to be mapped honestly, and the solution has to name a real lever, not just a good idea.",
+      `Writing the "Challenges to be Addressed" section pushed me to think harder about why well-intentioned policy sometimes doesn't work, not because people disagree with it, but because it isn't specific enough to close the actual gap. That's a lesson I want to carry beyond this course: a recommendation is only as strong as the mechanism behind it.`,
+    ],
+  },
 };
 
 export const mmsRotations = [
