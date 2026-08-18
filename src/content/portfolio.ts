@@ -616,11 +616,11 @@ export const courseDetails: Record<string, CourseDetail> = {
     selectedWork: [
       {
         title: "Obokata Case Brief: The STAP Stem Cell Controversy",
-        task: "Analyze the STAP stem cell scandal: Dr. Haruko Obokata's celebrated Nature papers, claiming a simple way to reprogram cells into stem cells, were retracted after investigators found manipulated images and irreproducible results. Work through what went wrong and what could have caught it sooner.",
+        task: "Analyze the STAP stem cell scandal: Dr. Haruko Obokata's celebrated Nature papers on reprogramming cells into stem cells were retracted after manipulated images and irreproducible results came to light.",
         actions:
-          "Broke down why the science was so exciting (a simpler, cheaper path to regenerative medicine) before unpacking the misconduct: manipulated images, irreproducible results, possible self-plagiarism. In a second brief, went into the human side: the pressure of suddenly leading her own lab at 30, a collaborator who'd chased the same hypothesis for a decade, and a research culture that rewards novelty over careful replication, while still concluding none of that justifies manipulating data. Proposed concrete safeguards: routine image screening and required outside verification before publication.",
+          "Broke down what made the science so exciting, then the misconduct itself and the human pressures behind it: a new lab at 30, a decade-long rival hypothesis, and a culture that rewards novelty over careful replication.",
         results:
-          "I can now break down a misconduct case by its root causes, not just its facts, weighing career pressure and institutional incentives against personal accountability. That's a skill I want to bring into any research environment, catching warning signs early, and it applies just as directly to any academic or professional setting where pressure to deliver can tempt people to cut corners.",
+          "The assignment itself was small, but what it taught me wasn't. Misconduct rarely comes from one bad decision; it builds from pressure, incentives, and good intentions left unchecked. I can now break down a case like this by its root causes, not just its facts, a skill that applies well beyond research, to any academic or professional setting where pressure to deliver can tempt people to cut corners.",
       },
       {
         title: "Retraction Story Assignment",
