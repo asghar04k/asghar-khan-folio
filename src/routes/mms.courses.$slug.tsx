@@ -87,7 +87,7 @@ function CourseDetailPage() {
                           <p className="mt-1 leading-relaxed text-foreground/85">{w.results}</p>
                         </div>
                       </div>
-                      {w.links && w.links.length > 0 && (
+                      {w.links && w.links.length > 0 && !w.audio && (
                         <div className="flex flex-wrap gap-2 pl-11">
                           {w.links.map((l) => (
                             <a
@@ -141,29 +141,42 @@ function CourseDetailPage() {
                             );
                           })()}
                         {w.audio && (
-                          <div className="wash-cool rounded-2xl border border-border bg-card p-4">
-                            <div className="flex items-center gap-2">
-                              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary">
-                                <Headphones className="h-4 w-4" />
+                          <div className="wash-cool flex min-h-[420px] flex-col justify-center rounded-2xl border border-border bg-card p-6 sm:p-8">
+                            <div className="flex items-center gap-3">
+                              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary">
+                                <Headphones className="h-6 w-6" />
                               </span>
                               <div className="min-w-0">
-                                <p className="truncate text-sm font-medium">
-                                  {w.audio.podcastName}
-                                </p>
-                                <p className="truncate text-xs text-muted-foreground">
+                                <p className="text-base font-medium">{w.audio.podcastName}</p>
+                                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                                   {w.audio.description}
                                 </p>
                               </div>
                             </div>
                             {w.audio.src ? (
-                              <div className="mt-4">
+                              <div className="mt-6">
                                 <AudioPlayer src={w.audio.src} title={w.audio.podcastName} />
                               </div>
                             ) : (
-                              <p className="mt-4 text-xs text-muted-foreground italic">
+                              <p className="mt-6 text-xs text-muted-foreground italic">
                                 Audio coming soon.
                               </p>
                             )}
+                          </div>
+                        )}
+                        {w.audio && w.links && w.links.length > 0 && (
+                          <div className="flex flex-col gap-3">
+                            {w.links.map((l) => (
+                              <a
+                                key={l.href}
+                                href={l.href}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="lift flex items-center justify-center gap-2 rounded-2xl border border-border bg-card px-6 py-4 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+                              >
+                                {l.label} <ExternalLink className="h-4 w-4" />
+                              </a>
+                            ))}
                           </div>
                         )}
                         {w.documents && w.documents.length > 0 && (
