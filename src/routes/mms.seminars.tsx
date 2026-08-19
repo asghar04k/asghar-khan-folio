@@ -194,6 +194,23 @@ function FeaturedCard({ session }: { session: (typeof seminarSeries.featured)[nu
           </div>
         )}
 
+        {session.skillBadges && session.skillBadges.length > 0 && (
+          <div className="mt-5 pl-11">
+            <p className="ledger mb-2">Now comfortable with</p>
+            <div className="flex flex-wrap gap-2">
+              {session.skillBadges.map((tool) => (
+                <span
+                  key={tool.name}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/40 py-1 pr-3 pl-1.5"
+                >
+                  <img src={tool.logo} alt="" className="h-5 w-5 shrink-0" />
+                  <span className="text-xs font-medium">{tool.name}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
         {session.tools && session.tools.length > 0 && (
           <div className="mt-5 pl-11">
             <div className="grid gap-2 sm:grid-cols-2">

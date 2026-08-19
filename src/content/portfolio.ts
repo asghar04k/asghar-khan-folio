@@ -582,15 +582,20 @@ export const courseDetails: Record<string, CourseDetail> = {
       },
       {
         title: '"Beyond the Abstract" Podcast',
-        task: "Create a 10-minute episode for a fictional science communication podcast, breaking down a recent peer-reviewed research article (published within the last year) for a general audience: the question it asked, why it matters, what it found, and its limitations.",
-        actions: "Details on the article, group, and my specific contribution to be added.",
+        task: 'Create a 10-minute episode for "Beyond the Abstract," a fictional science communication podcast, breaking down a recent peer-reviewed research article for a general audience: the question it asked, why it matters, what it found, and its limitations. Covered a 2025 Nature Genetics study, "Decomposition of phenotypic heterogeneity in autism reveals underlying genetic programs," examining how distinct autism profiles may correspond to different genetic patterns and developmental pathways.',
+        actions: "Details on my specific contribution and the rest of the group to be added.",
         results: "Details to be added.",
         audio: {
-          src: "",
+          src: "/audio/beyond-the-abstract-episode.mp3",
           podcastName: "Beyond the Abstract",
-          description:
-            "A 10-minute episode breaking down a recent research article for a general audience.",
+          description: "A Nature Genetics study on the genetics behind different autism profiles.",
         },
+        links: [
+          {
+            label: "Read the study on PubMed",
+            href: "https://pubmed.ncbi.nlm.nih.gov/40634707/",
+          },
+        ],
       },
     ],
     alsoInThisCourse: {
@@ -794,6 +799,7 @@ export type FeaturedSeminar = {
   toolsNote?: string;
   consensusMeter?: { label: string; yes: number; mixed: number; no: number };
   flipCards?: { front: string; back: string }[];
+  skillBadges?: { name: string; logo: string }[];
 };
 
 export type LightningSeminar = {
@@ -888,11 +894,17 @@ export const seminarSeries = {
       date: "June 12",
       presenter: "",
       setup:
-        "The MSc Digital Literacy Onboarding checklist: a self-directed practice module covering the Microsoft 365 tools (Outlook, Word, PowerPoint, Teams) the program expects everyone to be comfortable with.",
+        "The MSc Digital Literacy Onboarding checklist: a self-directed practice module covering the Microsoft 365 tools the program runs on, built to get everyone genuinely comfortable with the apps we'd already be using every day.",
       whatIDid:
-        'Worked through the checklist step by step and documented each one with a screenshot: in Outlook, practiced the difference between flagging and pinning a message and tried out different inbox layouts, views, and fonts; in Word, used the track-changes and suggestion-editing tools; in PowerPoint, set up a poster to the standard 48"×36" (4:3) conference size, embedded a YouTube video directly into a slide, added icon graphics, and recorded narrated audio over a slide deck.',
+        "Worked through hands-on practice across each app rather than just reading about them: better inbox organization and message management in Outlook, collaborative editing and review tools in Word, and building more polished, presentation-ready material in PowerPoint, from formatting to embedded media.",
       whatStuck:
-        "Small tool fluency compounds. Knowing exactly how to flag vs. pin an email or size a poster correctly the first time saves real time across a full research program, and it's the kind of thing nobody formally teaches unless a session like this one forces you to actually practice it.",
+        "Small tool fluency compounds. Knowing these apps well saves real time across a full research program, and it's the kind of thing nobody formally teaches unless a session like this one forces you to actually practice it.",
+      skillBadges: [
+        { name: "Outlook", logo: "/images/mms-seminars/outlook-logo.svg" },
+        { name: "Word", logo: "/images/mms-seminars/word-logo.svg" },
+        { name: "PowerPoint", logo: "/images/mms-seminars/powerpoint-logo.svg" },
+        { name: "Teams", logo: "/images/mms-seminars/teams-logo.svg" },
+      ],
     },
     {
       slug: "wicked-problems",

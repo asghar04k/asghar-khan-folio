@@ -1,6 +1,8 @@
 import { Pause, Play, RotateCcw, RotateCw } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+const SPEEDS = [1, 1.25, 1.5, 1.75, 2] as const;
+
 function formatTime(seconds: number) {
   if (!Number.isFinite(seconds)) return "0:00";
   const m = Math.floor(seconds / 60);
@@ -13,6 +15,14 @@ export function AudioPlayer({ src, title }: { src: string; title: string }) {
   const [playing, setPlaying] = useState(false);
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [speed, setSpeed] = useState<(typeof SPEEDS)[number]>(1);
+
+  const cycleSpeed = () => {
+    const audio = audioRef.current;
+    const next = SPEEDS[(SPEEDS.indexOf(speed) + 1) % SPEEDS.length] ?? SPEEDS[0];
+    setSpeed(next);
+    if (audio) audio.playbackRate = next;
+  };
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -95,6 +105,14 @@ export function AudioPlayer({ src, title }: { src: string; title: string }) {
           className="h-1.5 w-full flex-1 cursor-pointer appearance-none rounded-full bg-muted accent-primary"
         />
         <span className="ledger w-10 shrink-0">{formatTime(duration)}</span>
+        <button
+          type="button"
+          onClick={cycleSpeed}
+          aria-label={`Playback speed, currently ${speed}x. Tap to change.`}
+          className="ledger flex h-8 w-11 shrink-0 items-center justify-center rounded-full border border-border !text-[11px] text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+        >
+          {speed}x
+        </button>
       </div>
     </div>
   );
