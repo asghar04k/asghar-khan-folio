@@ -758,7 +758,7 @@ export const mmsCapstone = {
 
 export const mmsSeminars = [
   {
-    title: "Weekly Seminar Series",
+    title: "Interdisciplinary Skill Development",
     description:
       "MEDSCIEN 9700: a weekly, ungraded seminar series running all summer on the personal and professional skills interdisciplinary research actually requires.",
   },
@@ -811,18 +811,24 @@ export const seminarSeries = {
       week: 1,
       date: "June 5",
       topic: "Critical Reflection",
-      presenter: "Campbell",
+      presenter: "",
       featured: false,
     },
     {
       week: 2,
       date: "June 12",
       topic: "Microsoft Suites / Digital Literacy",
-      presenter: "Campbell & Wood",
+      presenter: "",
       featured: true,
     },
-    { week: 3, date: "June 19", topic: "Strengths", presenter: "Kelly", featured: false },
-    { week: 4, date: "June 26", topic: "Wicked Problems", presenter: "Khan", featured: true },
+    { week: 3, date: "June 19", topic: "Strengths", presenter: "", featured: false },
+    {
+      week: 4,
+      date: "June 26",
+      topic: "Wicked Problems",
+      presenter: "Dr. Ali R. Khan",
+      featured: true,
+    },
     {
       week: 5,
       date: "July 3",
@@ -835,43 +841,43 @@ export const seminarSeries = {
       week: 6,
       date: "July 10",
       topic: "Citations & Synthesis",
-      presenter: "Campbell & Read",
+      presenter: "",
       featured: false,
     },
     {
       week: 7,
       date: "July 17",
       topic: "Literature Reviews",
-      presenter: "Goodman",
+      presenter: "",
       featured: false,
     },
-    { week: 8, date: "July 24", topic: "ePortfolios", presenter: "Campbell", featured: false },
+    { week: 8, date: "July 24", topic: "ePortfolios", presenter: "", featured: false },
     {
       week: 9,
       date: "July 31",
       topic: "AI Tools for Literature Searching",
-      presenter: "Dyck",
+      presenter: "Jason Dyck",
       featured: true,
     },
     {
       week: 10,
       date: "August 7",
       topic: "Difficult Conversations / Connecting with Patients",
-      presenter: "Caine",
+      presenter: "Dr. Sean Caine",
       featured: true,
     },
     {
       week: 11,
       date: "August 14",
       topic: "Own Your Future",
-      presenter: "Richmond-Bravo",
+      presenter: "",
       featured: false,
     },
     {
       week: 12,
       date: "August 21",
       topic: "End-of-Term Meeting Preparation",
-      presenter: "Campbell",
+      presenter: "",
       featured: false,
     },
   ] as SeminarWeek[],
@@ -880,9 +886,9 @@ export const seminarSeries = {
       slug: "digital-literacy",
       title: "Digital Literacy Bootcamp",
       date: "June 12",
-      presenter: "Campbell & Wood",
+      presenter: "",
       setup:
-        "I actually missed this live session and made it up independently by working through the MSc Digital Literacy Onboarding checklist Dr. Wood put together, a self-directed practice module covering the Microsoft 365 tools (Outlook, Word, PowerPoint, Teams) the program expects everyone to be comfortable with.",
+        "The MSc Digital Literacy Onboarding checklist: a self-directed practice module covering the Microsoft 365 tools (Outlook, Word, PowerPoint, Teams) the program expects everyone to be comfortable with.",
       whatIDid:
         'Worked through the checklist step by step and documented each one with a screenshot: in Outlook, practiced the difference between flagging and pinning a message and tried out different inbox layouts, views, and fonts; in Word, used the track-changes and suggestion-editing tools; in PowerPoint, set up a poster to the standard 48"×36" (4:3) conference size, embedded a YouTube video directly into a slide, added icon graphics, and recorded narrated audio over a slide deck.',
       whatStuck:
@@ -980,54 +986,54 @@ export const seminarSeries = {
   lightningRound: [
     {
       title: "Critical Reflection",
-      presenter: "Campbell",
+      presenter: "",
       date: "June 5",
       blurb:
         "Opening session on how to reflect honestly on your own growth over the program, setting up the self-assessment thread that runs through the whole series.",
     },
     {
       title: "Strengths",
-      presenter: "Kelly",
+      presenter: "",
       date: "June 19",
       blurb:
         "A strengths-based self-assessment session to identify personal working strengths ahead of team-based coursework like 9503's policy simulation.",
     },
     {
       title: "Citations & Synthesis",
-      presenter: "Campbell & Read",
+      presenter: "",
       date: "July 10",
       blurb:
         "A Western Libraries session on what makes a citation actually useful, not just proof a source exists, but a synthesis of what it contributes, drawn together into your own argument rather than just listed.",
     },
     {
       title: "Literature Reviews",
-      presenter: "Goodman",
+      presenter: "",
       date: "July 17",
       blurb:
         "Structuring and writing an academic literature review, feeding directly into work like 9503's SGBA+ environmental scan.",
     },
     {
       title: "ePortfolios",
-      presenter: "Campbell",
+      presenter: "",
       date: "July 24",
       blurb:
         "How to build a professional ePortfolio/dossier, the very page you're looking at right now.",
     },
     {
       title: "Own Your Future",
-      presenter: "Richmond-Bravo",
+      presenter: "",
       date: "August 14",
       blurb: "Career planning and next-step strategy for life after the MMS program.",
     },
     {
       title: "End-of-Term Meeting Preparation",
-      presenter: "Campbell",
+      presenter: "",
       date: "August 21",
       blurb: "Closing session preparing for end-of-program check-ins with the program director.",
     },
   ] as LightningSeminar[],
   reflection: [
-    "If the graded courses taught me specific frameworks, 9700 was where I picked up the operating skills underneath all of them, the kind of thing that doesn't show up on a transcript but shows up every week in practice. Making up the Digital Literacy session on my own time turned out to be one of the more useful hours of the summer, in a boring-but-true way: half of graduate work is just knowing your tools well enough that they get out of your way.",
+    "If the graded courses taught me specific frameworks, 9700 was where I picked up the operating skills underneath all of them, the kind of thing that doesn't show up on a transcript but shows up every week in practice. Working through the Digital Literacy checklist on my own turned out to be one of the more useful hours of the summer, in a boring-but-true way: half of graduate work is just knowing your tools well enough that they get out of your way.",
     "The Wicked Problems and AI Tools sessions ended up talking to each other more than I expected. Both were really about the same question: how do you stay honest about the limits of a tool or a method, whether that's the scientific method hitting a genuinely messy real-world problem, or an AI search tool confidently returning a plausible-looking but wrong answer. Dr. Caine's session closed the loop by pointing the same instinct back at people: connection with a patient is built the same way trust in a source is, by checking your assumptions rather than taking the confident version at face value.",
     'Heading into rotations and the capstone, I want to carry that same instinct forward, treating every tool, source, and conversation with the same "can I actually trust this, and did I check" bar these seminars kept putting in front of me.',
   ],

@@ -16,13 +16,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/mms/seminars")({
   head: () => ({
     meta: [
-      { title: "MMS Seminars — Asghar Khan" },
+      { title: "Interdisciplinary Skill Development — Asghar Khan" },
       {
         name: "description",
         content:
           "MEDSCIEN 9700: a weekly, ungraded seminar series on the personal and professional skills interdisciplinary research requires.",
       },
-      { property: "og:title", content: "MMS Seminars — Asghar Khan" },
+      { property: "og:title", content: "Interdisciplinary Skill Development — Asghar Khan" },
       {
         property: "og:description",
         content:
@@ -54,23 +54,23 @@ function TimelineStrip() {
                       disabled={w.holiday}
                       onClick={() => featuredSlug && scrollToSlug(featuredSlug)}
                       className={cn(
-                        "flex h-14 w-16 flex-col items-center justify-center rounded-xl border text-center transition-all duration-200",
+                        "ledger flex h-9 w-11 items-center justify-center rounded-full border !text-[11px] transition-all duration-200",
                         w.holiday
                           ? "cursor-default border-dashed border-border/50 bg-muted/30 text-muted-foreground/50"
                           : clickable
-                            ? "lift cursor-pointer border-primary/30 bg-primary/10 text-foreground hover:border-primary"
-                            : "border-border bg-card text-foreground/85",
+                            ? "lift cursor-pointer border-primary/30 bg-primary/10 text-primary hover:border-primary"
+                            : "border-border bg-card text-foreground/70",
                       )}
                     >
-                      <span className="ledger !text-[10px]">W{w.week}</span>
-                      <span className="mt-0.5 max-w-full truncate px-1 text-[11px] font-medium">
-                        {w.holiday ? "—" : w.presenter}
-                      </span>
+                      {w.week}
                     </button>
                   </TooltipTrigger>
                   <TooltipContent>
                     <p className="font-medium">{w.topic}</p>
-                    <p className="text-[10px] opacity-80">{w.date}</p>
+                    <p className="text-[10px] opacity-80">
+                      {w.date}
+                      {w.presenter && ` · ${w.presenter}`}
+                    </p>
                   </TooltipContent>
                 </Tooltip>
               </li>
@@ -141,8 +141,12 @@ function FeaturedCard({ session }: { session: (typeof seminarSeries.featured)[nu
           <h3 className="text-lg font-medium text-balance">{session.title}</h3>
           <span className="ledger shrink-0 text-right">
             {session.date}
-            <br />
-            {session.presenter}
+            {session.presenter && (
+              <>
+                <br />
+                {session.presenter}
+              </>
+            )}
           </span>
         </div>
 
@@ -259,8 +263,12 @@ function FeaturedCard({ session }: { session: (typeof seminarSeries.featured)[nu
 
 function SeminarsPage() {
   return (
-    <PageShell eyebrow="MMS Program · Seminars" title="Seminars" intro={seminarSeries.intro}>
-      <SectionHeading note="12 Friday mornings, all summer">Seminar Passport</SectionHeading>
+    <PageShell
+      eyebrow="MMS Program · MEDSCIEN 9700"
+      title="Interdisciplinary Skill Development"
+      intro={seminarSeries.intro}
+    >
+      <SectionHeading note="12 Friday mornings, all summer">Timeline</SectionHeading>
       <TimelineStrip />
 
       <SectionHeading note="4 sessions, in full">Featured Sessions</SectionHeading>
@@ -279,7 +287,7 @@ function SeminarsPage() {
                 <h3 className="text-sm font-medium text-balance">{s.title}</h3>
                 <span className="ledger shrink-0 !text-[10px]">{s.date}</span>
               </div>
-              <p className="mt-1 text-xs text-muted-foreground">{s.presenter}</p>
+              {s.presenter && <p className="mt-1 text-xs text-muted-foreground">{s.presenter}</p>}
               <p className="mt-2 text-xs leading-relaxed text-foreground/85">{s.blurb}</p>
             </article>
           </Reveal>
