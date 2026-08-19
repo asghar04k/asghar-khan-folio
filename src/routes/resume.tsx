@@ -25,15 +25,25 @@ function ResumePage() {
     <PageShell
       eyebrow="Curriculum vitae"
       title="Resume"
-      intro="A summary view is below. Upload the PDF and it will be embedded and downloadable here."
+      intro="The full resume is below, scrollable in place or downloadable, with a quick summary underneath."
     >
       <Reveal>
         <a
-          href={`mailto:${profile.email}?subject=Resume%20request`}
+          href="/documents/asghar-khan-resume.pdf"
+          download
           className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5"
         >
-          <Download className="h-4 w-4" /> Request the PDF
+          <Download className="h-4 w-4" /> Download PDF
         </a>
+      </Reveal>
+
+      <Reveal className="mt-6">
+        <p className="ledger mb-2">Resume, scroll to read</p>
+        <iframe
+          src="/documents/asghar-khan-resume.pdf"
+          title="Asghar Khan — Resume"
+          className="h-[85vh] min-h-[700px] w-full rounded-2xl border border-border bg-muted/40"
+        />
       </Reveal>
 
       <Reveal className="mt-10">
