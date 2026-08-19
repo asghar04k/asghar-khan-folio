@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
+  ArrowRight,
   Award,
   Briefcase,
   FileText,
@@ -10,7 +11,8 @@ import {
   Volleyball,
 } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
-import { profile, education, employment } from "@/content/portfolio";
+import { education, employment, mmsCourses, profile } from "@/content/portfolio";
+import { siteMode } from "@/lib/site-mode";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,7 +53,17 @@ const tiles = [
   { to: "/hobbies", label: "Hobbies", note: "Off the clock", icon: Volleyball },
 ] as const;
 
+const mmsQuickLinks = [
+  { to: "/mms/seminars", label: "Seminars" },
+  { to: "/mms/lab", label: "Lab & Journal Club" },
+  { to: "/mms/rotations", label: "Rotations" },
+  { to: "/mms/capstone", label: "Capstone" },
+  { to: "/mms/reflections", label: "Reflections" },
+] as const;
+
 function Index() {
+  const isMms = siteMode === "mms";
+
   return (
     <main className="mx-auto max-w-6xl px-5 pt-16 pb-8">
       <section className="wash pb-16">
@@ -62,6 +74,11 @@ function Index() {
               <h1 className="mt-4 text-5xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-7xl">
                 {profile.name}
               </h1>
+              {isMms && (
+                <p className="mt-2 text-2xl font-semibold tracking-tight text-primary sm:text-3xl">
+                  Master of Medical Sciences — ePortfolio
+                </p>
+              )}
               <p className="mt-5 max-w-2xl font-mono text-sm text-muted-foreground sm:text-base">
                 {profile.tagline}
               </p>
@@ -78,24 +95,79 @@ function Index() {
         </Reveal>
       </section>
 
-      <section aria-label="Explore the portfolio" className="wash-cool">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {tiles.map((tile, i) => (
-            <Reveal key={tile.to} delay={i * 50}>
-              <Link
-                to={tile.to}
-                className="lift group flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-5"
-              >
-                <tile.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-secondary" />
-                <div className="mt-10">
-                  <p className="text-lg font-medium tracking-tight">{tile.label}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{tile.note}</p>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      {isMms ? (
+        <section aria-label="MMS Program" className="wash-cool">
+          <Reveal>
+            <h2 className="text-xl font-semibold tracking-tight">Courses</h2>
+          </Reveal>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {mmsCourses.map((c, i) =>
+              c.active ? (
+                <Reveal as="li" key={c.slug} delay={i * 40}>
+                  <Link
+                    to="/mms/courses/$slug"
+                    params={{ slug: c.slug }}
+                    className="lift flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-5"
+                  >
+                    <div>
+                      <p className="font-medium text-balance">{c.title}</p>
+                      <p className="mt-1.5 text-sm text-muted-foreground">{c.description}</p>
+                    </div>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm text-primary">
+                      View course <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                  </Link>
+                </Reveal>
+              ) : (
+                <Reveal as="li" key={c.slug} delay={i * 40}>
+                  <div
+                    aria-disabled="true"
+                    className="flex h-full cursor-not-allowed flex-col justify-between rounded-2xl border border-dashed border-border/60 bg-card/40 p-5 opacity-50 grayscale"
+                  >
+                    <div>
+                      <p className="font-medium text-balance">{c.title}</p>
+                      <p className="mt-1.5 text-sm text-muted-foreground">{c.description}</p>
+                    </div>
+                    <span className="ledger mt-4">Coming soon</span>
+                  </div>
+                </Reveal>
+              ),
+            )}
+          </ul>
+          <Reveal className="mt-4">
+            <div className="flex flex-wrap gap-2">
+              {mmsQuickLinks.map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs transition-colors hover:border-primary hover:text-primary"
+                >
+                  {l.label} <ArrowRight className="h-3 w-3" />
+                </Link>
+              ))}
+            </div>
+          </Reveal>
+        </section>
+      ) : (
+        <section aria-label="Explore the portfolio" className="wash-cool">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {tiles.map((tile, i) => (
+              <Reveal key={tile.to} delay={i * 50}>
+                <Link
+                  to={tile.to}
+                  className="lift group flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-5"
+                >
+                  <tile.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-secondary" />
+                  <div className="mt-10">
+                    <p className="text-lg font-medium tracking-tight">{tile.label}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{tile.note}</p>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="wash-soft mt-20 grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <Reveal>
