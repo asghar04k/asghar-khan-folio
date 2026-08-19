@@ -583,8 +583,10 @@ export const courseDetails: Record<string, CourseDetail> = {
       {
         title: '"Beyond the Abstract" Podcast',
         task: 'Create a 10-minute episode for "Beyond the Abstract," a fictional science communication podcast, breaking down a recent peer-reviewed research article for a general audience: the question it asked, why it matters, what it found, and its limitations. Covered a 2025 Nature Genetics study, "Decomposition of phenotypic heterogeneity in autism reveals underlying genetic programs," examining how distinct autism profiles may correspond to different genetic patterns and developmental pathways.',
-        actions: "Details on my specific contribution and the rest of the group to be added.",
-        results: "Details to be added.",
+        actions:
+          "Built a scripted panel-style conversation, a host plus a few expert voices, to walk a general audience through the study step by step: why the researchers set out to test whether autism represents one condition or several biologically distinct ones, how a generative mixture modeling approach on phenotype data from over 5,000 children identified four distinct autism subtypes, how those subtypes lined up with different genetic signatures and different windows of brain development, and where the study's limitations are, from parent-reported data to a lack of diversity in the sample.",
+        results:
+          "I can now take a dense, statistically heavy paper and find the actual narrative in it: a question, a method, a finding, a limitation, without flattening the nuance that makes the science honest. Structuring that as a conversation instead of a lecture also pushed me to translate real statistical machinery, like mixture modeling and latent classes, into something a non-scientist could follow without ever hearing that jargon out loud. That's a skill I want to keep using anywhere I have to explain research to someone outside the field, from patients to policymakers.",
         audio: {
           src: "/audio/beyond-the-abstract-episode.mp3",
           podcastName: "Beyond the Abstract",
