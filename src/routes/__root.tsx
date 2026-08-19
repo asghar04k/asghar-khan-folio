@@ -82,29 +82,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Asghar Khan" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { title: "Asghar Khan — Clinical Ethics & Health Research Portfolio" },
+      { title: "Asghar Khan · Clinical Ethics & Health Research Portfolio" },
       {
         property: "og:title",
-        content: "Asghar Khan — Clinical Ethics & Health Research Portfolio",
+        content: "Asghar Khan · Clinical Ethics & Health Research Portfolio",
       },
       {
         name: "twitter:title",
-        content: "Asghar Khan — Clinical Ethics & Health Research Portfolio",
+        content: "Asghar Khan · Clinical Ethics & Health Research Portfolio",
       },
       {
         name: "description",
         content:
-          "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University — clinical ethics, patient support, and health services research.",
+          "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University: clinical ethics, patient support, and health services research.",
       },
       {
         property: "og:description",
         content:
-          "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University — clinical ethics, patient support, and health services research.",
+          "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University: clinical ethics, patient support, and health services research.",
       },
       {
         name: "twitter:description",
         content:
-          "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University — clinical ethics, patient support, and health services research.",
+          "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University: clinical ethics, patient support, and health services research.",
       },
       {
         property: "og:image",

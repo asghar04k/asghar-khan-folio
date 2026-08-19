@@ -6,13 +6,13 @@ import { mmsCapstone, placeholderNote } from "@/content/portfolio";
 export const Route = createFileRoute("/mms/capstone")({
   head: () => ({
     meta: [
-      { title: "MMS Capstone — Asghar Khan" },
+      { title: "MMS Capstone · Asghar Khan" },
       {
         name: "description",
         content:
           "A team-based capstone on improving resource and support access for marginalized populations.",
       },
-      { property: "og:title", content: "MMS Capstone — Asghar Khan" },
+      { property: "og:title", content: "MMS Capstone · Asghar Khan" },
       {
         property: "og:description",
         content: "Environmental scan, systematic literature review, and final report.",

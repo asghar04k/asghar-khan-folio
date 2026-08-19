@@ -7,13 +7,13 @@ import { education, employment, profile } from "@/content/portfolio";
 export const Route = createFileRoute("/resume")({
   head: () => ({
     meta: [
-      { title: "Resume — Asghar Khan" },
+      { title: "Resume · Asghar Khan" },
       {
         name: "description",
         content:
-          "View and download the resume of Asghar Khan — Master of Medical Sciences candidate at Western University.",
+          "View and download the resume of Asghar Khan, Master of Medical Sciences candidate at Western University.",
       },
-      { property: "og:title", content: "Resume — Asghar Khan" },
+      { property: "og:title", content: "Resume · Asghar Khan" },
       { property: "og:description", content: "Viewable inline and available for download." },
     ],
   }),
@@ -41,7 +41,7 @@ function ResumePage() {
         <p className="ledger mb-2">Resume, scroll to read</p>
         <iframe
           src="/documents/asghar-khan-resume.pdf"
-          title="Asghar Khan — Resume"
+          title="Asghar Khan · Resume"
           className="h-[85vh] min-h-[700px] w-full rounded-2xl border border-border bg-muted/40"
         />
       </Reveal>

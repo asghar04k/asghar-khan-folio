@@ -7,13 +7,13 @@ import { mmsCourses, mmsSeminars } from "@/content/portfolio";
 export const Route = createFileRoute("/mms/courses/")({
   head: () => ({
     meta: [
-      { title: "MMS Courses — Asghar Khan" },
+      { title: "MMS Courses · Asghar Khan" },
       {
         name: "description",
         content:
           "Graded coursework in the Master of Medical Sciences program, each with an artifact and a written reflection.",
       },
-      { property: "og:title", content: "MMS Courses — Asghar Khan" },
+      { property: "og:title", content: "MMS Courses · Asghar Khan" },
       {
         property: "og:description",
         content: "Course artifacts and reflections, updated each term.",

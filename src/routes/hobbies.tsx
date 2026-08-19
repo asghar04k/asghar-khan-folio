@@ -6,13 +6,13 @@ import { hobbies } from "@/content/portfolio";
 export const Route = createFileRoute("/hobbies")({
   head: () => ({
     meta: [
-      { title: "Hobbies — Asghar Khan" },
+      { title: "Hobbies · Asghar Khan" },
       {
         name: "description",
         content:
           "Ball hockey and basketball as a multi-season intramural captain, plus time spent outdoors hunting.",
       },
-      { property: "og:title", content: "Hobbies — Asghar Khan" },
+      { property: "og:title", content: "Hobbies · Asghar Khan" },
       { property: "og:description", content: "What I do when I'm not in a hospital or a library." },
     ],
   }),

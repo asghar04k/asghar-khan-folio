@@ -6,13 +6,13 @@ import { otherVolunteering, volunteering } from "@/content/portfolio";
 export const Route = createFileRoute("/volunteering")({
   head: () => ({
     meta: [
-      { title: "Volunteering — Asghar Khan" },
+      { title: "Volunteering · Asghar Khan" },
       {
         name: "description",
         content:
           "Client support at SOAHAC's Indigenous Food Sovereignty Program and clinic and patient-visiting volunteering at London Health Sciences Centre.",
       },
-      { property: "og:title", content: "Volunteering — Asghar Khan" },
+      { property: "og:title", content: "Volunteering · Asghar Khan" },
       {
         property: "og:description",
         content: "Community and hospital volunteering across London, Ontario.",

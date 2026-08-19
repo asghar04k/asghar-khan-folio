@@ -16,13 +16,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/mms/seminars")({
   head: () => ({
     meta: [
-      { title: "Interdisciplinary Skill Development — Asghar Khan" },
+      { title: "Interdisciplinary Skill Development · Asghar Khan" },
       {
         name: "description",
         content:
           "MEDSCIEN 9700: a weekly, ungraded seminar series on the personal and professional skills interdisciplinary research requires.",
       },
-      { property: "og:title", content: "Interdisciplinary Skill Development — Asghar Khan" },
+      { property: "og:title", content: "Interdisciplinary Skill Development · Asghar Khan" },
       {
         property: "og:description",
         content:
@@ -266,7 +266,7 @@ function FeaturedCard({ session }: { session: (typeof seminarSeries.featured)[nu
                 <p className="ledger mb-2">{doc.label}, scroll to read</p>
                 <iframe
                   src={doc.src}
-                  title={`${session.title} — ${doc.label}`}
+                  title={`${session.title} · ${doc.label}`}
                   className="h-[420px] w-full rounded-2xl border border-border bg-muted/40"
                 />
               </div>

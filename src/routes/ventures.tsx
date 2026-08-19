@@ -7,13 +7,13 @@ import { ventures } from "@/content/portfolio";
 export const Route = createFileRoute("/ventures")({
   head: () => ({
     meta: [
-      { title: "Ventures & Archive — Asghar Khan" },
+      { title: "Ventures & Archive · Asghar Khan" },
       {
         name: "description",
         content:
-          "A garden of active ventures and a graveyard of shelved projects — what's growing, and what's resting.",
+          "A garden of active ventures and a graveyard of shelved projects: what's growing, and what's resting.",
       },
-      { property: "og:title", content: "Ventures & Archive — Asghar Khan" },
+      { property: "og:title", content: "Ventures & Archive · Asghar Khan" },
       {
         property: "og:description",
         content: "Active ventures and honest epitaphs for the projects that didn't make it.",

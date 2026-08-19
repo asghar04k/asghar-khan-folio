@@ -8,13 +8,13 @@ import { employment, leadershipRoles, practicum, ursa } from "@/content/portfoli
 export const Route = createFileRoute("/experience")({
   head: () => ({
     meta: [
-      { title: "Work Experience — Asghar Khan" },
+      { title: "Work Experience · Asghar Khan" },
       {
         name: "description",
         content:
           "Employment, the Western Centre for Bioethics clinical ethics practicum, and leadership including founding Western URSA.",
       },
-      { property: "og:title", content: "Work Experience — Asghar Khan" },
+      { property: "og:title", content: "Work Experience · Asghar Khan" },
       {
         property: "og:description",
         content:

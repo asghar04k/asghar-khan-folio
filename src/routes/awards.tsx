@@ -7,13 +7,13 @@ import { awards, placeholderNote, posts } from "@/content/portfolio";
 export const Route = createFileRoute("/awards")({
   head: () => ({
     meta: [
-      { title: "Awards & Recognition — Asghar Khan" },
+      { title: "Awards & Recognition · Asghar Khan" },
       {
         name: "description",
         content:
           "Awards and recognition including the 2026 BHSc Award of Recognition, Western Scholarship of Distinction, and the Health Innovation Award.",
       },
-      { property: "og:title", content: "Awards & Recognition — Asghar Khan" },
+      { property: "og:title", content: "Awards & Recognition · Asghar Khan" },
       {
         property: "og:description",
         content: "Academic awards, scholarships, and distinctions earned at Western University.",

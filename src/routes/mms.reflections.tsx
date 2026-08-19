@@ -6,13 +6,13 @@ import { mmsReflections } from "@/content/portfolio";
 export const Route = createFileRoute("/mms/reflections")({
   head: () => ({
     meta: [
-      { title: "MMS Reflections — Asghar Khan" },
+      { title: "MMS Reflections · Asghar Khan" },
       {
         name: "description",
         content:
           "An ongoing reflective journal kept through the Master of Medical Sciences program at Western University.",
       },
-      { property: "og:title", content: "MMS Reflections — Asghar Khan" },
+      { property: "og:title", content: "MMS Reflections · Asghar Khan" },
       { property: "og:description", content: "A running journal of the program, term by term." },
     ],
   }),

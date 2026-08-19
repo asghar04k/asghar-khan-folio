@@ -8,8 +8,8 @@ export const profile = {
   tagline: "Master of Medical Sciences Candidate, Western University",
   location: "London, Ontario",
   shortBio:
-    "Clinical ethics, patient support, and health services research — at Western's Schulich School of Medicine & Dentistry.",
-  bio: "Asghar Khan is a Master of Medical Sciences candidate at Western University's Schulich School of Medicine & Dentistry, following an Honours Specialization in Health Sciences (final two-year GPA of 3.97/4.0) and the 2026 recipient of the BHSc Award of Recognition. His work sits at the intersection of clinical ethics, patient support, and health services research — spanning a clinical ethics practicum at the Western Centre for Bioethics and London Health Sciences Centre, a research assistantship in the Down Syndrome Clinic at The Hospital for Sick Children, and applied AI research in geriatric medicine. He is also the founder and president of the Western Undergraduate Research Students' Association (URSA), which he grew into a 2,000+ member research community in its first year.",
+    "Clinical ethics, patient support, and health services research, at Western's Schulich School of Medicine & Dentistry.",
+  bio: "Asghar Khan is a Master of Medical Sciences candidate at Western University's Schulich School of Medicine & Dentistry, following an Honours Specialization in Health Sciences (final two-year GPA of 3.97/4.0) and the 2026 recipient of the BHSc Award of Recognition. His work sits at the intersection of clinical ethics, patient support, and health services research: spanning a clinical ethics practicum at the Western Centre for Bioethics and London Health Sciences Centre, a research assistantship in the Down Syndrome Clinic at The Hospital for Sick Children, and applied AI research in geriatric medicine. He is also the founder and president of the Western Undergraduate Research Students' Association (URSA), which he grew into a 2,000+ member research community in its first year.",
   email: "akha228@uwo.ca",
   linkedin: "https://www.linkedin.com/in/asghark/",
   headshot: "/images/profile/headshot.jpg",
@@ -41,7 +41,7 @@ export type Role = {
 
 export const employment: Role[] = [
   {
-    title: "Patient Support — Clinical Ethics Practicum",
+    title: "Patient Support: Clinical Ethics Practicum",
     org: "London Health Sciences Centre & Western Centre for Bioethics",
     location: "London, ON",
     dates: "Dec 2025 – Apr 2026",
@@ -125,9 +125,9 @@ export const practicum = {
   title: "Undergraduate Practicum, Western Centre for Bioethics",
   dates: "Winter 2026",
   badge: "First Undergraduate Practicum Student at the Centre",
-  body: "Hospital-based ethics work in partnership with London Health Sciences Centre: clinical ethics discussions on patient autonomy, capacity, consent, and institutional decision-making across long-term care, adult mental health, and child/adolescent mental health units — alongside a research component exploring the ethics of healthcare delivery in space environments, informed by Western's Institute for Earth & Space Exploration and the Canadian Space Agency.",
+  body: "Hospital-based ethics work in partnership with London Health Sciences Centre: clinical ethics discussions on patient autonomy, capacity, consent, and institutional decision-making across long-term care, adult mental health, and child/adolescent mental health units, alongside a research component exploring the ethics of healthcare delivery in space environments, informed by Western's Institute for Earth & Space Exploration and the Canadian Space Agency.",
   link: "https://bioethics.uwo.ca/initiatives/practicum.html",
-  linkLabel: "Official practicum profile — bioethics.uwo.ca",
+  linkLabel: "Official practicum profile: bioethics.uwo.ca",
   reflection:
     "One of my biggest takeaways is that ethics in healthcare is not merely abstract or theoretical. It is constant, dynamic, and embedded in everyday clinical decisions.",
 };
@@ -143,7 +143,7 @@ export const ursa = {
     "Our Discovering Research & Networking Symposium was a big moment. We also hosted an Indigenous Health & Research Talking Circle, which was one of the most meaningful experiences for me personally.",
   ],
   thanks:
-    "Special shoutout to my Vice Presidents — Anita Severin, Sofia Tomassini, Fiona Zhou, Lily Carson, Jenna Pavlovic, Porousha Shokoofeh, Jibraan Dhirani, and Ali Ajwani — and all the directors.",
+    "Special shoutout to my Vice Presidents: Anita Severin, Sofia Tomassini, Fiona Zhou, Lily Carson, Jenna Pavlovic, Porousha Shokoofeh, Jibraan Dhirani, and Ali Ajwani, and all the directors.",
   stats: [
     { value: "2,000+", label: "student community" },
     { value: "30+", label: "executive team" },
@@ -169,7 +169,7 @@ export const leadershipRoles = [
   { title: "Vice President", org: "Butterfly Effect UWO" },
   {
     title: "Team Captain",
-    org: "Intramural Ball Hockey & Basketball — 4+ seasons, multiple championships",
+    org: "Intramural Ball Hockey & Basketball (4+ seasons, multiple championships)",
   },
 ];
 
@@ -219,11 +219,11 @@ export const volunteering = [
 ];
 
 export const otherVolunteering = [
-  "Volunteer Notetaker — Accessibility Services, Western University (Feb–Apr 2025): took notes for students with accommodations in Dr. Jacob Shelley's Health Law 3101A course",
-  "Fundraising Volunteer — Vaughan Food Bank (Sep 2018–Present, 8+ yrs): biweekly food package delivery and distribution for low-income families",
-  "Fundraising Volunteer — The Corsage Project, in partnership with Children's Aid Foundation of Canada (Feb–Mar 2020): spoke to YRDSB students and staff and helped raise funds and scholarships for young women in financial difficulty",
-  "Youth Volunteer — Jaffari Community Centre",
-  "Volunteer — Babul Hawaij Relief Foundation",
+  "Volunteer Notetaker, Accessibility Services, Western University (Feb–Apr 2025): took notes for students with accommodations in Dr. Jacob Shelley's Health Law 3101A course",
+  "Fundraising Volunteer, Vaughan Food Bank (Sep 2018–Present, 8+ yrs): biweekly food package delivery and distribution for low-income families",
+  "Fundraising Volunteer, The Corsage Project, in partnership with Children's Aid Foundation of Canada (Feb–Mar 2020): spoke to YRDSB students and staff and helped raise funds and scholarships for young women in financial difficulty",
+  "Youth Volunteer, Jaffari Community Centre",
+  "Volunteer, Babul Hawaij Relief Foundation",
 ];
 
 export type Project = {
@@ -296,10 +296,10 @@ export const research: Project[] = [
   },
   {
     title: "AI-Powered Wearable Sensors for Fall Detection in Older Adults",
-    org: "STEM Fellowship — National Inter-University Health Data and AI Inquiry Program, University of Toronto",
+    org: "STEM Fellowship, National Inter-University Health Data and AI Inquiry Program, University of Toronto",
     year: "2025",
     summary:
-      "A systematic review examining the reliability of AI-enabled wearable technologies for detecting falls in older adults — sensor types, algorithms, and validation methods across the literature, identifying strengths, limitations, and opportunities for innovation.",
+      "A systematic review examining the reliability of AI-enabled wearable technologies for detecting falls in older adults: sensor types, algorithms, and validation methods across the literature, identifying strengths, limitations, and opportunities for innovation.",
     details: [
       "Presented as an oral talk at the 2025 National Inter-University Health Data and AI Inquiry Program (Hart House, University of Toronto), hosted by STEM Fellowship.",
       "Team: Jenna Pavlovic, Ameera Khwaja, Maria Tassopoulos, Emma Massaro, and Asghar Khan.",
@@ -333,14 +333,14 @@ export const research: Project[] = [
 
 export const thesis = {
   title:
-    "Informed Consent & Decision-Making for Indigenous Peoples Living with Disabilities in Canada — A Scoping Review",
+    "Informed Consent & Decision-Making for Indigenous Peoples Living with Disabilities in Canada: A Scoping Review",
   subtitle: "Independent Study / 4th-year thesis",
   supervisor: "Supervised by Dr. Jacob Shelley, Faculty of Health Sciences, Western University",
   presented: "Presented December 2025",
   landAcknowledgement:
-    "Presented on the traditional lands of the Anishinaabe, Haudenosaunee, and Lūnaapéewak peoples — including the Chippewas of the Thames First Nation, the Oneida Nation of the Thames, and the Munsee-Delaware Nation — with respectful acknowledgement of Walpole Island First Nation (Bkejwanong Territory) for welcoming participation in traditional food and hunting practices.",
+    "Presented on the traditional lands of the Anishinaabe, Haudenosaunee, and Lūnaapéewak peoples (including the Chippewas of the Thames First Nation, the Oneida Nation of the Thames, and the Munsee-Delaware Nation), with respectful acknowledgement of Walpole Island First Nation (Bkejwanong Territory) for welcoming participation in traditional food and hunting practices.",
   overview:
-    "A scoping review examining consent as a structural barrier at the intersection of disability and Indigeneity in Canada. It maps existing literature, identifies legal, ethical, and policy frameworks, examines Indigenous perspectives on health, healing, and relational care, and highlights systemic gaps — including family burden in navigating services and transition gaps between childhood and adult care systems.",
+    "A scoping review examining consent as a structural barrier at the intersection of disability and Indigeneity in Canada. It maps existing literature, identifies legal, ethical, and policy frameworks, examines Indigenous perspectives on health, healing, and relational care, and highlights systemic gaps, including family burden in navigating services and transition gaps between childhood and adult care systems.",
   objectives: [
     "Map the existing literature.",
     "Identify legal, ethical, and policy frameworks.",
@@ -356,7 +356,7 @@ export const thesis = {
     "Western Libraries (search strategy support)",
   ],
   whyICare:
-    "This research started from personal experience, not just academic interest. Watching a family member navigate the healthcare system while in hospital made it clear that barriers to care are rarely just medical — they're rooted in language, culture, power, and assumptions about whose needs are treated as straightforward and whose aren't. Being present for that, and seeing how much depended on who happened to be advocating in the room, became the foundation for my interest in disability, consent, and advocacy-focused research.",
+    "This research started from personal experience, not just academic interest. Watching a family member navigate the healthcare system while in hospital made it clear that barriers to care are rarely just medical. They're rooted in language, culture, power, and assumptions about whose needs are treated as straightforward and whose aren't. Being present for that, and seeing how much depended on who happened to be advocating in the room, became the foundation for my interest in disability, consent, and advocacy-focused research.",
 };
 
 export const awards = [
@@ -370,7 +370,7 @@ export const awards = [
   { title: "Health Innovation Award", year: "", note: "" },
   { title: "Dean's Honour List", year: "", note: "" },
   {
-    title: "Top Student Recognition — Physics I & II",
+    title: "Top Student Recognition: Physics I & II",
     year: "",
     note: "99% (Physics I) and 103% (Physics II)",
   },
@@ -404,14 +404,14 @@ export const ventures = {
       logo: "/images/ventures/luxe-logo.jpg",
       dates: "Grade 12 – 2nd year of university",
       epitaph: "Rest in soap suds. A few hundred cars later, homework won.",
-      body: "A mobile auto detailing business — interior, exterior, and ceramic coating. Detailed a couple hundred cars over the run before shutting it down once it became too time-consuming to keep up with alongside school.",
+      body: "A mobile auto detailing business: interior, exterior, and ceramic coating. Detailed a couple hundred cars over the run before shutting it down once it became too time-consuming to keep up with alongside school.",
     },
     {
       title: "Safety Stuff Plus",
       logo: "/images/ventures/safety-stuff-plus-logo.jpg",
       dates: "Spring 2020 (high school)",
       epitaph: "Flattened the curve, then flattened itself.",
-      body: "Launched at the very start of COVID-19 to supply businesses with PPE in wholesale quantities — face shields, masks, gloves, sneeze guards, point-of-sale safety guards, and social distancing floor stickers. Generated roughly $20,000 in sales.",
+      body: "Launched at the very start of COVID-19 to supply businesses with PPE in wholesale quantities: face shields, masks, gloves, sneeze guards, point-of-sale safety guards, and social distancing floor stickers. Generated roughly $20,000 in sales.",
       images: [
         {
           src: "/images/ventures/safety-stuff-plus-stickers.jpg",
@@ -431,19 +431,19 @@ export const ventures = {
       logo: "/images/ventures/drip-apparel-logo.jpg",
       dates: "High school – end of 1st year of university",
       epitaph: "Retired the throwback shorts, kept the receipts.",
-      body: "A throwback sports apparel brand — retro jerseys and shorts sourced through a manufacturer in China. Generated roughly $8,000 in sales before winding down.",
+      body: "A throwback sports apparel brand: retro jerseys and shorts sourced through a manufacturer in China. Generated roughly $8,000 in sales before winding down.",
       images: [
         {
           src: "/images/ventures/drip-apparel-inventory-1.jpg",
-          alt: "Drip Apparel inventory — retro jerseys",
+          alt: "Drip Apparel inventory: retro jerseys",
         },
         {
           src: "/images/ventures/drip-apparel-inventory-2.jpg",
-          alt: "Drip Apparel inventory — throwback shorts",
+          alt: "Drip Apparel inventory: throwback shorts",
         },
         {
           src: "/images/ventures/drip-apparel-inventory-3.jpg",
-          alt: "Drip Apparel inventory — throwback shorts",
+          alt: "Drip Apparel inventory: throwback shorts",
         },
       ],
     },
@@ -451,7 +451,7 @@ export const ventures = {
       title: "Mustang Tutors",
       logo: "/images/ventures/mustang-tutors-logo.png",
       dates: "2nd year of university",
-      epitaph: "Taught a lesson in trust — the hard way.",
+      epitaph: "Taught a lesson in trust, the hard way.",
       body: "A peer-tutoring venture at Western. Shut down after tutors started booking private sessions directly with students, bypassing the platform, and the overhead of managing the team became too much to sustain.",
     },
   ],
@@ -466,7 +466,7 @@ export const posts = [
   {
     title: "BHSc Award of Recognition",
     date: "July 2026",
-    body: "As I reflect on convocation and the completion of my BHSc at Western University, I'm grateful to have been selected as the 2026 recipient of the BHSc Award of Recognition — presented annually to a single BHSc student who demonstrates academic achievement, leadership, character, and a commitment to the School of Health Studies.",
+    body: "As I reflect on convocation and the completion of my BHSc at Western University, I'm grateful to have been selected as the 2026 recipient of the BHSc Award of Recognition, presented annually to a single BHSc student who demonstrates academic achievement, leadership, character, and a commitment to the School of Health Studies.",
   },
 ];
 

@@ -21,9 +21,9 @@ export const Route = createFileRoute("/mms/courses/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.title ?? "Course"} — Asghar Khan` },
+      { title: `${loaderData?.title ?? "Course"} · Asghar Khan` },
       { name: "description", content: loaderData?.description ?? "" },
-      { property: "og:title", content: `${loaderData?.title ?? "Course"} — Asghar Khan` },
+      { property: "og:title", content: `${loaderData?.title ?? "Course"} · Asghar Khan` },
       { property: "og:description", content: loaderData?.description ?? "" },
     ],
   }),
@@ -186,7 +186,7 @@ function CourseDetailPage() {
                                 <p className="ledger mb-2">{doc.label}, scroll to read</p>
                                 <iframe
                                   src={doc.src}
-                                  title={`${w.title} — ${doc.label}`}
+                                  title={`${w.title} · ${doc.label}`}
                                   className={`w-full rounded-2xl border border-border bg-muted/40 ${
                                     w.documents!.length > 1 ? "h-[260px]" : "h-[420px]"
                                   }`}

@@ -7,13 +7,13 @@ import { research, thesis } from "@/content/portfolio";
 export const Route = createFileRoute("/research")({
   head: () => ({
     meta: [
-      { title: "Research — Asghar Khan" },
+      { title: "Research · Asghar Khan" },
       {
         name: "description",
         content:
           "Scoping reviews, quality improvement work, and a thesis on informed consent for Indigenous peoples living with disabilities in Canada.",
       },
-      { property: "og:title", content: "Research — Asghar Khan" },
+      { property: "og:title", content: "Research · Asghar Khan" },
       {
         property: "og:description",
         content:

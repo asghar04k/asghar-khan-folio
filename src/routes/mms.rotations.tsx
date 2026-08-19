@@ -6,13 +6,13 @@ import { mmsRotations, placeholderNote } from "@/content/portfolio";
 export const Route = createFileRoute("/mms/rotations")({
   head: () => ({
     meta: [
-      { title: "MMS Rotations — Asghar Khan" },
+      { title: "MMS Rotations · Asghar Khan" },
       {
         name: "description",
         content:
           "Basic science, clinical science, and community engaged learning rotations in the Master of Medical Sciences program.",
       },
-      { property: "og:title", content: "MMS Rotations — Asghar Khan" },
+      { property: "og:title", content: "MMS Rotations · Asghar Khan" },
       { property: "og:description", content: "Rotation placements and reflections." },
     ],
   }),

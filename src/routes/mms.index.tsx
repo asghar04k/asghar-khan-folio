@@ -6,13 +6,13 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/mms/")({
   head: () => ({
     meta: [
-      { title: "MMS Program Portfolio — Asghar Khan" },
+      { title: "MMS Program Portfolio · Asghar Khan" },
       {
         name: "description",
         content:
           "Program portfolio for the Master of Medical Sciences at Western University: courses, rotations, capstone, seminars, and reflections.",
       },
-      { property: "og:title", content: "MMS Program Portfolio — Asghar Khan" },
+      { property: "og:title", content: "MMS Program Portfolio · Asghar Khan" },
       {
         property: "og:description",
         content: "Coursework artifacts, rotation reflections, and capstone progress.",

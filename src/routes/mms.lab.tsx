@@ -6,13 +6,13 @@ import { journalClub, labBootcamp, placeholderNote } from "@/content/portfolio";
 export const Route = createFileRoute("/mms/lab")({
   head: () => ({
     meta: [
-      { title: "MMS Lab & Journal Club — Asghar Khan" },
+      { title: "MMS Lab & Journal Club · Asghar Khan" },
       {
         name: "description",
         content:
           "The nine-week hands-on lab bootcamp and journal club in the Master of Medical Sciences program.",
       },
-      { property: "og:title", content: "MMS Lab & Journal Club — Asghar Khan" },
+      { property: "og:title", content: "MMS Lab & Journal Club · Asghar Khan" },
       { property: "og:description", content: "Lab bootcamp reflections and journal club notes." },
     ],
   }),
