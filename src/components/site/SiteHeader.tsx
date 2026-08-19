@@ -14,7 +14,8 @@ const navLinks = [
 ];
 
 const mmsLinks = [
-  { to: "/mms/courses", label: "Courses & Seminars" },
+  { to: "/mms/courses", label: "Courses" },
+  { to: "/mms/seminars", label: "Seminars" },
   { to: "/mms/lab", label: "Lab & Journal Club" },
   { to: "/mms/rotations", label: "Rotations" },
   { to: "/mms/capstone", label: "Capstone" },

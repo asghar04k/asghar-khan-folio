@@ -759,9 +759,279 @@ export const mmsCapstone = {
 export const mmsSeminars = [
   {
     title: "Weekly Seminar Series",
-    description: "A Friday seminar series running through the program.",
+    description:
+      "MEDSCIEN 9700: a weekly, ungraded seminar series running all summer on the personal and professional skills interdisciplinary research actually requires.",
   },
 ];
+
+export type SeminarWeek = {
+  week: number;
+  date: string;
+  topic: string;
+  presenter: string;
+  featured: boolean;
+  holiday?: boolean;
+};
+
+export type FeaturedSeminar = {
+  slug: string;
+  title: string;
+  date: string;
+  presenter: string;
+  setup: string;
+  whatIDid: string;
+  whatStuck: string;
+  documents?: { src: string; label: string }[];
+  images?: { src: string; alt: string }[];
+  stepper?: { steps: string[]; closing: string };
+  tools?: {
+    name: string;
+    description: string;
+    database: string;
+    href: string;
+    logo: string;
+  }[];
+  toolsNote?: string;
+  consensusMeter?: { label: string; yes: number; mixed: number; no: number };
+  flipCards?: { front: string; back: string }[];
+};
+
+export type LightningSeminar = {
+  title: string;
+  presenter: string;
+  date: string;
+  blurb: string;
+};
+
+export const seminarSeries = {
+  intro:
+    'A weekly, ungraded seminar series running all summer: 12 Friday mornings on the personal and professional skills interdisciplinary research actually requires, from digital-tool literacy and tackling "wicked problems" to critical AI use, scientific writing, and difficult conversations.',
+  timeline: [
+    {
+      week: 1,
+      date: "June 5",
+      topic: "Critical Reflection",
+      presenter: "Campbell",
+      featured: false,
+    },
+    {
+      week: 2,
+      date: "June 12",
+      topic: "Microsoft Suites / Digital Literacy",
+      presenter: "Campbell & Wood",
+      featured: true,
+    },
+    { week: 3, date: "June 19", topic: "Strengths", presenter: "Kelly", featured: false },
+    { week: 4, date: "June 26", topic: "Wicked Problems", presenter: "Khan", featured: true },
+    {
+      week: 5,
+      date: "July 3",
+      topic: "Holiday closure, no session",
+      presenter: "",
+      featured: false,
+      holiday: true,
+    },
+    {
+      week: 6,
+      date: "July 10",
+      topic: "Citations & Synthesis",
+      presenter: "Campbell & Read",
+      featured: false,
+    },
+    {
+      week: 7,
+      date: "July 17",
+      topic: "Literature Reviews",
+      presenter: "Goodman",
+      featured: false,
+    },
+    { week: 8, date: "July 24", topic: "ePortfolios", presenter: "Campbell", featured: false },
+    {
+      week: 9,
+      date: "July 31",
+      topic: "AI Tools for Literature Searching",
+      presenter: "Dyck",
+      featured: true,
+    },
+    {
+      week: 10,
+      date: "August 7",
+      topic: "Difficult Conversations / Connecting with Patients",
+      presenter: "Caine",
+      featured: true,
+    },
+    {
+      week: 11,
+      date: "August 14",
+      topic: "Own Your Future",
+      presenter: "Richmond-Bravo",
+      featured: false,
+    },
+    {
+      week: 12,
+      date: "August 21",
+      topic: "End-of-Term Meeting Preparation",
+      presenter: "Campbell",
+      featured: false,
+    },
+  ] as SeminarWeek[],
+  featured: [
+    {
+      slug: "digital-literacy",
+      title: "Digital Literacy Bootcamp",
+      date: "June 12",
+      presenter: "Campbell & Wood",
+      setup:
+        "I actually missed this live session and made it up independently by working through the MSc Digital Literacy Onboarding checklist Dr. Wood put together, a self-directed practice module covering the Microsoft 365 tools (Outlook, Word, PowerPoint, Teams) the program expects everyone to be comfortable with.",
+      whatIDid:
+        'Worked through the checklist step by step and documented each one with a screenshot: in Outlook, practiced the difference between flagging and pinning a message and tried out different inbox layouts, views, and fonts; in Word, used the track-changes and suggestion-editing tools; in PowerPoint, set up a poster to the standard 48"×36" (4:3) conference size, embedded a YouTube video directly into a slide, added icon graphics, and recorded narrated audio over a slide deck.',
+      whatStuck:
+        "Small tool fluency compounds. Knowing exactly how to flag vs. pin an email or size a poster correctly the first time saves real time across a full research program, and it's the kind of thing nobody formally teaches unless a session like this one forces you to actually practice it.",
+    },
+    {
+      slug: "wicked-problems",
+      title: "Wicked Problems",
+      date: "June 26",
+      presenter: "Dr. Ali R. Khan",
+      setup:
+        "A guest lecture from Dr. Ali R. Khan (Canada Research Chair in Computational Neuroimaging, Robarts Research Institute) on why the clean, controlled logic of the scientific method breaks down once you're dealing with real-world problems, and what to do once a problem crosses the line from \"messy\" into genuinely wicked: unstructured, cross-cutting, and relentless, per Rittel and Webber's foundational 1973 argument that most social problems are too complex for any single discipline to solve alone.",
+      whatIDid:
+        'Worked through a live 7-step group exercise on an assigned real-world problem, then stepped back to ask whether the problem even qualified as "wicked" in the first place.',
+      whatStuck:
+        "The session closed by naming four different problem-solving mindsets: engineering (solve your way forward), business (optimize your way forward), research (analyze your way forward), and design (build your way forward), then made the case that wicked problems need all four, not just the analytical one graduate training defaults to. That's a genuinely useful lens for interdisciplinary work, and set up later sessions on design thinking.",
+      stepper: {
+        steps: [
+          "List the sub-issues inside the problem.",
+          "Map the relationships between those sub-issues.",
+          "Identify every stakeholder and their agenda.",
+          "Brainstorm potential solutions.",
+          "Name which disciplines each solution would actually require.",
+          "Pick one solution and trace its ripple effects across the other issues.",
+          "Build an evaluation plan for the chosen solution.",
+        ],
+        closing:
+          'Then we stepped back and asked whether the problem even qualified as "wicked" in the first place.',
+      },
+    },
+    {
+      slug: "ai-tools",
+      title: "AI Tools for Literature Searching",
+      date: "July 31",
+      presenter: "Jason Dyck, Western Libraries",
+      setup:
+        "A hands-on session with Western Libraries' Jason Dyck on using AI-powered search tools responsibly in academic literature searching: what they're good at, where they quietly fail, and how to stay skeptical of them.",
+      whatIDid:
+        'Tried two AI academic search tools live, Consensus and Elicit, then worked through the limitations: a 2025 BBC study found major AI chatbots gave answers with significant issues to roughly half of 100 test questions; a widely shared example had Google\'s AI summary telling users that geologists recommend eating a small rock daily, sourced unnoticed by the model from a satirical article; and a broader discussion of how bias enters AI search results not because the tools are "biased" on their own, but because the training data reflects existing inequities in whose research gets published, cited, and digitized in the first place.',
+      whatStuck:
+        "These tools are genuinely useful for getting oriented in unfamiliar literature fast, but they're still search tools, not authorities. Every AI-assisted search still needs the same skepticism and citation-checking discipline as a manual one. That connects directly to the same territory I dug into in 9505's AI Misconduct assignment: the risk isn't that these tools are useless, it's that their outputs look authoritative enough to skip the verification step.",
+      tools: [
+        {
+          name: "Consensus",
+          description: "AI research engine over 200M+ peer-reviewed papers. Free tier available.",
+          database: "Semantic Scholar & OpenAlex",
+          href: "https://consensus.app",
+          logo: "/images/mms-seminars/consensus-logo.svg",
+        },
+        {
+          name: "Elicit",
+          description:
+            "AI research assistant that builds a structured literature matrix. Exports to PDF, free tier with limited features.",
+          database: "Semantic Scholar & OpenAlex",
+          href: "https://elicit.com",
+          logo: "/images/mms-seminars/elicit-logo.png",
+        },
+      ],
+      toolsNote:
+        'For contrast, general-purpose chatbots like ChatGPT were the running counterexample all session: not built for scholarly search, prone to fabricated ("hallucinated") citations.',
+      consensusMeter: {
+        label: "Illustrative example, not real search results",
+        yes: 62,
+        mixed: 23,
+        no: 15,
+      },
+    },
+    {
+      slug: "connecting-with-patients",
+      title: "Connecting With Patients",
+      date: "August 7",
+      presenter: "Dr. Sean Caine",
+      setup:
+        "A session from emergency physician Dr. Sean Caine (Woodstock Hospital; adjunct professor, Schulich Family and Community Medicine) on why physician-patient communication is so hard in practice. ED physicians spend over 80% of their time communicating, get interrupted every 6 to 8 minutes, and juggle multiple simultaneous conversations more than 10% of the time. The session looked at what the evidence actually says helps.",
+      whatIDid:
+        'Worked through Dr. Caine\'s synthesis of a JAMA 2020 study (Zulman et al.) built from a literature review, observed clinical encounters, interviews with non-medical experts, and a formal Delphi consensus process, identifying five concrete clinical practices that build genuine connection with patients. Discussed the "warmth and competence" framework, and covered real data points, like patients citing "feeling cared for" as more important than wait time, and sitting (vs. standing) at a patient\'s bedside measurably changing their perception of how much time a provider spent with them.',
+      whatStuck:
+        "Patient-centred care and patient satisfaction aren't the same thing, and the evidence shows the former reliably produces the latter, not the reverse. That reframing, plus the reference to Stone, Patton & Heen's Difficult Conversations, is a communication lens I want to carry into clinical and research conversations alike, not just patient-facing ones.",
+      flipCards: [
+        {
+          front: "Can I trust you?",
+          back: "A competence question: is this clinician skilled and honest enough to rely on?",
+        },
+        {
+          front: "Are you committed to excellence?",
+          back: "Also a competence question: is this clinician prepared, careful, and going to follow through?",
+        },
+        {
+          front: "Do you care about me?",
+          back: "A warmth question: does this clinician see me as a person, not just a case?",
+        },
+      ],
+    },
+  ] as FeaturedSeminar[],
+  lightningRound: [
+    {
+      title: "Critical Reflection",
+      presenter: "Campbell",
+      date: "June 5",
+      blurb:
+        "Opening session on how to reflect honestly on your own growth over the program, setting up the self-assessment thread that runs through the whole series.",
+    },
+    {
+      title: "Strengths",
+      presenter: "Kelly",
+      date: "June 19",
+      blurb:
+        "A strengths-based self-assessment session to identify personal working strengths ahead of team-based coursework like 9503's policy simulation.",
+    },
+    {
+      title: "Citations & Synthesis",
+      presenter: "Campbell & Read",
+      date: "July 10",
+      blurb:
+        "A Western Libraries session on what makes a citation actually useful, not just proof a source exists, but a synthesis of what it contributes, drawn together into your own argument rather than just listed.",
+    },
+    {
+      title: "Literature Reviews",
+      presenter: "Goodman",
+      date: "July 17",
+      blurb:
+        "Structuring and writing an academic literature review, feeding directly into work like 9503's SGBA+ environmental scan.",
+    },
+    {
+      title: "ePortfolios",
+      presenter: "Campbell",
+      date: "July 24",
+      blurb:
+        "How to build a professional ePortfolio/dossier, the very page you're looking at right now.",
+    },
+    {
+      title: "Own Your Future",
+      presenter: "Richmond-Bravo",
+      date: "August 14",
+      blurb: "Career planning and next-step strategy for life after the MMS program.",
+    },
+    {
+      title: "End-of-Term Meeting Preparation",
+      presenter: "Campbell",
+      date: "August 21",
+      blurb: "Closing session preparing for end-of-program check-ins with the program director.",
+    },
+  ] as LightningSeminar[],
+  reflection: [
+    "If the graded courses taught me specific frameworks, 9700 was where I picked up the operating skills underneath all of them, the kind of thing that doesn't show up on a transcript but shows up every week in practice. Making up the Digital Literacy session on my own time turned out to be one of the more useful hours of the summer, in a boring-but-true way: half of graduate work is just knowing your tools well enough that they get out of your way.",
+    "The Wicked Problems and AI Tools sessions ended up talking to each other more than I expected. Both were really about the same question: how do you stay honest about the limits of a tool or a method, whether that's the scientific method hitting a genuinely messy real-world problem, or an AI search tool confidently returning a plausible-looking but wrong answer. Dr. Caine's session closed the loop by pointing the same instinct back at people: connection with a patient is built the same way trust in a source is, by checking your assumptions rather than taking the confident version at face value.",
+    'Heading into rotations and the capstone, I want to carry that same instinct forward, treating every tool, source, and conversation with the same "can I actually trust this, and did I check" bar these seminars kept putting in front of me.',
+  ],
+};
 
 export const labBootcamp = {
   title: "Lab Bootcamp",
