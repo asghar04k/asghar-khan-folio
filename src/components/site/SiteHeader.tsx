@@ -3,10 +3,12 @@ import { useState } from "react";
 import { Linkedin, Mail, Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { profile } from "@/content/portfolio";
+import { siteMode } from "@/lib/site-mode";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
-  { to: "/", label: "Home" },
+const homeLink = { to: "/", label: "Home" };
+
+const profileLinks = [
   { to: "/awards", label: "Awards" },
   { to: "/experience", label: "Work Experience" },
   { to: "/research", label: "Research" },
@@ -28,6 +30,14 @@ const tailLinks = [
   { to: "/resume", label: "Resume" },
 ];
 
+// "personal" (default): profile pages up front, MMS pages tucked in a dropdown.
+// "mms": roles swapped — MMS pages are the top bar (the focus of that
+// deployment), profile pages move into a "Profile" dropdown. See site-mode.ts.
+const topLinks = siteMode === "mms" ? [homeLink, ...mmsLinks] : [homeLink, ...profileLinks];
+const trailingLinks = siteMode === "mms" ? [] : tailLinks;
+const dropdownLabel = siteMode === "mms" ? "Profile" : "MMS";
+const dropdownLinks = siteMode === "mms" ? [...profileLinks, ...tailLinks] : mmsLinks;
+
 const linkClass =
   "relative rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors duration-200 hover:bg-accent hover:text-foreground";
 const activeClass = "text-foreground bg-accent";
@@ -43,7 +53,7 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((l) => (
+          {topLinks.map((l) => (
             <Link
               key={l.to}
               to={l.to}
@@ -59,14 +69,14 @@ export function SiteHeader() {
               so there is no hover dead-zone. */}
           <div className="group relative">
             <button type="button" className={cn(linkClass, "inline-flex items-center gap-1")}>
-              MMS
+              {dropdownLabel}
               <span aria-hidden className="text-[10px]">
                 ▾
               </span>
             </button>
             <div className="pointer-events-none absolute top-full left-0 pt-2 opacity-0 transition-opacity duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
               <div className="w-56 rounded-xl border border-border bg-popover p-1.5 shadow-lg">
-                {mmsLinks.map((l) => (
+                {dropdownLinks.map((l) => (
                   <Link
                     key={l.to}
                     to={l.to}
@@ -83,7 +93,7 @@ export function SiteHeader() {
             </div>
           </div>
 
-          {tailLinks.map((l) => (
+          {trailingLinks.map((l) => (
             <Link
               key={l.to}
               to={l.to}
@@ -127,7 +137,7 @@ export function SiteHeader() {
       {open && (
         <nav className="border-t border-border bg-background px-5 pt-2 pb-4 lg:hidden">
           <div className="flex flex-col">
-            {[...navLinks, ...tailLinks].map((l) => (
+            {[...topLinks, ...trailingLinks].map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
@@ -137,8 +147,8 @@ export function SiteHeader() {
                 {l.label}
               </Link>
             ))}
-            <p className="ledger mt-3 px-2">MMS</p>
-            {mmsLinks.map((l) => (
+            <p className="ledger mt-3 px-2">{dropdownLabel}</p>
+            {dropdownLinks.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
