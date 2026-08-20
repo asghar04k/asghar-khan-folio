@@ -378,6 +378,86 @@ export const awards = [
   { title: "Youth Excellence Award", year: "", note: "" },
 ];
 
+export type CliftonStrength = { rank: number; name: string; description: string };
+
+export const cliftonStrengths: CliftonStrength[] = [
+  {
+    rank: 1,
+    name: "Futuristic",
+    description:
+      "You are inspired by the future and what could be. You energize others with your visions of the future.",
+  },
+  {
+    rank: 2,
+    name: "Competition",
+    description:
+      "You measure your progress against others' performance. You strive to win first place and revel in contests.",
+  },
+  {
+    rank: 3,
+    name: "Ideation",
+    description:
+      "You are fascinated by ideas. You are able to find connections between seemingly disparate phenomena.",
+  },
+  {
+    rank: 4,
+    name: "Activator",
+    description:
+      "You can make things happen by turning thoughts into action. You want to do things now rather than simply talk about them.",
+  },
+  {
+    rank: 5,
+    name: "Positivity",
+    description:
+      "You have contagious enthusiasm. You are upbeat and can get others excited about what they are going to do.",
+  },
+];
+
+export type Certification = {
+  title: string;
+  issuer: string;
+  date: string;
+  certNumber?: string;
+  pdf: string;
+  summary: string;
+  reflection: string;
+};
+
+// Completed as part of MEDSCIEN 9700 (Interdisciplinary Skill Development), duplicated
+// here as short entries; the full certificate and reflection live on the Seminars page.
+export const certifications: Certification[] = [
+  {
+    title: "TCPS 2: CORE 2022",
+    issuer: "Panel on Research Ethics",
+    date: "May 20, 2023",
+    certNumber: "0000930733",
+    pdf: "/documents/tcps2-core-2022-certificate.pdf",
+    summary:
+      "Course on Research Ethics, based on the Tri-Council Policy Statement: Ethical Conduct for Research Involving Humans.",
+    reflection:
+      "The standard research-ethics training required before conducting any human-subjects research in Canada: informed consent, privacy, vulnerable populations, and weighing scientific value against participant risk. It's the same framework behind every consent form and REB application, so having it formally completed means I can move into human-subjects research without a training gap.",
+  },
+  {
+    title: "Building Inclusivity through Anti-Racism",
+    issuer: "Office of Equity, Diversity & Inclusion, Western University",
+    date: "",
+    pdf: "/documents/anti-racism-certificate.pdf",
+    summary: "Completed through Western's Office of Equity, Diversity & Inclusion.",
+    reflection:
+      "Covered how racism operates structurally, not just interpersonally, and what it actually takes to build an inclusive environment rather than just intending to. Directly relevant to the clinical and research settings I work in, where the people showing up for care, or as participants, aren't a uniform group.",
+  },
+  {
+    title: "Western Required Training",
+    issuer: "Western Human Resources (LMS)",
+    date: "Issued May 25, 2026",
+    pdf: "/documents/western-required-training-summary.pdf",
+    summary:
+      "Biosafety, laboratory safety, WHMIS, accessibility, and health and safety awareness training required for lab and campus roles.",
+    reflection:
+      "A set of mandatory modules covering biosafety and biosecurity, laboratory safety and hazardous waste management, WHMIS, workplace and supervisor health and safety awareness, and accessibility in service and teaching under AODA. Not glamorous, but it's the actual prerequisite layer underneath any hands-on lab work in the program: none of the Lab Bootcamp work happens safely without it.",
+  },
+];
+
 export const hobbies = [
   {
     title: "Ball hockey & basketball",

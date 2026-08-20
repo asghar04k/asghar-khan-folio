@@ -1,8 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Award } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Award, ExternalLink, Sparkles } from "lucide-react";
 import { PageShell, SectionHeading } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
-import { awards, placeholderNote, posts } from "@/content/portfolio";
+import { awards, certifications, cliftonStrengths, posts } from "@/content/portfolio";
 
 export const Route = createFileRoute("/awards")({
   head: () => ({
@@ -67,10 +67,56 @@ function AwardsPage() {
         ))}
       </div>
 
-      <SectionHeading>Certifications & Clifton Strengths</SectionHeading>
+      <SectionHeading note="Top 5, in order">CliftonStrengths</SectionHeading>
       <Reveal>
-        <p className="rounded-2xl border border-dashed border-border p-5 text-sm text-muted-foreground">
-          {placeholderNote}
+        <ol className="grid gap-3 sm:grid-cols-2">
+          {cliftonStrengths.map((s) => (
+            <li
+              key={s.rank}
+              className="lift flex gap-4 rounded-2xl border border-border bg-card p-5"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/12 font-mono text-sm text-primary">
+                {s.rank}
+              </span>
+              <div className="min-w-0">
+                <p className="flex items-center gap-1.5 font-medium">
+                  {s.name} <Sparkles className="h-3.5 w-3.5 text-secondary" />
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {s.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </Reveal>
+
+      <SectionHeading note="Completed through MEDSCIEN 9700, full reflections on the Seminars page">
+        Certifications
+      </SectionHeading>
+      <Reveal>
+        <ul className="grid gap-3 sm:grid-cols-3">
+          {certifications.map((c) => (
+            <li key={c.title} className="h-full rounded-2xl border border-border bg-card p-5">
+              <p className="font-medium text-balance">{c.title}</p>
+              <p className="mt-1.5 text-sm text-muted-foreground">{c.issuer}</p>
+              {c.date && <p className="ledger mt-3">{c.date}</p>}
+              <a
+                href={c.pdf}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="mt-3 inline-flex items-center gap-1.5 text-sm text-primary"
+              >
+                View certificate <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 text-sm text-muted-foreground">
+          <Link to="/mms/seminars" className="text-primary hover:underline">
+            See the full write-up on the Seminars page
+          </Link>
+          , where each certification was completed.
         </p>
       </Reveal>
     </PageShell>

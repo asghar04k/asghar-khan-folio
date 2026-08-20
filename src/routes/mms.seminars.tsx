@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Compass, ExternalLink, Hammer, Quote, Sparkles } from "lucide-react";
+import { Award, Compass, ExternalLink, Hammer, Quote, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { PageShell, SectionHeading } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
@@ -10,7 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { seminarSeries } from "@/content/portfolio";
+import { certifications, seminarSeries } from "@/content/portfolio";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/mms/seminars")({
@@ -306,6 +306,34 @@ function SeminarsPage() {
               </div>
               {s.presenter && <p className="mt-1 text-xs text-muted-foreground">{s.presenter}</p>}
               <p className="mt-2 text-xs leading-relaxed text-foreground/85">{s.blurb}</p>
+            </article>
+          </Reveal>
+        ))}
+      </ul>
+
+      <SectionHeading note="Completed and submitted through 9700">Certifications</SectionHeading>
+      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {certifications.map((c, i) => (
+          <Reveal as="li" key={c.title} delay={i * 50}>
+            <article className="flex h-full flex-col rounded-3xl border border-border bg-card p-6">
+              <div className="flex items-start gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/12 text-primary">
+                  <Award className="h-4 w-4" />
+                </span>
+                <div className="min-w-0">
+                  <h3 className="font-medium text-balance">{c.title}</h3>
+                  <p className="mt-0.5 text-xs text-muted-foreground">{c.issuer}</p>
+                  {c.date && <p className="ledger mt-1">{c.date}</p>}
+                </div>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-foreground/85">{c.reflection}</p>
+              <div className="mt-4">
+                <iframe
+                  src={c.pdf}
+                  title={`${c.title} certificate`}
+                  className="h-[320px] w-full rounded-2xl border border-border bg-muted/40"
+                />
+              </div>
             </article>
           </Reveal>
         ))}
