@@ -94,17 +94,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University: clinical ethics, patient support, and health services research.",
+          "I'm Asghar Khan, a Master of Medical Sciences candidate at Western University: clinical ethics, patient support, and health services research.",
       },
       {
         property: "og:description",
         content:
-          "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University: clinical ethics, patient support, and health services research.",
+          "I'm Asghar Khan, a Master of Medical Sciences candidate at Western University: clinical ethics, patient support, and health services research.",
       },
       {
         name: "twitter:description",
         content:
-          "Portfolio of Asghar Khan, Master of Medical Sciences candidate at Western University: clinical ethics, patient support, and health services research.",
+          "I'm Asghar Khan, a Master of Medical Sciences candidate at Western University: clinical ethics, patient support, and health services research.",
       },
       {
         property: "og:image",

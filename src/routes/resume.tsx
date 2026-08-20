@@ -11,7 +11,7 @@ export const Route = createFileRoute("/resume")({
       {
         name: "description",
         content:
-          "View and download the resume of Asghar Khan, Master of Medical Sciences candidate at Western University.",
+          "View and download my resume, Master of Medical Sciences candidate at Western University.",
       },
       { property: "og:title", content: "Resume · Asghar Khan" },
       { property: "og:description", content: "Viewable inline and available for download." },

@@ -54,7 +54,7 @@ function AwardsPage() {
         ))}
       </ul>
 
-      <SectionHeading note="In his own words">Convocation & recognition</SectionHeading>
+      <SectionHeading note="In my own words">Convocation & recognition</SectionHeading>
       <div className="grid gap-3 sm:grid-cols-2">
         {posts.map((p, i) => (
           <Reveal key={p.title} delay={i * 60}>
