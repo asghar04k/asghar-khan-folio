@@ -9,7 +9,7 @@ export const profile = {
   location: "London, Ontario",
   shortBio:
     "Clinical ethics, patient support, and health services research, at Western's Schulich School of Medicine & Dentistry.",
-  bio: "Asghar Khan is a Master of Medical Sciences candidate at Western University's Schulich School of Medicine & Dentistry, following an Honours Specialization in Health Sciences (final two-year GPA of 3.97/4.0) and the 2026 recipient of the BHSc Award of Recognition. His work sits at the intersection of clinical ethics, patient support, and health services research: spanning a clinical ethics practicum at the Western Centre for Bioethics and London Health Sciences Centre, a research assistantship in the Down Syndrome Clinic at The Hospital for Sick Children, and applied AI research in geriatric medicine. He is also the founder and president of the Western Undergraduate Research Students' Association (URSA), which he grew into a 2,000+ member research community in its first year.",
+  bio: "I'm a Master of Medical Sciences candidate at Western University's Schulich School of Medicine & Dentistry, following an Honours Specialization in Health Sciences (final two-year GPA of 3.97/4.0) and the 2026 recipient of the BHSc Award of Recognition. My work sits at the intersection of clinical ethics, patient support, and health services research: spanning a clinical ethics practicum at the Western Centre for Bioethics and London Health Sciences Centre, a research assistantship in the Down Syndrome Clinic at The Hospital for Sick Children, and applied AI research in geriatric medicine. I'm also the founder and president of the Western Undergraduate Research Students' Association (URSA), which I grew into a 2,000+ member research community in its first year.",
   email: "akha228@uwo.ca",
   linkedin: "https://www.linkedin.com/in/asghark/",
   headshot: "/images/profile/headshot.jpg",
@@ -831,10 +831,37 @@ export const courseDetails: Record<string, CourseDetail> = {
   },
 };
 
-export const mmsRotations = [
+export type MmsRotation = {
+  title: string;
+  description: string;
+  partner?: string;
+  note?: string;
+  certifications?: { title: string; pdf: string }[];
+};
+
+export const mmsRotations: MmsRotation[] = [
   { title: "Basic Science Rotation", description: "Laboratory placement." },
   { title: "Clinical Science Rotation", description: "Clinical setting placement." },
-  { title: "Community Engaged Learning Rotation", description: "Community partner placement." },
+  {
+    title: "Community Engaged Learning Rotation",
+    description: "Community partner placement.",
+    partner: "Merrymount",
+    note: "Early stage. Completed Merrymount's online orientation and training modules.",
+    certifications: [
+      {
+        title: "Merrymount Orientation 2025",
+        pdf: "/documents/merrymount-orientation-2025-certificate.pdf",
+      },
+      {
+        title: "Workplace Violence and Harassment Training",
+        pdf: "/documents/merrymount-workplace-violence-harassment-certificate.pdf",
+      },
+      {
+        title: "Health and Safety Rights and Responsibilities",
+        pdf: "/documents/merrymount-health-safety-certificate.pdf",
+      },
+    ],
+  },
 ];
 
 export const mmsCapstone = {
