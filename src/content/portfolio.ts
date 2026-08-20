@@ -435,7 +435,7 @@ export const certifications: Certification[] = [
     summary:
       "Course on Research Ethics, based on the Tri-Council Policy Statement: Ethical Conduct for Research Involving Humans.",
     reflection:
-      "The standard research-ethics training required before conducting any human-subjects research in Canada: informed consent, privacy, vulnerable populations, and weighing scientific value against participant risk. It's the same framework behind every consent form and REB application, so having it formally completed means I can move into human-subjects research without a training gap.",
+      "Required training before conducting any human-subjects research in Canada: consent, privacy, and participant risk.",
   },
   {
     title: "Building Inclusivity through Anti-Racism",
@@ -444,7 +444,7 @@ export const certifications: Certification[] = [
     pdf: "/documents/anti-racism-certificate.pdf",
     summary: "Completed through Western's Office of Equity, Diversity & Inclusion.",
     reflection:
-      "Covered how racism operates structurally, not just interpersonally, and what it actually takes to build an inclusive environment rather than just intending to. Directly relevant to the clinical and research settings I work in, where the people showing up for care, or as participants, aren't a uniform group.",
+      "How racism operates structurally, not just interpersonally, and what building real inclusion actually takes.",
   },
   {
     title: "Western Required Training",
@@ -454,7 +454,7 @@ export const certifications: Certification[] = [
     summary:
       "Biosafety, laboratory safety, WHMIS, accessibility, and health and safety awareness training required for lab and campus roles.",
     reflection:
-      "A set of mandatory modules covering biosafety and biosecurity, laboratory safety and hazardous waste management, WHMIS, workplace and supervisor health and safety awareness, and accessibility in service and teaching under AODA. Not glamorous, but it's the actual prerequisite layer underneath any hands-on lab work in the program: none of the Lab Bootcamp work happens safely without it.",
+      "The safety and compliance training required before any hands-on lab work: biosafety, lab safety, and WHMIS.",
   },
 ];
 

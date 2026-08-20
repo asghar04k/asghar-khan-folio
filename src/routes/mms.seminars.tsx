@@ -44,7 +44,8 @@ function TimelineStrip() {
         <ol className="flex flex-wrap gap-2">
           {seminarSeries.timeline.map((w) => {
             const featuredSlug = seminarSeries.featured.find((f) => f.date === w.date)?.slug;
-            const clickable = Boolean(featuredSlug) && !w.holiday;
+            const targetSlug = featuredSlug ?? (w.topic === "Strengths" ? "strengths" : undefined);
+            const clickable = Boolean(targetSlug) && !w.holiday;
             return (
               <li key={w.week}>
                 <Tooltip>
@@ -52,7 +53,7 @@ function TimelineStrip() {
                     <button
                       type="button"
                       disabled={w.holiday}
-                      onClick={() => featuredSlug && scrollToSlug(featuredSlug)}
+                      onClick={() => targetSlug && scrollToSlug(targetSlug)}
                       className={cn(
                         "ledger flex h-9 w-11 items-center justify-center rounded-full border !text-[11px] transition-all duration-200",
                         w.holiday
@@ -311,10 +312,14 @@ function SeminarsPage() {
         ))}
       </ul>
 
-      <SectionHeading note="From the Strengths session, top 5 in order">
-        CliftonStrengths
-      </SectionHeading>
+      <div id="strengths" className="scroll-mt-24">
+        <SectionHeading note="Top 5, in order">My CliftonStrengths</SectionHeading>
+      </div>
       <Reveal>
+        <p className="mb-4 text-sm text-muted-foreground">
+          During the Strengths session, I took the CliftonStrengths assessment, which returned these
+          five as my top strengths.
+        </p>
         <ol className="grid gap-3 sm:grid-cols-2">
           {cliftonStrengths.map((s) => (
             <li
