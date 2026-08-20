@@ -22,7 +22,6 @@ import { Route as MmsIndexRouteImport } from './routes/mms.index'
 import { Route as MmsCapstoneRouteImport } from './routes/mms.capstone'
 import { Route as MmsCoursesRouteImport } from './routes/mms.courses'
 import { Route as MmsLabRouteImport } from './routes/mms.lab'
-import { Route as MmsReflectionsRouteImport } from './routes/mms.reflections'
 import { Route as MmsRotationsRouteImport } from './routes/mms.rotations'
 import { Route as MmsSeminarsRouteImport } from './routes/mms.seminars'
 import { Route as MmsCoursesIndexRouteImport } from './routes/mms.courses.index'
@@ -93,11 +92,6 @@ const MmsLabRoute = MmsLabRouteImport.update({
   path: '/lab',
   getParentRoute: () => MmsRoute,
 } as any)
-const MmsReflectionsRoute = MmsReflectionsRouteImport.update({
-  id: '/reflections',
-  path: '/reflections',
-  getParentRoute: () => MmsRoute,
-} as any)
 const MmsRotationsRoute = MmsRotationsRouteImport.update({
   id: '/rotations',
   path: '/rotations',
@@ -132,7 +126,6 @@ export interface FileRoutesByFullPath {
   '/mms/capstone': typeof MmsCapstoneRoute
   '/mms/courses': typeof MmsCoursesRouteWithChildren
   '/mms/lab': typeof MmsLabRoute
-  '/mms/reflections': typeof MmsReflectionsRoute
   '/mms/rotations': typeof MmsRotationsRoute
   '/mms/seminars': typeof MmsSeminarsRoute
   '/mms/': typeof MmsIndexRoute
@@ -150,7 +143,6 @@ export interface FileRoutesByTo {
   '/volunteering': typeof VolunteeringRoute
   '/mms/capstone': typeof MmsCapstoneRoute
   '/mms/lab': typeof MmsLabRoute
-  '/mms/reflections': typeof MmsReflectionsRoute
   '/mms/rotations': typeof MmsRotationsRoute
   '/mms/seminars': typeof MmsSeminarsRoute
   '/mms': typeof MmsIndexRoute
@@ -171,7 +163,6 @@ export interface FileRoutesById {
   '/mms/capstone': typeof MmsCapstoneRoute
   '/mms/courses': typeof MmsCoursesRouteWithChildren
   '/mms/lab': typeof MmsLabRoute
-  '/mms/reflections': typeof MmsReflectionsRoute
   '/mms/rotations': typeof MmsRotationsRoute
   '/mms/seminars': typeof MmsSeminarsRoute
   '/mms/': typeof MmsIndexRoute
@@ -193,7 +184,6 @@ export interface FileRouteTypes {
     | '/mms/capstone'
     | '/mms/courses'
     | '/mms/lab'
-    | '/mms/reflections'
     | '/mms/rotations'
     | '/mms/seminars'
     | '/mms/'
@@ -211,7 +201,6 @@ export interface FileRouteTypes {
     | '/volunteering'
     | '/mms/capstone'
     | '/mms/lab'
-    | '/mms/reflections'
     | '/mms/rotations'
     | '/mms/seminars'
     | '/mms'
@@ -231,7 +220,6 @@ export interface FileRouteTypes {
     | '/mms/capstone'
     | '/mms/courses'
     | '/mms/lab'
-    | '/mms/reflections'
     | '/mms/rotations'
     | '/mms/seminars'
     | '/mms/'
@@ -344,13 +332,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MmsLabRouteImport
       parentRoute: typeof MmsRoute
     }
-    '/mms/reflections': {
-      id: '/mms/reflections'
-      path: '/reflections'
-      fullPath: '/mms/reflections'
-      preLoaderRoute: typeof MmsReflectionsRouteImport
-      parentRoute: typeof MmsRoute
-    }
     '/mms/rotations': {
       id: '/mms/rotations'
       path: '/rotations'
@@ -400,7 +381,6 @@ interface MmsRouteChildren {
   MmsCapstoneRoute: typeof MmsCapstoneRoute
   MmsCoursesRoute: typeof MmsCoursesRouteWithChildren
   MmsLabRoute: typeof MmsLabRoute
-  MmsReflectionsRoute: typeof MmsReflectionsRoute
   MmsRotationsRoute: typeof MmsRotationsRoute
   MmsSeminarsRoute: typeof MmsSeminarsRoute
   MmsIndexRoute: typeof MmsIndexRoute
@@ -410,7 +390,6 @@ const MmsRouteChildren: MmsRouteChildren = {
   MmsCapstoneRoute: MmsCapstoneRoute,
   MmsCoursesRoute: MmsCoursesRouteWithChildren,
   MmsLabRoute: MmsLabRoute,
-  MmsReflectionsRoute: MmsReflectionsRoute,
   MmsRotationsRoute: MmsRotationsRoute,
   MmsSeminarsRoute: MmsSeminarsRoute,
   MmsIndexRoute: MmsIndexRoute,

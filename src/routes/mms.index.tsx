@@ -10,7 +10,7 @@ export const Route = createFileRoute("/mms/")({
       {
         name: "description",
         content:
-          "Program portfolio for the Master of Medical Sciences at Western University: courses, rotations, capstone, seminars, and reflections.",
+          "Program portfolio for the Master of Medical Sciences at Western University: courses, rotations, capstone, and seminars.",
       },
       { property: "og:title", content: "MMS Program Portfolio · Asghar Khan" },
       {
@@ -49,11 +49,6 @@ const journey = [
     to: "/mms/capstone",
     label: "Capstone",
     note: "A team project tackling access to care for marginalized populations.",
-  },
-  {
-    to: "/mms/reflections",
-    label: "Reflections",
-    note: "A running journal on what the program has actually taught me.",
   },
 ] as const;
 

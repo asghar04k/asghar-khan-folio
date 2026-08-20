@@ -1128,12 +1128,4 @@ export const journalClub = {
   description: "A recurring session breaking down current research papers as a group.",
 };
 
-export const mmsReflections = [
-  {
-    date: "May 2026",
-    title: "Starting the program",
-    body: "Beginning the Master of Medical Sciences felt like stepping from asking questions about care into being asked to answer them. The first weeks have been about learning how this program wants me to think: less about collecting experiences, more about examining them carefully and writing them down for someone who wasn't in the room.",
-  },
-];
-
 export const placeholderNote = "Content for this section is in progress and will be added shortly.";

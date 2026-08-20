@@ -21,7 +21,6 @@ const mmsLinks = [
   { to: "/mms/lab", label: "Lab & Journal Club" },
   { to: "/mms/rotations", label: "Rotations" },
   { to: "/mms/capstone", label: "Capstone" },
-  { to: "/mms/reflections", label: "Reflections" },
 ];
 
 const tailLinks = [

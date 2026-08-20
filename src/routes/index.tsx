@@ -6,7 +6,6 @@ import {
   FlaskConical,
   GraduationCap,
   HeartHandshake,
-  NotebookPen,
   Presentation,
   Route as RouteIcon,
   Sprout,
@@ -58,7 +57,7 @@ const personalTiles = [
 ] as const;
 
 // Same order as the MMS-mode top bar (see SiteHeader): Courses through
-// Reflections, then Profile last, matching the Profile dropdown's position.
+// Capstone, then Profile last, matching the Profile dropdown's position.
 const mmsTiles = [
   { to: "/mms/courses", label: "Courses", note: "Coursework & reflections", icon: GraduationCap },
   {
@@ -75,7 +74,6 @@ const mmsTiles = [
   },
   { to: "/mms/rotations", label: "Rotations", note: "Basic, Clinical, Community", icon: RouteIcon },
   { to: "/mms/capstone", label: "Capstone", note: "Team-based final project", icon: Target },
-  { to: "/mms/reflections", label: "Reflections", note: "Program journal", icon: NotebookPen },
   { to: "/awards", label: "Profile", note: "Awards, experience & more", icon: UserCircle },
 ] as const;
 
