@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CheckCircle2, Quote, Target, Wrench } from "lucide-react";
 import { PageShell, SectionHeading } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
-import { journalClub, labBootcamp, placeholderNote } from "@/content/portfolio";
+import { journalClub, labBootcamp } from "@/content/portfolio";
 
 export const Route = createFileRoute("/mms/lab")({
   head: () => ({
@@ -79,11 +80,72 @@ function LabPage() {
 
       <SectionHeading note="Recurring">{journalClub.title}</SectionHeading>
       <Reveal>
-        <article className="rounded-2xl border border-border bg-card p-6">
-          <p className="text-sm text-muted-foreground">{journalClub.description}</p>
-          <div className="mt-4 rounded-xl border border-dashed border-border p-4">
-            <p className="ledger">Notes & reflection</p>
-            <p className="mt-1.5 text-sm text-muted-foreground">{placeholderNote}</p>
+        <p className="text-sm text-muted-foreground">{journalClub.description}</p>
+      </Reveal>
+
+      <ul className="mt-6 space-y-6">
+        {journalClub.selectedWork.map((w, i) => (
+          <Reveal as="li" key={w.title} delay={i * 60}>
+            <article className="overflow-hidden rounded-3xl border border-border bg-card p-6 sm:p-8">
+              <h3 className="text-lg font-medium text-balance">{w.title}</h3>
+              <div className="mt-6 space-y-5">
+                <div className="flex gap-3">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/12 text-primary">
+                    <Target className="h-4 w-4" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="ledger">Task</p>
+                    <p className="mt-1 leading-relaxed text-foreground/85">{w.task}</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary/12 text-secondary">
+                    <Wrench className="h-4 w-4" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="ledger">My Actions</p>
+                    <p className="mt-1 leading-relaxed text-foreground/85">{w.actions}</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-tertiary/15 text-tertiary">
+                    <CheckCircle2 className="h-4 w-4" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="ledger">Results</p>
+                    <p className="mt-1 leading-relaxed text-foreground/85">{w.results}</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </Reveal>
+        ))}
+      </ul>
+
+      <SectionHeading>Also in This Activity</SectionHeading>
+      <Reveal>
+        <p className="leading-relaxed text-foreground/85">{journalClub.alsoInThisActivity}</p>
+      </Reveal>
+
+      <SectionHeading>Self-Reflection</SectionHeading>
+      <Reveal>
+        <article className="wash-soft rounded-3xl border border-border bg-card p-6 sm:p-8">
+          <Quote className="h-7 w-7 text-primary/40" />
+          <div className="mt-4 space-y-5">
+            {journalClub.reflection.map((p, i) =>
+              i === 1 ? (
+                <blockquote
+                  key={p.slice(0, 24)}
+                  className="border-l-2 border-primary pl-5 text-lg leading-relaxed font-medium text-balance text-foreground"
+                >
+                  {p}
+                </blockquote>
+              ) : (
+                <p key={p.slice(0, 24)} className="leading-relaxed text-foreground/85">
+                  {p}
+                </p>
+              ),
+            )}
           </div>
         </article>
       </Reveal>
