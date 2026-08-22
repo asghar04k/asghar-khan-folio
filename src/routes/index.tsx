@@ -74,7 +74,7 @@ const mmsTiles = [
   },
   { to: "/mms/rotations", label: "Rotations", note: "Basic, Clinical, Community", icon: RouteIcon },
   { to: "/mms/capstone", label: "Capstone", note: "Team-based final project", icon: Target },
-  { to: "/awards", label: "Profile", note: "Awards, experience & more", icon: UserCircle },
+  { to: "/resume", label: "Profile", note: "Resume, awards & more", icon: UserCircle },
 ] as const;
 
 function Index() {

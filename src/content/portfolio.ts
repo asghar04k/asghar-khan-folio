@@ -1206,12 +1206,6 @@ export const seminarSeries = {
       date: "August 14",
       blurb: "Career planning and next-step strategy for life after the MMS program.",
     },
-    {
-      title: "End-of-Term Meeting Preparation",
-      presenter: "",
-      date: "August 21",
-      blurb: "Closing session preparing for end-of-program check-ins with the program director.",
-    },
   ] as LightningSeminar[],
   reflection: [
     "If the graded courses taught me specific frameworks, 9700 was where I picked up the operating skills underneath all of them, the kind of thing that doesn't show up on a transcript but shows up every week in practice. Working through the Digital Literacy checklist on my own turned out to be one of the more useful hours of the summer, in a boring-but-true way: half of graduate work is just knowing your tools well enough that they get out of your way.",
