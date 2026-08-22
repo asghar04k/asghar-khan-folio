@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CheckCircle2, Quote, Target, Wrench } from "lucide-react";
+import { CheckCircle2, ExternalLink, Quote, Target, Wrench } from "lucide-react";
 import { PageShell, SectionHeading } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { journalClub, labBootcamp } from "@/content/portfolio";
@@ -88,6 +88,21 @@ function LabPage() {
           <Reveal as="li" key={w.title} delay={i * 60}>
             <article className="overflow-hidden rounded-3xl border border-border bg-card p-6 sm:p-8">
               <h3 className="text-lg font-medium text-balance">{w.title}</h3>
+              {w.links && w.links.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {w.links.map((l) => (
+                    <a
+                      key={l.href}
+                      href={l.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary transition-colors hover:border-primary"
+                    >
+                      {l.label} <ExternalLink className="h-3 w-3" />
+                    </a>
+                  ))}
+                </div>
+              )}
               <div className="mt-6 space-y-5">
                 <div className="flex gap-3">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/12 text-primary">

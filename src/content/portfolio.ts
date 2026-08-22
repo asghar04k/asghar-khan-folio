@@ -1295,6 +1295,7 @@ export type JournalClubSession = {
   task: string;
   actions: string;
   results: string;
+  links?: { label: string; href: string }[];
 };
 
 export const journalClub = {
@@ -1304,27 +1305,39 @@ export const journalClub = {
   selectedWork: [
     {
       title:
-        'Facilitating: "Product Differentiation by Analysis of DNA Melting Curves during the Polymerase Chain Reaction" (Ririe et al., 1996)',
-      task: "Co-facilitate the two-hour discussion of a methods paper on using DNA melting curve analysis to distinguish specific PCR products from non-specific ones, a technique still used in molecular biology labs decades after publication.",
+        'Facilitating: "Product Differentiation by Analysis of DNA Melting Curves during the Polymerase Chain Reaction" (Ririe et al., 1997)',
+      task: "Co-facilitate a two-hour discussion of a methods paper on using DNA melting curve analysis to distinguish specific PCR products, a technique still used in molecular biology labs decades later.",
       actions:
-        "Co-led the session with Michael while Jeyany took notes, walking the group through the paper's methods and its two-part results: how dye concentration and temperature transition rate shift the melting curve, and how melting curve shape can distinguish specific PCR products from primer oligomers. Prepared discussion questions in advance to get the group talking through the paper's strengths, including its clear methods, strong figures, and testing beyond ideal lab conditions, as well as its limitations, such as SYBR Green's non-specificity and the limited number of PCR products tested.",
+        "Walked the group through the paper's methods and results: how dye concentration and temperature shift the melting curve, and how curve shape can tell specific PCR products apart from primer oligomers. Prepared discussion questions on the paper's strengths and limitations to keep the conversation moving.",
       results:
-        "Group feedback described the discussion as thorough and well organized, highlighting the clear summary and prepared questions that kept the conversation moving. One specific note for next time was to show the actual figure being discussed on screen so everyone could more easily follow how it connected to the result being explained.",
+        "Feedback described the discussion as thorough and well organized. I can now take a dense methods paper and lead a group through it clearly, a skill that carries over to any setting where I need to understand complex research and discuss what it actually means.",
+      links: [
+        {
+          label: "Ririe et al., 1997, Analytical Biochemistry",
+          href: "https://pubmed.ncbi.nlm.nih.gov/9056205/",
+        },
+      ],
     },
     {
       title:
         'Facilitating: "Human Adipose Tissue Protein Analyses Using Capillary Western Blot Technology" (Lu, Alfred & Jensen, 2017)',
-      task: "Solo-facilitate discussion of a paper comparing a newer automated capillary western blot method (Wes) against traditional western blotting for quantifying proteins in human adipose tissue, where the traditional method's variability and manual steps had not been directly tested against the newer one in that specific tissue type.",
+      task: "Solo-facilitate discussion of a paper comparing a newer automated capillary western blot method (Wes) against traditional western blotting for measuring proteins in human adipose tissue.",
       actions:
-        "Led the full two-hour discussion while Farah took notes, walking the group through the paper's three protein measurements: CD36 abundance, Erk1/2 phosphorylation ratio, and Akt phosphorylation change after feeding. Used the paper's own figures rather than reciting findings as bullet points so the group could see how each result was built. Prepared questions that pushed past summary, including whether strong correlation between the two methods was actually enough evidence to consider them interchangeable and which method the group would choose to use themselves.",
+        "Walked the group through the paper's three protein measurements using its own figures rather than reciting findings as bullet points. Asked questions that pushed past summary: whether strong correlation between the two methods was actually enough to call them interchangeable, and which method the group would choose themselves.",
       results:
-        "Feedback highlighted the figure-based walkthrough and the follow-up questions that pushed the discussion deeper than the paper's own content. Constructive feedback focused on projecting more during delivery, spending more time on the methods section before moving into the results, and maintaining more eye contact with the group while presenting.",
+        "Feedback highlighted the figure-based walkthrough and the questions that pushed past the paper's own content. I can now push a research discussion beyond summary, toward what the findings actually imply and whether the evidence holds up.",
+      links: [
+        {
+          label: "Lu, Alfred & Jensen, 2017, Nutrition & Diabetes",
+          href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5916899/",
+        },
+      ],
     },
   ] as JournalClubSession[],
   alsoInThisActivity:
     "Beyond the two sessions above, journal club ran most weeks across the summer with the same core group working through a new molecular biology methods paper each time. On weeks I was not facilitating, I contributed as a discussion participant, asked questions, and helped the group work through the methods, results, strengths, and limitations of each paper.",
   reflection: [
-    "Facilitating journal club was honestly a little intimidating at first because I was not sure how I was going to lead a discussion for over an hour and still keep everyone engaged. The first time, I co-facilitated with Michael, an exchange medical student from China, which made it easier to ease into the role and share the responsibility of keeping the discussion moving. By the second session, I felt confident enough to facilitate the full discussion on my own. What surprised me was how much there actually was to talk about once I knew the paper well. When I felt confident in the material, I did not have to worry as much about what I was going to say next because I could respond to questions, explain the figures, connect different parts of the study, and let the discussion develop naturally.",
+    "Facilitating journal club was honestly a little intimidating at first because I was not sure how I was going to lead a discussion for over an hour and still keep everyone engaged. The first time, I co-facilitated with an exchange medical student, which made it easier to ease into the role and share the responsibility of keeping the discussion moving. By the second session, I felt confident enough to facilitate the full discussion on my own. What surprised me was how much there actually was to talk about once I knew the paper well. When I felt confident in the material, I did not have to worry as much about what I was going to say next because I could respond to questions, explain the figures, connect different parts of the study, and let the discussion develop naturally.",
     "The feedback from both sessions also helped me see what I could improve. After the first, I realized how helpful it is to have the figure on screen while discussing it. The second time, the feedback focused more on delivery, including projecting my voice, making more eye contact, and spending enough time explaining the methods before moving into the results. Overall, I found that being well prepared made me much more confident and made it easier to actually lead a conversation rather than just present a paper.",
     "I also found it interesting to read papers from different time periods and see how scientific writing and reporting have changed. Some of the older papers felt much more formal and were harder to follow if you were not already familiar with the topic. There were also times where I felt that certain claims went a little further than what the results actually showed. At the same time, some of the methods introduced in these papers are still used today. Seeing that made me appreciate how important those innovations were when they were introduced, while also showing me how the way we evaluate and communicate research has continued to develop.",
   ],
