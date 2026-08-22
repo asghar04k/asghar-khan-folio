@@ -42,6 +42,25 @@ function VolunteeringPage() {
                 <span className="ledger shrink-0">{v.dates}</span>
               </div>
               <p className="mt-4 leading-relaxed text-foreground/85">{v.description}</p>
+              {v.images && v.images.length > 0 && (
+                <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                  {v.images.map((img) => (
+                    <figure
+                      key={img.src}
+                      className="overflow-hidden rounded-xl border border-border"
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="aspect-[4/3] w-full object-cover"
+                      />
+                      <figcaption className="bg-muted/60 px-2 py-1.5 text-[11px] text-muted-foreground">
+                        {img.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              )}
               {v.crossLink && (
                 <Link
                   to={v.crossLink.to}

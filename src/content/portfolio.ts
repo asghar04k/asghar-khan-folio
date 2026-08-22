@@ -183,6 +183,38 @@ export const volunteering = [
     description:
       "Direct client support: check-in, resource preparation and distribution, and coordinating weekly nutritious food boxes for 100+ families. This is also the site of the community immersion behind my Independent Study thesis.",
     crossLink: { label: "See the Independent Study thesis", to: "/research" },
+    images: [
+      {
+        src: "/images/volunteering/soahac-ifsp-banner.jpg",
+        alt: "SOAHAC's Indigenous Food Sovereignty Program banner",
+        caption: "SOAHAC's Indigenous Food Sovereignty Program",
+      },
+      {
+        src: "/images/volunteering/soahac-food-box-distribution.jpg",
+        alt: "Asghar Khan among rows of crated produce ahead of weekly food box distribution",
+        caption: "Prepping weekly food boxes for distribution",
+      },
+      {
+        src: "/images/volunteering/soahac-crate-rows.jpg",
+        alt: "Rows of crates full of fresh produce ready for distribution",
+        caption: "Produce sorted into crates for the week's food boxes",
+      },
+      {
+        src: "/images/volunteering/soahac-prep-room.jpg",
+        alt: "The food prep and storage room ahead of a distribution day",
+        caption: "The prep room ahead of a distribution day",
+      },
+      {
+        src: "/images/volunteering/soahac-seed-sorting.jpg",
+        alt: "Sorting traditional seeds by hand",
+        caption: "Sorting traditional seeds",
+      },
+      {
+        src: "/images/volunteering/soahac-community-meal.jpg",
+        alt: "A community meal being served as part of the program's food gatherings",
+        caption: "A community meal, part of the program's food gatherings",
+      },
+    ],
   },
   {
     title: "Ortho Inpatient Clinic Volunteer",
@@ -190,7 +222,30 @@ export const volunteering = [
     location: "London, ON",
     dates: "Aug 2025 – Present",
     year: "2025–",
-    description: "Patient navigation and clinic flow support in the orthopaedic inpatient unit.",
+    description:
+      "Patient navigation and clinic flow support in the orthopaedic inpatient unit, plus a hands-on visit to CSTAR (Canadian Surgical Technologies & Advanced Robotics): practicing realistic CPR on a high-fidelity simulation mannequin capable of simulating bleeding, learning from researchers how the automated systems work, and seeing the da Vinci surgical robot in motion.",
+    images: [
+      {
+        src: "/images/volunteering/lhsc-volunteer-vest.jpg",
+        alt: "Asghar Khan in LHSC volunteer uniform at the volunteer station",
+        caption: "Volunteering in the orthopaedic inpatient unit",
+      },
+      {
+        src: "/images/volunteering/cstar-cpr-mannequin.jpg",
+        alt: "A high-fidelity CPR simulation mannequin at CSTAR",
+        caption: "Practicing CPR on CSTAR's high-fidelity simulation mannequin",
+      },
+      {
+        src: "/images/volunteering/cstar-davinci-robot.jpg",
+        alt: "The da Vinci surgical robot system at CSTAR",
+        caption: "The da Vinci surgical robot",
+      },
+      {
+        src: "/images/volunteering/cstar-or-room.jpg",
+        alt: "A CSTAR simulation operating room",
+        caption: "A CSTAR simulation operating room",
+      },
+    ],
   },
   {
     title: "Palliative Care Volunteer",
