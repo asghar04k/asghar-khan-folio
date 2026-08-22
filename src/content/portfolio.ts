@@ -366,6 +366,11 @@ export const awards = [
     note: "Awarded annually to one BHSc student for academic achievement, leadership, character, and community commitment.",
     image: "/images/awards/bhsc-award-diploma.jpg",
   },
+  {
+    title: "Conference Travel Award",
+    year: "2026",
+    note: "Approximately $1,500 for conference registration, travel, and accommodation to attend the 2026 AGE-WELL Annual Conference in Ottawa, awarded after our research abstract was accepted for poster presentation. I was selected as the graduate student to represent Provincial Geriatrics Leadership Ontario and present our work evaluating the clinical utility of AI in older-adult care.",
+  },
   { title: "Western Scholarship of Distinction", year: "2022", note: "$3,500" },
   { title: "Health Innovation Award", year: "", note: "" },
   { title: "Dean's Honour List", year: "", note: "" },
