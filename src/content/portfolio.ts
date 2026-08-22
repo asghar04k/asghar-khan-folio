@@ -1237,6 +1237,10 @@ export const labBootcamp = {
   ],
   headerImages: [
     { src: "/images/mms-lab/team-group.jpg", alt: "Asghar Khan with his lab bench group" },
+    {
+      src: "/images/mms-lab/lab-bench-partners.jpg",
+      alt: "Asghar Khan with his lab bench partners",
+    },
     { src: "/images/mms-lab/pipetting-1.jpg", alt: "Asghar Khan pipetting at the lab bench" },
   ],
   weeks: [
@@ -1284,6 +1288,12 @@ export const labBootcamp = {
       week: "Week 9",
       title: "Detecting the Protein of Interest",
       body: "Used antibodies to detect and measure our specific protein of interest, then compared the two measurement approaches from Week 8.",
+      images: [
+        {
+          src: "/images/mms-lab/antibody-rocking-tray.jpg",
+          alt: "Rocking tray used for antibody incubation during Week 9's protein detection protocol",
+        },
+      ],
     },
   ],
   reflection:

@@ -27,7 +27,7 @@ function LabPage() {
       <Reveal>
         <article className="wash-soft rounded-3xl border border-border bg-card p-6 sm:p-8">
           {labBootcamp.headerImages.length > 0 && (
-            <div className="mb-6 grid grid-cols-2 gap-2">
+            <div className="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-3">
               {labBootcamp.headerImages.map((img) => (
                 <img
                   key={img.src}
