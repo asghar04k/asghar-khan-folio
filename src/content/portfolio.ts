@@ -223,7 +223,7 @@ export const volunteering = [
     dates: "Aug 2025 – Present",
     year: "2025–",
     description:
-      "Patient navigation and clinic flow support in the orthopaedic inpatient unit, plus a hands-on visit to CSTAR (Canadian Surgical Technologies & Advanced Robotics): practicing realistic CPR on a high-fidelity simulation mannequin capable of simulating bleeding, learning from researchers how the automated systems work, and seeing the da Vinci surgical robot in motion.",
+      "Weekly patient visits on the orthopaedic inpatient unit: talking with patients and building friendships through regular visits, plus a hands-on visit to CSTAR (Canadian Surgical Technologies & Advanced Robotics): practicing realistic CPR on a high-fidelity simulation mannequin capable of simulating bleeding, learning from researchers how the automated systems work, and seeing the da Vinci surgical robot in motion.",
     images: [
       {
         src: "/images/volunteering/lhsc-volunteer-vest.jpg",
