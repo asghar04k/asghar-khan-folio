@@ -538,8 +538,6 @@ export const hobbies = [
   },
 ];
 
-export const friends: { src: string; alt: string; caption?: string }[] = [];
-
 export const ventures = {
   garden: [
     {
