@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageShell } from "@/components/site/PageShell";
+import { PageShell, SectionHeading } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
-import { hobbies } from "@/content/portfolio";
+import { friends, hobbies, placeholderNote } from "@/content/portfolio";
 
 export const Route = createFileRoute("/hobbies")({
   head: () => ({
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/hobbies")({
       {
         name: "description",
         content:
-          "Ball hockey and basketball as a multi-season intramural captain, plus time spent outdoors hunting.",
+          "Ball hockey, basketball, and golf as an intramural captain, plus time spent outdoors hunting.",
       },
       { property: "og:title", content: "Hobbies · Asghar Khan" },
       { property: "og:description", content: "What I do when I'm not in a hospital or a library." },
@@ -41,6 +41,30 @@ function HobbiesPage() {
           </Reveal>
         ))}
       </ul>
+
+      <SectionHeading note="Some of the people from along the way">Friends</SectionHeading>
+      {friends.length > 0 ? (
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {friends.map((f, i) => (
+            <Reveal as="li" key={f.src} delay={i * 50}>
+              <div className="lift overflow-hidden rounded-2xl border border-border bg-card">
+                <img src={f.src} alt={f.alt} className="h-56 w-full object-cover" />
+                {f.caption && (
+                  <p className="border-t border-border px-4 py-2 text-center text-xs text-muted-foreground">
+                    {f.caption}
+                  </p>
+                )}
+              </div>
+            </Reveal>
+          ))}
+        </ul>
+      ) : (
+        <Reveal>
+          <p className="rounded-2xl border border-dashed border-border p-5 text-sm text-muted-foreground">
+            {placeholderNote}
+          </p>
+        </Reveal>
+      )}
     </PageShell>
   );
 }

@@ -520,8 +520,16 @@ export const certifications: Certification[] = [
 
 export const hobbies = [
   {
-    title: "Ball hockey & basketball",
-    body: "Team captain across 4+ intramural seasons, with multiple championships.",
+    title: "Ball Hockey",
+    body: "Team captain, intramural league.",
+  },
+  {
+    title: "Basketball",
+    body: "Team captain, intramural league.",
+  },
+  {
+    title: "Golf",
+    body: "Details to be added.",
   },
   {
     title: "Hunting",
@@ -529,6 +537,8 @@ export const hobbies = [
     image: "/images/hobbies/hunting.jpg",
   },
 ];
+
+export const friends: { src: string; alt: string; caption?: string }[] = [];
 
 export const ventures = {
   garden: [
