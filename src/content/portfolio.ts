@@ -524,6 +524,10 @@ export const hobbies = [
     body: "Team captain, intramural league.",
   },
   {
+    title: "Ice Hockey",
+    body: "Details to be added.",
+  },
+  {
     title: "Basketball",
     body: "Team captain, intramural league.",
   },
