@@ -526,6 +526,7 @@ export const hobbies = [
   {
     title: "Ice Hockey",
     body: "Details to be added.",
+    image: "/images/hobbies/ice-hockey-bench.jpg",
   },
   {
     title: "Basketball",
