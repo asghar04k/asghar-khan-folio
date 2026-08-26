@@ -535,6 +535,7 @@ export const hobbies = [
   {
     title: "Golf",
     body: "Details to be added.",
+    image: "/images/hobbies/golf.jpg",
   },
   {
     title: "Hunting",
