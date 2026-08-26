@@ -525,7 +525,7 @@ export const hobbies = [
   },
   {
     title: "Ice Hockey",
-    body: "Details to be added.",
+    body: "Playing since I was 5 years old.",
     image: "/images/hobbies/ice-hockey-bench.jpg",
   },
   {
@@ -534,7 +534,7 @@ export const hobbies = [
   },
   {
     title: "Golf",
-    body: "Details to be added.",
+    body: "Playing since I was 12, and recently got back into it.",
     image: "/images/hobbies/golf.jpg",
   },
   {
