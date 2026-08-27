@@ -30,7 +30,7 @@ function CoursesPage() {
       title="Courses"
       intro="Each course carries an artifact and a reflection, added as the program progresses."
     >
-      <ul className="grid gap-3 sm:grid-cols-2">
+      <ul className="grid auto-rows-fr gap-3 sm:grid-cols-2">
         {mmsCourses.map((c, i) =>
           c.active ? (
             <Reveal as="li" key={c.slug} delay={i * 40}>

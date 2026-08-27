@@ -51,7 +51,9 @@ function CourseDetailPage() {
 
       {detail ? (
         <>
-          <SectionHeading>Selected Work</SectionHeading>
+          <SectionHeading note="Below are selected pieces of work from this course.">
+            Selected Work
+          </SectionHeading>
           <ul className="space-y-6">
             {detail.selectedWork.map((w, i) => (
               <Reveal as="li" key={w.title}>
@@ -240,13 +242,15 @@ function CourseDetailPage() {
           <SectionHeading>Also in this course</SectionHeading>
           <Reveal>
             <p className="text-sm text-muted-foreground">{detail.alsoInThisCourse.intro}</p>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {detail.alsoInThisCourse.topics.map((t) => (
-                <li
-                  key={t}
-                  className="rounded-full border border-border bg-muted/60 px-4 py-2 text-sm text-foreground/85"
-                >
+            <ul className="mt-4 flex flex-wrap gap-x-2 gap-y-1.5">
+              {detail.alsoInThisCourse.topics.map((t, i) => (
+                <li key={t} className="flex items-center text-sm text-muted-foreground">
                   {t}
+                  {i < detail.alsoInThisCourse.topics.length - 1 && (
+                    <span aria-hidden className="ml-2 text-border">
+                      ·
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

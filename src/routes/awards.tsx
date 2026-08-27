@@ -67,9 +67,7 @@ function AwardsPage() {
         ))}
       </div>
 
-      <SectionHeading note="Completed through MEDSCIEN 9700, full reflections on the Seminars page">
-        Certifications
-      </SectionHeading>
+      <SectionHeading note="Full reflections on the Seminars page">Certifications</SectionHeading>
       <Reveal>
         <ul className="grid gap-3 sm:grid-cols-3">
           {certifications.map((c) => (

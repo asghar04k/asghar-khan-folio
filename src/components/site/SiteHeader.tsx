@@ -6,13 +6,14 @@ import { profile } from "@/content/portfolio";
 import { siteMode } from "@/lib/site-mode";
 import { cn } from "@/lib/utils";
 
-const homeLink = { to: "/", label: "Home" };
-
 const profileLinks = [
   { to: "/awards", label: "Awards" },
   { to: "/experience", label: "Work Experience" },
   { to: "/research", label: "Research" },
   { to: "/volunteering", label: "Volunteering" },
+  { to: "/ventures", label: "Ventures" },
+  { to: "/hobbies", label: "Hobbies" },
+  { to: "/resume", label: "Resume" },
 ];
 
 const mmsLinks = [
@@ -23,23 +24,72 @@ const mmsLinks = [
   { to: "/mms/capstone", label: "Capstone" },
 ];
 
-const tailLinks = [
-  { to: "/ventures", label: "Ventures" },
-  { to: "/hobbies", label: "Hobbies" },
-  { to: "/resume", label: "Resume" },
-];
+type NavEntry = { kind: "link"; to: string; label: string } | { kind: "dropdown" };
 
-// "personal" (default): profile pages up front, MMS pages tucked in a dropdown.
-// "mms": roles swapped — MMS pages are the top bar (the focus of that
-// deployment), profile pages move into a "Profile" dropdown. See site-mode.ts.
-const topLinks = siteMode === "mms" ? [homeLink, ...mmsLinks] : [homeLink, ...profileLinks];
-const trailingLinks = siteMode === "mms" ? [] : tailLinks;
+// "personal" (default): profile pages up front as individual links, MMS pages
+// tucked into an "MMS" dropdown at the end.
+// "mms": roles swapped for the MMS-focused deployment. The Profile dropdown
+// (Awards/Work Experience/Resume/etc.) sits right after Home, so a visitor
+// learns who you are before going into the coursework, then the MMS pages
+// follow as individual links (the actual focus of that deployment).
+// See site-mode.ts.
+const navEntries: NavEntry[] =
+  siteMode === "mms"
+    ? [
+        { kind: "link", to: "/", label: "Home" },
+        { kind: "dropdown" },
+        ...mmsLinks.map((l) => ({ kind: "link" as const, ...l })),
+      ]
+    : [
+        { kind: "link", to: "/", label: "Home" },
+        { kind: "link", to: "/awards", label: "Awards" },
+        { kind: "link", to: "/experience", label: "Work Experience" },
+        { kind: "link", to: "/research", label: "Research" },
+        { kind: "link", to: "/volunteering", label: "Volunteering" },
+        { kind: "dropdown" },
+        { kind: "link", to: "/ventures", label: "Ventures" },
+        { kind: "link", to: "/hobbies", label: "Hobbies" },
+        { kind: "link", to: "/resume", label: "Resume" },
+      ];
+
 const dropdownLabel = siteMode === "mms" ? "Profile" : "MMS";
-const dropdownLinks = siteMode === "mms" ? [...profileLinks, ...tailLinks] : mmsLinks;
+const dropdownLinks = siteMode === "mms" ? profileLinks : mmsLinks;
 
 const linkClass =
   "relative rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors duration-200 hover:bg-accent hover:text-foreground";
 const activeClass = "text-foreground bg-accent";
+
+function DesktopDropdown() {
+  return (
+    // Menu is flush with trigger (top-full) — spacing is internal padding,
+    // so there is no hover dead-zone.
+    <div className="group relative">
+      <button type="button" className={cn(linkClass, "inline-flex items-center gap-1")}>
+        {dropdownLabel}
+        <span aria-hidden className="text-[10px]">
+          ▾
+        </span>
+      </button>
+      <div className="pointer-events-none absolute top-full left-0 pt-2 opacity-0 transition-opacity duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+        <div className="w-56 rounded-xl border border-border bg-popover p-1.5 shadow-lg">
+          {dropdownLinks.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              activeProps={{
+                className:
+                  "block rounded-lg px-3 py-2 text-sm bg-accent text-foreground transition-colors",
+              }}
+            >
+              {l.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -52,56 +102,21 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
-          {topLinks.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className={linkClass}
-              activeOptions={{ exact: l.to === "/" }}
-              activeProps={{ className: cn(linkClass, activeClass) }}
-            >
-              {l.label}
-            </Link>
-          ))}
-
-          {/* Dropdown: menu is flush with trigger (top-full) — spacing is internal padding,
-              so there is no hover dead-zone. */}
-          <div className="group relative">
-            <button type="button" className={cn(linkClass, "inline-flex items-center gap-1")}>
-              {dropdownLabel}
-              <span aria-hidden className="text-[10px]">
-                ▾
-              </span>
-            </button>
-            <div className="pointer-events-none absolute top-full left-0 pt-2 opacity-0 transition-opacity duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
-              <div className="w-56 rounded-xl border border-border bg-popover p-1.5 shadow-lg">
-                {dropdownLinks.map((l) => (
-                  <Link
-                    key={l.to}
-                    to={l.to}
-                    className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                    activeProps={{
-                      className:
-                        "block rounded-lg px-3 py-2 text-sm bg-accent text-foreground transition-colors",
-                    }}
-                  >
-                    {l.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {trailingLinks.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className={linkClass}
-              activeProps={{ className: cn(linkClass, activeClass) }}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {navEntries.map((entry) =>
+            entry.kind === "dropdown" ? (
+              <DesktopDropdown key="dropdown" />
+            ) : (
+              <Link
+                key={entry.to}
+                to={entry.to}
+                className={linkClass}
+                activeOptions={{ exact: entry.to === "/" }}
+                activeProps={{ className: cn(linkClass, activeClass) }}
+              >
+                {entry.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
@@ -136,27 +151,33 @@ export function SiteHeader() {
       {open && (
         <nav className="border-t border-border bg-background px-5 pt-2 pb-4 lg:hidden">
           <div className="flex flex-col">
-            {[...topLinks, ...trailingLinks].map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground"
-              >
-                {l.label}
-              </Link>
-            ))}
-            <p className="ledger mt-3 px-2">{dropdownLabel}</p>
-            {dropdownLinks.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground"
-              >
-                {l.label}
-              </Link>
-            ))}
+            {navEntries.map((entry) =>
+              entry.kind === "dropdown" ? (
+                <div key="dropdown-mobile">
+                  <p className="ledger mt-3 px-2">{dropdownLabel}</p>
+                  {dropdownLinks.map((l) => (
+                    <Link
+                      key={l.to}
+                      to={l.to}
+                      onClick={() => setOpen(false)}
+                      className="rounded-lg px-2 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground"
+                    >
+                      {l.label}
+                    </Link>
+                  ))}
+                  <div className="mt-2 border-t border-border" />
+                </div>
+              ) : (
+                <Link
+                  key={entry.to}
+                  to={entry.to}
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg px-2 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground"
+                >
+                  {entry.label}
+                </Link>
+              ),
+            )}
           </div>
         </nav>
       )}

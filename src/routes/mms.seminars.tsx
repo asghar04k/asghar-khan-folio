@@ -20,7 +20,7 @@ export const Route = createFileRoute("/mms/seminars")({
       {
         name: "description",
         content:
-          "MEDSCIEN 9700: a weekly, ungraded seminar series on the personal and professional skills interdisciplinary research requires.",
+          "A weekly, ungraded seminar series on the personal and professional skills interdisciplinary research requires.",
       },
       { property: "og:title", content: "Interdisciplinary Skill Development · Asghar Khan" },
       {
@@ -78,6 +78,20 @@ function TimelineStrip() {
             );
           })}
         </ol>
+        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 shrink-0 rounded-full border border-primary/30 bg-primary/10" />
+            Selected as an artifact below
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 shrink-0 rounded-full border border-border bg-card" />
+            Hover for details
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 shrink-0 rounded-full border border-dashed border-border/50 bg-muted/30" />
+            No session
+          </span>
+        </div>
       </Reveal>
     </TooltipProvider>
   );
@@ -282,7 +296,7 @@ function FeaturedCard({ session }: { session: (typeof seminarSeries.featured)[nu
 function SeminarsPage() {
   return (
     <PageShell
-      eyebrow="MMS Program · MEDSCIEN 9700"
+      eyebrow="MMS Program · Seminars"
       title="Interdisciplinary Skill Development"
       intro={seminarSeries.intro}
     >
@@ -342,7 +356,9 @@ function SeminarsPage() {
         </ol>
       </Reveal>
 
-      <SectionHeading note="Completed and submitted through 9700">Certifications</SectionHeading>
+      <SectionHeading note="Completed and submitted through the seminar series">
+        Certifications
+      </SectionHeading>
       <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {certifications.map((c, i) => (
           <Reveal as="li" key={c.title} delay={i * 50}>

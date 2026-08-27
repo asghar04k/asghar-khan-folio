@@ -625,17 +625,13 @@ export const posts = [
 ];
 
 export const mmsCourses = [
+  // Active courses first so they group together visually on the courses grid,
+  // ahead of the greyed-out "coming soon" ones.
   {
     slug: "communicating-science",
     title: "Communicating Science in the 21st Century",
     description: "Translating research for public, clinical, and policy audiences.",
     active: true,
-  },
-  {
-    slug: "designing-analyzing-research",
-    title: "Designing, Analyzing & Interpreting Medical Science Research",
-    description: "Study design, analysis, and critical interpretation of medical science research.",
-    active: false,
   },
   {
     slug: "academic-integrity-professionalism",
@@ -648,6 +644,12 @@ export const mmsCourses = [
     title: "Science Policy",
     description: "How evidence moves into policy and practice.",
     active: true,
+  },
+  {
+    slug: "designing-analyzing-research",
+    title: "Designing, Analyzing & Interpreting Medical Science Research",
+    description: "Study design, analysis, and critical interpretation of medical science research.",
+    active: false,
   },
   {
     slug: "ethical-research-practices",
@@ -755,7 +757,7 @@ export const courseDetails: Record<string, CourseDetail> = {
       },
     ],
     alsoInThisCourse: {
-      intro: "Beyond the proposal and peer-review cycle, 9501 also included:",
+      intro: "Beyond the proposal and peer-review cycle, this course also included:",
       topics: [
         "Microteach presentations",
         "Group Layman Summary",
@@ -768,7 +770,7 @@ export const courseDetails: Record<string, CourseDetail> = {
     reflection: [
       "This course built my ability to communicate science to different audiences, starting with the Microteach presentations (which had nothing to do with science but got everyone comfortable speaking to an unfamiliar audience), through the Layman Summary, and the SciComm Proposal, Peer Review, and Response Letter sequence, which walked through grant writing and publication as if it were a real project. My weekly LinkedIn posts extended that practice by translating each class for a professional network every week.",
       "The part that pushed me the most was our closing debate, where I was assigned to argue a position I didn't initially agree with. I'd avoided debate-style classes since elementary school, so choosing to represent my team as one of the speakers, and having our own research change my mind on the issue, ended up being the most valuable part of the course for me.",
-      "9501 gave me the confidence to communicate my ideas, and I want to carry that into more difficult conversations around ethics and professionalism in the next course: getting better at analyzing situations from multiple perspectives and connecting my clinical ethics experience at LHSC to our case discussions.",
+      "This course gave me the confidence to communicate my ideas, and I want to carry that into more difficult conversations around ethics and professionalism in the next course: getting better at analyzing situations from multiple perspectives and connecting my clinical ethics experience at LHSC to our case discussions.",
     ],
   },
   "academic-integrity-professionalism": {
@@ -823,7 +825,7 @@ export const courseDetails: Record<string, CourseDetail> = {
       },
     ],
     alsoInThisCourse: {
-      intro: "Beyond these three assignments, 9505 also covered:",
+      intro: "Beyond these three assignments, this course also covered:",
       topics: [
         "Academic integrity",
         "Lab professionalism",
@@ -886,7 +888,7 @@ export const courseDetails: Record<string, CourseDetail> = {
       },
     ],
     alsoInThisCourse: {
-      intro: "Beyond the SGBA+ policy file itself, 9503 also covered:",
+      intro: "Beyond the SGBA+ policy file itself, this course also covered:",
       topics: [
         "How government works",
         "Government policy levers",
@@ -948,7 +950,7 @@ export const mmsSeminars = [
   {
     title: "Interdisciplinary Skill Development",
     description:
-      "MEDSCIEN 9700: a weekly, ungraded seminar series running all summer on the personal and professional skills interdisciplinary research actually requires.",
+      "A weekly, ungraded seminar series running all summer on the personal and professional skills interdisciplinary research actually requires.",
   },
 ];
 
@@ -1124,7 +1126,7 @@ export const seminarSeries = {
       whatIDid:
         'Tried two AI academic search tools live, Consensus and Elicit, then worked through the limitations: a 2025 BBC study found major AI chatbots gave answers with significant issues to roughly half of 100 test questions; a widely shared example had Google\'s AI summary telling users that geologists recommend eating a small rock daily, sourced unnoticed by the model from a satirical article; and a broader discussion of how bias enters AI search results not because the tools are "biased" on their own, but because the training data reflects existing inequities in whose research gets published, cited, and digitized in the first place.',
       whatStuck:
-        "These tools are genuinely useful for getting oriented in unfamiliar literature fast, but they're still search tools, not authorities. Every AI-assisted search still needs the same skepticism and citation-checking discipline as a manual one. That connects directly to the same territory I dug into in 9505's AI Misconduct assignment: the risk isn't that these tools are useless, it's that their outputs look authoritative enough to skip the verification step.",
+        "These tools are genuinely useful for getting oriented in unfamiliar literature fast, but they're still search tools, not authorities. Every AI-assisted search still needs the same skepticism and citation-checking discipline as a manual one. That connects directly to the same territory I dug into in Academic Integrity and Professionalism's AI Misconduct assignment: the risk isn't that these tools are useless, it's that their outputs look authoritative enough to skip the verification step.",
       tools: [
         {
           name: "Consensus",
@@ -1191,7 +1193,7 @@ export const seminarSeries = {
       presenter: "",
       date: "June 19",
       blurb:
-        "A strengths-based self-assessment session to identify personal working strengths ahead of team-based coursework like 9503's policy simulation.",
+        "A strengths-based self-assessment session to identify personal working strengths ahead of team-based coursework like the Science Policy course's policy simulation.",
     },
     {
       title: "Citations & Synthesis",
@@ -1205,7 +1207,7 @@ export const seminarSeries = {
       presenter: "",
       date: "July 17",
       blurb:
-        "Structuring and writing an academic literature review, feeding directly into work like 9503's SGBA+ environmental scan.",
+        "Structuring and writing an academic literature review, feeding directly into work like the Science Policy course's SGBA+ environmental scan.",
     },
     {
       title: "ePortfolios",
@@ -1222,7 +1224,7 @@ export const seminarSeries = {
     },
   ] as LightningSeminar[],
   reflection: [
-    "If the graded courses taught me specific frameworks, 9700 was where I picked up the operating skills underneath all of them, the kind of thing that doesn't show up on a transcript but shows up every week in practice. Working through the Digital Literacy checklist on my own turned out to be one of the more useful hours of the summer, in a boring-but-true way: half of graduate work is just knowing your tools well enough that they get out of your way.",
+    "If the graded courses taught me specific frameworks, this seminar series was where I picked up the operating skills underneath all of them, the kind of thing that doesn't show up on a transcript but shows up every week in practice. Working through the Digital Literacy checklist on my own turned out to be one of the more useful hours of the summer, in a boring-but-true way: half of graduate work is just knowing your tools well enough that they get out of your way.",
     "The Wicked Problems and AI Tools sessions ended up talking to each other more than I expected. Both were really about the same question: how do you stay honest about the limits of a tool or a method, whether that's the scientific method hitting a genuinely messy real-world problem, or an AI search tool confidently returning a plausible-looking but wrong answer. Dr. Caine's session closed the loop by pointing the same instinct back at people: connection with a patient is built the same way trust in a source is, by checking your assumptions rather than taking the confident version at face value.",
     'Heading into rotations and the capstone, I want to carry that same instinct forward, treating every tool, source, and conversation with the same "can I actually trust this, and did I check" bar these seminars kept putting in front of me.',
   ],
