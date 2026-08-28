@@ -106,7 +106,11 @@ function Index() {
               <p className="mt-5 max-w-2xl font-mono text-sm text-muted-foreground sm:text-base">
                 {profile.tagline}
               </p>
-              <p className="mt-4 max-w-2xl text-lg text-foreground/85">{profile.shortBio}</p>
+              <p className="mt-4 max-w-2xl text-lg text-foreground/85">
+                {isMms
+                  ? "A two-year professional graduate program at Western's Schulich School of Medicine & Dentistry: coursework, clinical and research rotations, and a team-based capstone."
+                  : profile.shortBio}
+              </p>
             </div>
             {profile.headshot && (
               <img
