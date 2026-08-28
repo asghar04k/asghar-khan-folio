@@ -17,10 +17,15 @@ import { Reveal } from "@/components/site/Reveal";
 import { education, employment, profile } from "@/content/portfolio";
 import { siteMode } from "@/lib/site-mode";
 
+const siteTitle =
+  siteMode === "mms"
+    ? "Asghar Khan · MMS Portfolio"
+    : "Asghar Khan · Clinical Ethics & Health Research Portfolio";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Asghar Khan · Clinical Ethics & Health Research Portfolio" },
+      { title: siteTitle },
       {
         name: "description",
         content:
@@ -28,7 +33,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Asghar Khan · Clinical Ethics & Health Research Portfolio",
+        content: siteTitle,
       },
       {
         property: "og:description",

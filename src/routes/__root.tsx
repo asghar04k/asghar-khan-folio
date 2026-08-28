@@ -13,6 +13,12 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
+import { siteMode } from "../lib/site-mode";
+
+const siteTitle =
+  siteMode === "mms"
+    ? "Asghar Khan · MMS Portfolio"
+    : "Asghar Khan · Clinical Ethics & Health Research Portfolio";
 
 function NotFoundComponent() {
   return (
@@ -82,14 +88,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Asghar Khan" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { title: "Asghar Khan · Clinical Ethics & Health Research Portfolio" },
+      { title: siteTitle },
       {
         property: "og:title",
-        content: "Asghar Khan · Clinical Ethics & Health Research Portfolio",
+        content: siteTitle,
       },
       {
         name: "twitter:title",
-        content: "Asghar Khan · Clinical Ethics & Health Research Portfolio",
+        content: siteTitle,
       },
       {
         name: "description",
