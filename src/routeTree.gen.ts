@@ -14,6 +14,7 @@ import { Route as AwardsRouteImport } from './routes/awards'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as HobbiesRouteImport } from './routes/hobbies'
 import { Route as MmsRouteImport } from './routes/mms'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as ResearchRouteImport } from './routes/research'
 import { Route as ResumeRouteImport } from './routes/resume'
 import { Route as VenturesRouteImport } from './routes/ventures'
@@ -50,6 +51,11 @@ const HobbiesRoute = HobbiesRouteImport.update({
 const MmsRoute = MmsRouteImport.update({
   id: '/mms',
   path: '/mms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResearchRoute = ResearchRouteImport.update({
@@ -119,6 +125,7 @@ export interface FileRoutesByFullPath {
   '/experience': typeof ExperienceRoute
   '/hobbies': typeof HobbiesRoute
   '/mms': typeof MmsRouteWithChildren
+  '/profile': typeof ProfileRoute
   '/research': typeof ResearchRoute
   '/resume': typeof ResumeRoute
   '/ventures': typeof VenturesRoute
@@ -137,6 +144,7 @@ export interface FileRoutesByTo {
   '/awards': typeof AwardsRoute
   '/experience': typeof ExperienceRoute
   '/hobbies': typeof HobbiesRoute
+  '/profile': typeof ProfileRoute
   '/research': typeof ResearchRoute
   '/resume': typeof ResumeRoute
   '/ventures': typeof VenturesRoute
@@ -156,6 +164,7 @@ export interface FileRoutesById {
   '/experience': typeof ExperienceRoute
   '/hobbies': typeof HobbiesRoute
   '/mms': typeof MmsRouteWithChildren
+  '/profile': typeof ProfileRoute
   '/research': typeof ResearchRoute
   '/resume': typeof ResumeRoute
   '/ventures': typeof VenturesRoute
@@ -177,6 +186,7 @@ export interface FileRouteTypes {
     | '/experience'
     | '/hobbies'
     | '/mms'
+    | '/profile'
     | '/research'
     | '/resume'
     | '/ventures'
@@ -195,6 +205,7 @@ export interface FileRouteTypes {
     | '/awards'
     | '/experience'
     | '/hobbies'
+    | '/profile'
     | '/research'
     | '/resume'
     | '/ventures'
@@ -213,6 +224,7 @@ export interface FileRouteTypes {
     | '/experience'
     | '/hobbies'
     | '/mms'
+    | '/profile'
     | '/research'
     | '/resume'
     | '/ventures'
@@ -233,6 +245,7 @@ export interface RootRouteChildren {
   ExperienceRoute: typeof ExperienceRoute
   HobbiesRoute: typeof HobbiesRoute
   MmsRoute: typeof MmsRouteWithChildren
+  ProfileRoute: typeof ProfileRoute
   ResearchRoute: typeof ResearchRoute
   ResumeRoute: typeof ResumeRoute
   VenturesRoute: typeof VenturesRoute
@@ -274,6 +287,13 @@ declare module '@tanstack/react-router' {
       path: '/mms'
       fullPath: '/mms'
       preLoaderRoute: typeof MmsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/research': {
@@ -403,6 +423,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExperienceRoute: ExperienceRoute,
   HobbiesRoute: HobbiesRoute,
   MmsRoute: MmsRouteWithChildren,
+  ProfileRoute: ProfileRoute,
   ResearchRoute: ResearchRoute,
   ResumeRoute: ResumeRoute,
   VenturesRoute: VenturesRoute,

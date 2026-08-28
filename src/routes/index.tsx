@@ -56,9 +56,12 @@ const personalTiles = [
   { to: "/hobbies", label: "Hobbies", note: "Off the clock", icon: Volleyball },
 ] as const;
 
-// Same order as the MMS-mode top bar (see SiteHeader): Courses through
-// Capstone, then Profile last, matching the Profile dropdown's position.
+// Same order as the MMS-mode top bar (see SiteHeader): Profile right after
+// Home, then Courses through Capstone. Resume gets its own big button
+// alongside Profile since it's the single most-requested page.
 const mmsTiles = [
+  { to: "/profile", label: "Profile", note: "Awards, experience & more", icon: UserCircle },
+  { to: "/resume", label: "Resume", note: "View & download", icon: FileText },
   { to: "/mms/courses", label: "Courses", note: "Coursework & reflections", icon: GraduationCap },
   {
     to: "/mms/seminars",
@@ -74,7 +77,6 @@ const mmsTiles = [
   },
   { to: "/mms/rotations", label: "Rotations", note: "Basic, Clinical, Community", icon: RouteIcon },
   { to: "/mms/capstone", label: "Capstone", note: "Team-based final project", icon: Target },
-  { to: "/resume", label: "Profile", note: "Resume, awards & more", icon: UserCircle },
 ] as const;
 
 function Index() {
