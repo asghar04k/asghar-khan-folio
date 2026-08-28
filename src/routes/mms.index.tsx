@@ -57,7 +57,7 @@ function MmsIndex() {
     <PageShell
       eyebrow="Master of Medical Sciences"
       title="Program Portfolio"
-      intro="Two years at Western's Schulich School of Medicine & Dentistry, building toward a career at the intersection of research and clinical care. Here's the whole program at a glance."
+      intro="Building toward a career at the intersection of research and clinical care, at Western's Schulich School of Medicine & Dentistry. Here's the whole program at a glance."
     >
       <Reveal>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
