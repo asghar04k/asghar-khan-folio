@@ -12,6 +12,8 @@ export const profile = {
   bio: "I'm a Master of Medical Sciences candidate at Western University's Schulich School of Medicine & Dentistry, following an Honours Specialization in Health Sciences (final two-year GPA of 3.97/4.0) and the 2026 recipient of the BHSc Award of Recognition. My work sits at the intersection of clinical ethics, patient support, and health services research: spanning a clinical ethics practicum at the Western Centre for Bioethics and London Health Sciences Centre, a research assistantship in the Down Syndrome Clinic at The Hospital for Sick Children, and applied AI research in geriatric medicine. I'm also the founder and president of the Western Undergraduate Research Students' Association (URSA), which I grew into a 2,000+ member research community in its first year.",
   email: "akha228@uwo.ca",
   linkedin: "https://www.linkedin.com/in/asghark/",
+  // Private command center (Claude artifact, opens only for the owner).
+  atlas: { label: "Atlas", href: "https://claude.ai/artifact/DkRrD8mGscY6Am37Takmvo" },
   headshot: "/images/profile/headshot.jpg",
 };
 

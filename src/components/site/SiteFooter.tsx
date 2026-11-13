@@ -9,6 +9,15 @@ export function SiteFooter() {
           <p className="font-mono text-sm text-foreground">{profile.name}</p>
           <p className="mt-1 text-sm text-muted-foreground">{profile.location}</p>
         </div>
+        <a
+          href={profile.atlas.href}
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Atlas (private)"
+          className="order-last font-mono text-xs tracking-[0.3em] text-muted-foreground/50 transition-colors hover:text-foreground sm:order-none"
+        >
+          {profile.atlas.label.toUpperCase()}
+        </a>
         <div className="flex items-center gap-2">
           <a
             href={profile.linkedin}
