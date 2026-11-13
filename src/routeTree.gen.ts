@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AtlasRouteImport } from './routes/atlas'
 import { Route as AwardsRouteImport } from './routes/awards'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as HobbiesRouteImport } from './routes/hobbies'
@@ -31,6 +32,11 @@ import { Route as MmsCoursesSlugRouteImport } from './routes/mms.courses.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtlasRoute = AtlasRouteImport.update({
+  id: '/atlas',
+  path: '/atlas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AwardsRoute = AwardsRouteImport.update({
@@ -121,6 +127,7 @@ const MmsCoursesSlugRoute = MmsCoursesSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/atlas': typeof AtlasRoute
   '/awards': typeof AwardsRoute
   '/experience': typeof ExperienceRoute
   '/hobbies': typeof HobbiesRoute
@@ -141,6 +148,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/atlas': typeof AtlasRoute
   '/awards': typeof AwardsRoute
   '/experience': typeof ExperienceRoute
   '/hobbies': typeof HobbiesRoute
@@ -160,6 +168,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/atlas': typeof AtlasRoute
   '/awards': typeof AwardsRoute
   '/experience': typeof ExperienceRoute
   '/hobbies': typeof HobbiesRoute
@@ -182,6 +191,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/atlas'
     | '/awards'
     | '/experience'
     | '/hobbies'
@@ -202,6 +212,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/atlas'
     | '/awards'
     | '/experience'
     | '/hobbies'
@@ -220,6 +231,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/atlas'
     | '/awards'
     | '/experience'
     | '/hobbies'
@@ -241,6 +253,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AtlasRoute: typeof AtlasRoute
   AwardsRoute: typeof AwardsRoute
   ExperienceRoute: typeof ExperienceRoute
   HobbiesRoute: typeof HobbiesRoute
@@ -259,6 +272,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atlas': {
+      id: '/atlas'
+      path: '/atlas'
+      fullPath: '/atlas'
+      preLoaderRoute: typeof AtlasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/awards': {
@@ -419,6 +439,7 @@ const MmsRouteWithChildren = MmsRoute._addFileChildren(MmsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AtlasRoute: AtlasRoute,
   AwardsRoute: AwardsRoute,
   ExperienceRoute: ExperienceRoute,
   HobbiesRoute: HobbiesRoute,
